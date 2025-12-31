@@ -559,7 +559,23 @@ footer {
     animation: slideInRight 0.8s forwards ease-out;
 }
 
-/* Keyframes pulseGlow removed */
+/* Professional Border Animation - Re-added as subtle pulse */
+@keyframes borderFlow {
+    0% {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-color: rgba(255, 107, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(255, 107, 0, 0.1);
+    }
+
+    100% {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
 
 
 
@@ -582,7 +598,13 @@ footer {
 
 /* Professional Border Animation */
 /* Professional Border Animation - REMOVED per user request (no looping) */
-/* Apply globally to cards - Removed animation */
+/* Apply globally to cards */
+.card,
+.stat-card,
+.benefit-card,
+.review-card {
+    animation: borderFlow 4s ease-in-out infinite;
+}
 
 
 /* Contact / Calendar Section */
@@ -927,9 +949,12 @@ iframe {
             box-shadow: none;
             border: none;
             border: none;
-            padding-left: 0;
+            border: none;
+            padding: 0;
+            width: 100%;
+            min-width: 0;
+            /* Reset desktop min-width */
             text-align: center;
-            /* Center items */
             align-items: center;
         }
 

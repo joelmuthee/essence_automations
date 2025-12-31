@@ -9,7 +9,7 @@ document.addEventListener('mousemove', (e) => {
 
 // Scroll Animations
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.05
 };
 
 const observer = new IntersectionObserver((entries) => {
