@@ -514,16 +514,9 @@ footer {
 }
 
 /* Mobile Animation Fixes */
+/* Mobile Animation Fixes - Re-enabled but optimized */
 @media (max-width: 768px) {
-
-    .zoom-in,
-    .fade-in-up,
-    .slide-in-left,
-    .slide-in-right {
-        animation: none !important;
-        opacity: 1 !important;
-        transform: none !important;
-    }
+    /* Ensure they run but don't cause layout shifts if user prefers reduced motion (handled by system prefs usually, but here we just ensure they work) */
 }
 
 .zoom-in {
@@ -579,9 +572,7 @@ footer {
     }
 }
 
-.pulse-glow {
-    /* Legacy class kept for structure but animation handled globally now */
-}
+
 
 /* Cursor Glow Effect */
 .cursor-glow {
@@ -907,6 +898,7 @@ iframe {
 
     .nav-links {
         display: none;
+        /* Hidden by default causing the "off" issue if JS toggles it to flex but this rule persists? No, JS adds 'active'. But let's verify duplicate rules. */
     }
 
     /* Simplified mobile nav for now */
@@ -927,10 +919,9 @@ iframe {
     }
 
     .logo {
-        font-size: 0.9rem !important;
-        /* Smaller to fit text */
-        max-width: 80%;
-        /* More space for text */
+        font-size: 1.4rem !important;
+        /* Increased size */
+        max-width: 70%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -938,7 +929,6 @@ iframe {
 
     .logo .highlight {
         display: inline-block;
-        /* Ensure span respects parent */
     }
 
     /* Hamburger Menu */
@@ -1030,19 +1020,19 @@ iframe {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 70%;
+        width: 100%;
         height: 100vh;
-        background: rgba(5, 5, 16, 0.95);
+        background: rgba(5, 5, 16, 0.98);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: flex-start;
-        /* Start from top to allow scrolling */
-        padding-top: 4rem;
-        /* Space for close button/header */
+        align-items: center;
+        /* Center items */
+        padding-top: 6rem;
+        /* More space */
         transition: 0.5s;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        box-shadow: none;
         overflow-y: auto;
-        /* Enable scrolling for long menus */
     }
 
     .nav-links.active {
