@@ -580,7 +580,7 @@ footer {
 }
 
 .pulse-glow {
-    /* animation: pulseGlow 2s infinite; Disabled per user request */
+    /* Legacy class kept for structure but animation handled globally now */
 }
 
 /* Cursor Glow Effect */
@@ -596,7 +596,34 @@ footer {
     transform: translate(-50%, -50%);
     transition: transform 0.1s ease-out;
     /* Smooth follow lagging slightly */
+    /* Smooth follow lagging slightly */
     mix-blend-mode: screen;
+}
+
+/* Professional Border Animation */
+@keyframes borderFlow {
+    0% {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    50% {
+        border-color: rgba(255, 107, 0, 0.4);
+        box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
+    }
+
+    100% {
+        border-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* Apply globally to cards */
+.card,
+.stat-card,
+.benefit-card,
+.review-card {
+    animation: borderFlow 4s ease-in-out infinite;
 }
 
 /* Contact / Calendar Section */
