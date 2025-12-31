@@ -1,0 +1,174 @@
+/* Copy and paste this into the "Custom CSS" section of your GoHighLevel Calendar Settings */
+
+/* 1. Import the Website Font */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+
+/* 2. Main Wrapper & Background */
+/* Targets the main application wrapper and cards */
+.v-application,
+.v-application--wrap,
+.v-card,
+.v-sheet {
+    background-color: transparent !important;
+    background: transparent !important;
+    font-family: 'Outfit', sans-serif !important;
+    box-shadow: none !important;
+}
+
+/* Force body to be transparent so your glass container shows through */
+body {
+    background-color: transparent !important;
+}
+
+/* 3. Text Colors - Force White */
+.v-application,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+label,
+.v-list-item__title,
+.v-list-item__subtitle {
+    color: #ffffff !important;
+}
+
+/* 4. Calendar Date Picker Styles */
+
+/* Header (Month/Year) */
+.v-date-picker-header__value button {
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #ff6b00 !important;
+    /* Primary Orange */
+}
+
+/* Arrows */
+.v-date-picker-header .v-icon {
+    color: #ffffff !important;
+}
+
+/* Weekday labels (S M T W T F S) */
+.v-date-picker-table th {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-weight: 600;
+}
+
+/* Date Buttons */
+.v-date-picker-table .v-btn {
+    color: #ffffff !important;
+    font-weight: 400;
+}
+
+/* Selected Date */
+.v-date-picker-table .v-btn.v-btn--active {
+    background-image: linear-gradient(45deg, #ff6b00, #ff9100) !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3) !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Today's Date (Outlined) */
+.v-date-picker-table .v-btn--outlined {
+    border: 1px solid #ff6b00 !important;
+}
+
+/* Hover effect on dates */
+.v-date-picker-table .v-btn:hover {
+    color: #ff6b00 !important;
+}
+
+/* 5. Time Slots */
+.slots-column .v-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    /* Glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+}
+
+.slots-column .v-btn:hover {
+    background: rgba(255, 107, 0, 0.15) !important;
+    border-color: #ff6b00 !important;
+    color: #ff6b00 !important;
+}
+
+/* Selected Time Slot */
+.slots-column .v-btn.v-btn--active {
+    background: linear-gradient(45deg, #ff6b00, #ff9100) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+/* 6. Input Fields (Name, Phone, Email) */
+.v-text-field__slot input,
+.v-select__selection,
+.v-textarea textarea {
+    color: #ffffff !important;
+}
+
+.v-input__slot {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 10px !important;
+}
+
+/* Input Borders/Underlines */
+.v-text-field>.v-input__control>.v-input__slot:before,
+.v-text-field>.v-input__control>.v-input__slot:after {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Focused Input */
+.v-input--is-focused .v-input__slot:after {
+    border-color: #ff6b00 !important;
+}
+
+/* Label Colors */
+.v-label {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.v-input--is-focused .v-label {
+    color: #ff6b00 !important;
+}
+
+/* 7. Main Action Button (Book Appointment) */
+.confirm-btn,
+.v-btn.primary {
+    background: linear-gradient(45deg, #ff6b00, #ff9100) !important;
+    border-radius: 50px !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3) !important;
+    text-transform: none !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    height: 48px !important;
+    transition: transform 0.3s, box-shadow 0.3s !important;
+}
+
+.confirm-btn:hover,
+.v-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5) !important;
+}
+
+/* 8. Success Message / Confirmation */
+.confirmation-message {
+    background: transparent !important;
+    color: #ffffff !important;
+}
+
+/* Hide white backgrounds in dropdowns */
+.v-menu__content {
+    background: #0a0a14 !important;
+    /* Dark solid bg for dropdowns */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
