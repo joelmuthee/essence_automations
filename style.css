@@ -592,29 +592,13 @@ footer {
 }
 
 /* Professional Border Animation */
-@keyframes borderFlow {
-    0% {
-        border-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-
-    50% {
-        border-color: rgba(255, 107, 0, 0.4);
-        box-shadow: 0 4px 20px rgba(255, 107, 0, 0.1);
-    }
-
-    100% {
-        border-color: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-}
-
-/* Apply globally to cards */
+/* Professional Border Animation - REMOVED per user request (no looping) */
+/* Apply globally to cards - Removed animation */
 .card,
 .stat-card,
 .benefit-card,
 .review-card {
-    animation: borderFlow 4s ease-in-out infinite;
+    /* animation: borderFlow 4s ease-in-out infinite; */
 }
 
 /* Contact / Calendar Section */
@@ -898,7 +882,6 @@ iframe {
 
     .nav-links {
         display: none;
-        /* Hidden by default causing the "off" issue if JS toggles it to flex but this rule persists? No, JS adds 'active'. But let's verify duplicate rules. */
     }
 
     /* Simplified mobile nav for now */
@@ -919,8 +902,8 @@ iframe {
     }
 
     .logo {
-        font-size: 1.4rem !important;
-        /* Increased size */
+        font-size: 1.1rem !important;
+        /* Smaller per user request */
         max-width: 70%;
         overflow: hidden;
         white-space: nowrap;
