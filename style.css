@@ -702,8 +702,7 @@ iframe {
     transition: var(--transition-speed);
     position: relative;
     /* For stretched link */
-    animation: pulseGlow 4s infinite;
-    /* Slow pulse */
+    /* animation: pulseGlow 4s infinite; Removed as per user request */
 }
 
 .review-card {
@@ -805,8 +804,7 @@ iframe {
     text-align: left;
     border: 1px solid var(--glass-border);
     /* Ensure border exists for animation */
-    animation: pulseGlow 5s infinite reverse;
-    /* Slight offset */
+    /* animation: pulseGlow 5s infinite reverse; Removed as per user request */
 }
 
 .benefit-card:hover {
@@ -886,9 +884,10 @@ iframe {
     }
 
     .logo {
-        font-size: 1.1rem !important;
-        /* Revert to smaller size */
-        max-width: 60%;
+        font-size: 0.9rem !important;
+        /* Smaller to fit text */
+        max-width: 80%;
+        /* More space for text */
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
