@@ -34,9 +34,18 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.fade-in-up, .zoom-in, .slide-in-left, .slide-in-right').forEach(el => {
+// Global Animation Initializer
+const animateElements = document.querySelectorAll('.hero h1, .hero p, .hero-buttons, .section-header, .card, .stat-card, .benefit-card, .review-card, .btn-primary, .about-content p');
+
+animateElements.forEach((el, index) => {
+    // Add base class if not present
+    if (!el.classList.contains('fade-in-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right')) {
+        el.classList.add('fade-in-up');
+    }
+    // Add observer
     observer.observe(el);
 });
+
 
 // Mobile Menu Toggle
 const hamburger = document.querySelector('.hamburger');
