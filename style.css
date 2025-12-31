@@ -251,7 +251,22 @@ a.logo {
     width: 600px;
     height: 600px;
     z-index: 1;
+    z-index: 1;
     pointer-events: none;
+}
+
+/* Review Widget Fix */
+iframe.lc_reviews_widget {
+    min-height: 600px !important;
+    height: 100% !important;
+}
+
+/* Mobile Calendar Fixes */
+@media (max-width: 768px) {
+    .calendar-container {
+        padding: 0.5rem !important;
+        min-height: 800px;
+    }
 }
 
 .orb {
@@ -480,6 +495,77 @@ footer {
     }
 }
 
+
+/* New Cool Animations */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom-in {
+    opacity: 0;
+    animation: zoomIn 0.8s forwards ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s forwards ease-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    opacity: 0;
+    animation: slideInRight 0.8s forwards ease-out;
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 107, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 0, 0);
+    }
+}
+
+.pulse-glow {
+    animation: pulseGlow 2s infinite;
+}
+
 /* Cursor Glow Effect */
 .cursor-glow {
     width: 400px;
@@ -579,6 +665,8 @@ iframe {
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 600px;
+    /* Force container height */
 }
 
 .review-card {
@@ -748,6 +836,105 @@ iframe {
 
     .hero-content {
         margin-bottom: 2rem;
+    }
+
+    .navbar {
+        padding: 0.5rem 5% !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    .logo {
+        font-size: 1rem !important;
+        max-width: 65%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .logo .highlight {
+        display: inline-block;
+        /* Ensure span respects parent */
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 999999;
+        width: 40px;
+        height: 30px;
+        padding: 5px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        background: rgba(0, 0, 0, 0.6);
+        /* Ensure contrast */
+    }
+
+    .hamburger span {
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff !important;
+        transition: 0.3s;
+    }
+
+    /* Reduce side margins for Contact/Calendar on mobile */
+    .contact {
+        padding: 1rem 0 !important;
+        /* Remove side padding completely */
+    }
+
+    .calendar-container {
+        padding: 0 !important;
+        min-height: 800px;
+        width: 100% !important;
+        border-radius: 10px;
+    }
+
+    /* Force mobile review widget height and scrolling */
+    iframe.lc_reviews_widget {
+        min-height: 800px !important;
+        height: 100% !important;
+        /* explicit height, not auto */
+        overflow-y: scroll !important;
+    }
+
+
+
+    /* Mobile Nav */
+    .nav-links {
+        display: flex;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(5, 5, 16, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.5s;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* Hamburger Animation */
+    .nav-links.active+.hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 6px);
+    }
+
+    .nav-links.active+.hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-links.active+.hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -6px);
     }
 }
 
