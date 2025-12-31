@@ -276,7 +276,7 @@ iframe.lc_reviews_widget {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.6;
-    animation: float 6s ease-in-out infinite;
+    /* animation: float 6s ease-in-out infinite; Disabled per user request */
 }
 
 /* Services Grid */
@@ -513,6 +513,19 @@ footer {
     }
 }
 
+/* Mobile Animation Fixes */
+@media (max-width: 768px) {
+
+    .zoom-in,
+    .fade-in-up,
+    .slide-in-left,
+    .slide-in-right {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
 .zoom-in {
     opacity: 0;
     animation: zoomIn 0.8s forwards ease-out;
@@ -567,7 +580,7 @@ footer {
 }
 
 .pulse-glow {
-    animation: pulseGlow 2s infinite;
+    /* animation: pulseGlow 2s infinite; Disabled per user request */
 }
 
 /* Cursor Glow Effect */
@@ -664,11 +677,9 @@ iframe {
 }
 
 .review-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: block;
+    width: 100%;
+    max-width: 100%;
     min-height: 600px;
     /* Force container height */
 }
@@ -704,8 +715,7 @@ iframe {
     /* For stretched link */
     position: relative;
     /* For stretched link */
-    animation: pulseGlow 4s infinite;
-    /* Re-enabled per user request */
+    /* animation: pulseGlow 4s infinite; Removed per user request - too distracting */
 }
 
 .review-card {
