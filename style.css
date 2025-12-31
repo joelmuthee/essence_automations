@@ -849,9 +849,9 @@ iframe {
     }
 
     .logo {
-        font-size: 1.5rem !important;
-        /* Increase to match hamburger */
-        max-width: 70%;
+        font-size: 1.1rem !important;
+        /* Revert to smaller size */
+        max-width: 60%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -870,9 +870,11 @@ iframe {
         gap: 5px;
         cursor: pointer;
         z-index: 999999;
-        width: 40px;
-        height: 30px;
-        padding: 5px;
+        width: 32px;
+        /* Slightly smaller */
+        height: 24px;
+        /* Slightly smaller */
+        padding: 4px;
         border: 1px solid rgba(255, 255, 255, 0.2);
         border-radius: 5px;
         background: rgba(0, 0, 0, 0.6);
@@ -888,8 +890,8 @@ iframe {
 
     /* Reduce side margins for Contact/Calendar on mobile */
     .contact {
-        padding: 1rem 0.5rem !important;
-        /* Slight margin to match reviews */
+        padding: 1rem 5% !important;
+        /* Standard site padding to match reviews */
     }
 
     .calendar-container {
