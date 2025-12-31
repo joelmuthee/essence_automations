@@ -603,7 +603,7 @@ footer {
 .stat-card,
 .benefit-card,
 .review-card {
-    animation: borderFlow 4s ease-in-out infinite;
+    /* animation: borderFlow 4s ease-in-out infinite; REMOVED AGAIN */
 }
 
 
@@ -948,21 +948,20 @@ iframe {
             width: 100%;
             box-shadow: none;
             border: none;
-            border: none;
-            border: none;
             padding: 0;
             width: 100%;
             min-width: 0;
-            /* Reset desktop min-width */
-            text-align: center;
-            align-items: center;
+            align-items: stretch;
+            /* Full width items */
         }
 
         .dropdown-content a {
-            text-align: center;
-            /* Ensure links are centered */
-            padding: 1rem;
-            justify-content: center;
+            text-align: left;
+            padding: 1rem 1rem 1rem 3rem;
+            /* Push text right (indentation) */
+            justify-content: flex-start;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            /* Subtle separator */
         }
 
         /* Hide benefits section on mobile nav if it makes it too long, or just let it scroll */
