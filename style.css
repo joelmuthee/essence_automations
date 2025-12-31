@@ -956,12 +956,14 @@ iframe {
         }
 
         .dropdown-content a {
-            text-align: left;
-            padding: 1rem 1rem 1rem 3rem;
-            /* Push text right (indentation) */
-            justify-content: flex-start;
+            text-align: right !important;
+            /* Push text to the right as requested */
+            padding: 1rem 2rem 1rem 1rem;
+            /* Padding right */
+            justify-content: flex-end;
+            /* Flex end */
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            /* Subtle separator */
+            width: 100%;
         }
 
         /* Hide benefits section on mobile nav if it makes it too long, or just let it scroll */
