@@ -309,34 +309,38 @@ iframe.lc_reviews_widget {
     transition: var(--transition-speed);
 }
 
+.card {
+    /* ... existing styles ... */
+    position: relative;
+    /* For stretched link */
+}
+
 .card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.08);
-    /* Slightly lighter on hover */
     border-color: var(--primary-color);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.card h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-}
-
-.card p {
-    color: rgba(255, 255, 255, 0.7);
-    margin-bottom: 1.5rem;
-}
+/* ... existing icon/h3/p styles ... */
 
 .card a {
     color: var(--primary-color);
     font-weight: 600;
     display: inline-block;
     transition: transform 0.2s;
+}
+
+/* Stretched Link */
+.card a::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    z-index: 1;
 }
 
 .card a:hover {
@@ -845,8 +849,9 @@ iframe {
     }
 
     .logo {
-        font-size: 1rem !important;
-        max-width: 65%;
+        font-size: 1.5rem !important;
+        /* Increase to match hamburger */
+        max-width: 70%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
@@ -883,8 +888,8 @@ iframe {
 
     /* Reduce side margins for Contact/Calendar on mobile */
     .contact {
-        padding: 1rem 0 !important;
-        /* Remove side padding completely */
+        padding: 1rem 0.5rem !important;
+        /* Slight margin to match reviews */
     }
 
     .calendar-container {
