@@ -22,10 +22,11 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Global Animation Initializer
-const animateElements = document.querySelectorAll('.hero h1, .hero p, .hero-buttons, .section-header, .card, .stat-card, .benefit-card, .review-card, .btn-primary, .about-content p');
+// Global Animation Initializer - "Reveal on Scroll" for entire website
+const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper');
 
 animateElements.forEach((el, index) => {
-    // Add base class if not present (default to slide-up now)
+    // Add base class if not present (default to slide-up "Reveal on Scroll")
     if (!el.classList.contains('slide-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right') && !el.classList.contains('fade-in')) {
         el.classList.add('slide-up');
     }

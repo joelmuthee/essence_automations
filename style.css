@@ -599,12 +599,7 @@ footer {
 /* Professional Border Animation */
 /* Professional Border Animation - REMOVED per user request (no looping) */
 /* Apply globally to cards */
-.card,
-.stat-card,
-.benefit-card,
-.review-card {
-    /* animation: borderFlow 4s ease-in-out infinite; REMOVED AGAIN */
-}
+/* .card, .stat-card, .benefit-card, .review-card { animation: borderFlow ... REMOVED } */
 
 
 /* Contact / Calendar Section */
@@ -956,11 +951,15 @@ iframe {
         }
 
         .dropdown-content a {
-            text-align: left;
-            /* Keep left align for readability */
-            padding: 1rem 1rem 1rem 5rem;
-            /* Massive indentation (5rem) to push "further to the right" */
-            justify-content: flex-start;
+            text-align: right !important;
+            /* Force Right Alignment */
+            padding: 1rem 2rem 1rem 1rem;
+            /* Right padding preference */
+            justify-content: flex-end;
+            /* Flexbox alignment */
+            display: flex;
+            /* Ensure flex behavior */
+            align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.03);
             width: 100%;
         }
