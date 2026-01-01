@@ -492,10 +492,12 @@ footer {
 
 .delay-1 {
     animation-delay: 0.2s;
+    transition-delay: 0.2s;
 }
 
 .delay-2 {
     animation-delay: 0.4s;
+    transition-delay: 0.4s;
 }
 
 @keyframes fadeInUp {
@@ -520,48 +522,42 @@ footer {
 }
 
 /* Mobile Animation Fixes */
-/* Mobile Animation Fixes - Re-enabled but optimized */
+/* Mobile Animation Fixes - Optimized */
 @media (max-width: 768px) {
-    /* Ensure they run but don't cause layout shifts if user prefers reduced motion (handled by system prefs usually, but here we just ensure they work) */
+    /* Optional: Disable offsets for mobile if needed, but defaults work */
 }
 
 .zoom-in {
     opacity: 0;
-    animation: zoomIn 0.8s forwards ease-out;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@keyframes slideInLeft {
-    from {
-        transform: translateX(-50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.zoom-in.visible {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .slide-in-left {
     opacity: 0;
-    animation: slideInLeft 0.8s forwards ease-out;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-@keyframes slideInRight {
-    from {
-        transform: translateX(50px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .slide-in-right {
     opacity: 0;
-    animation: slideInRight 0.8s forwards ease-out;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 /* Professional Border Animation - Re-added as subtle pulse */
