@@ -604,7 +604,12 @@ footer {
 /* Professional Border Animation */
 /* Professional Border Animation - REMOVED per user request (no looping) */
 /* Apply globally to cards */
-/* .card, .stat-card, .benefit-card, .review-card { animation: borderFlow ... REMOVED } */
+.card,
+.stat-card,
+.benefit-card,
+.review-card {
+    animation: borderFlow 4s infinite;
+}
 
 
 /* Contact / Calendar Section */
