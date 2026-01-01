@@ -28,7 +28,7 @@ const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, im
 animateElements.forEach((el, index) => {
     // Add base class if not present (default to slide-up "Reveal on Scroll")
     if (!el.classList.contains('slide-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right') && !el.classList.contains('fade-in') && !el.classList.contains('fade-in-up')) {
-        el.classList.add('slide-up');
+        el.classList.add('fade-in-up');
     }
     // Add observer
     observer.observe(el);
