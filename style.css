@@ -374,9 +374,9 @@ iframe.lc_reviews_widget {
 .link-styled {
     display: inline-block;
     margin-top: 1.5rem;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 600;
-    border-bottom: 2px solid var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
 }
 
 /* Footer Fixes */
