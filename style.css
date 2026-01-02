@@ -371,7 +371,8 @@ iframe.lc_reviews_widget {
     padding: 3rem;
 }
 
-.link-styled {
+.link-styled,
+.link-styled:visited {
     display: inline-block;
     margin-top: 1.5rem;
     color: var(--primary-color);
