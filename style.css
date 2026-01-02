@@ -38,7 +38,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: linear-gradient(var(--primary-color), var(--secondary-color));
     border-radius: 5px;
 }
 
@@ -64,7 +64,7 @@ a.logo {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, var(--primary-color), #ffcc80);
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
