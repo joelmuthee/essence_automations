@@ -38,7 +38,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(var(--primary-color), var(--secondary-color));
+    background: var(--primary-color);
     border-radius: 5px;
 }
 
@@ -64,10 +64,21 @@ a.logo {
 }
 
 .gradient-text {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(90deg, var(--primary-color), #ffcc80);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.link-styled {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.link-styled:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-color);
 }
 
 /* Navbar */
@@ -768,7 +779,7 @@ iframe {
 .client-initial {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, var(--primary-color), #ff4500);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -864,7 +875,7 @@ iframe {
 
 .benefit-features li::before {
     content: "•";
-    color: var(--secondary-color);
+    color: var(--primary-color);
     position: absolute;
     left: 0;
     font-weight: bold;
