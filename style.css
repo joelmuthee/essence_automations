@@ -307,9 +307,15 @@ iframe.lc_reviews_widget {
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
+}
+
+.grid-container>* {
+    flex: 1 1 300px;
+    max-width: 400px;
 }
 
 .glass-effect {
