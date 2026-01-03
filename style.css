@@ -669,12 +669,14 @@ iframe {
 
 .contact-info a {
     color: var(--text-color);
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+    text-underline-offset: 4px;
     font-size: 1rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 .contact-inf.logo .highlight {
@@ -690,6 +692,7 @@ iframe {
 
 .contact-info a:hover {
     color: var(--primary-color);
+    text-decoration-color: var(--primary-color);
 }
 
 /* Reviews Section */
