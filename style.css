@@ -318,6 +318,24 @@ iframe.lc_reviews_widget {
     max-width: 400px;
 }
 
+.two-column-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.two-column-grid>* {
+    max-width: none;
+    flex: unset;
+}
+
+@media (max-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .glass-effect {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
