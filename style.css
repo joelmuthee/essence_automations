@@ -1163,7 +1163,7 @@ iframe {
 
 /* Trusted By Slider */
 .trusted-by {
-    padding: 6rem 0 3rem;
+    padding: 3rem 0;
     /* Increased top padding to clear sticky header */
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
