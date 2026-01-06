@@ -1163,8 +1163,8 @@ iframe {
 
 /* Trusted By Slider */
 .trusted-by {
-    padding: 0 0 3rem 0;
-    /* Reduced top padding per user request */
+    padding: 3rem 0;
+    /* Restored top padding for uniformity */
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
     /* Borders removed per user request */
