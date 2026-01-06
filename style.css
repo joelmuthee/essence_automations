@@ -1167,8 +1167,7 @@ iframe {
     /* Increased top padding to clear sticky header */
     overflow: hidden;
     background: rgba(255, 255, 255, 0.02);
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
+    /* Borders removed per user request */
     margin-bottom: 5rem;
     position: relative;
     z-index: 10;
