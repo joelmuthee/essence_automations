@@ -1215,8 +1215,8 @@ iframe {
 
 .slide-track {
     display: flex;
-    width: calc(250px * 10);
-    /* 5 slides * 2 sets */
+    width: calc(250px * 12);
+    /* 6 slides * 2 sets */
     gap: 0;
     /* handled by slide padding/margin or width */
     animation: scroll 30s linear infinite;
@@ -1259,11 +1259,11 @@ iframe {
 
 @keyframes scroll {
     0% {
-        transform: translateX(calc(-250px * 5));
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(0);
+        transform: translateX(calc(-250px * 6));
     }
 }
 
@@ -1279,16 +1279,16 @@ iframe {
     }
 
     .slide-track {
-        width: calc(150px * 10);
+        width: calc(150px * 12);
     }
 
     @keyframes scroll {
         0% {
-            transform: translateX(calc(-150px * 5));
+            transform: translateX(0);
         }
 
         100% {
-            transform: translateX(0);
+            transform: translateX(calc(-150px * 6));
         }
     }
 }
