@@ -1224,7 +1224,7 @@ iframe {
 
 .slide {
     width: 250px;
-    height: 100px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1249,6 +1249,12 @@ iframe {
     transform: scale(1.1) !important;
     /* Allow hover scale */
     /* filter: none; Removed since filter above is gone */
+}
+
+.slide img.trusted-logo-large {
+    max-height: 120px !important;
+    /* User requested size */
+    transform: scale(1.1);
 }
 
 @keyframes scroll {

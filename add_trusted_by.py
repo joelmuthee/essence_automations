@@ -11,14 +11,16 @@ section_html = """
                     <div class="slide"><img src="client_2.jpg" alt="Trusted Client 2"></div>
                     <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
                     <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
-                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5"></div>
+                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
 
                     <!-- Duplicate Set for Seamless Loop -->
                     <div class="slide"><img src="client_1.png" alt="Trusted Client 1"></div>
                     <div class="slide"><img src="client_2.jpg" alt="Trusted Client 2"></div>
                     <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
                     <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
-                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5"></div>
+                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
                 </div>
             </div>
         </section>
