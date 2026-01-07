@@ -798,6 +798,111 @@ iframe {
     line-height: 1.6;
 }
 
+/* FAQ Section Styling */
+.faq {
+    padding: 5rem 5%;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* Force visibility */
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
+
+.faq-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-item:hover {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.faq-item[open] {
+    border-color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.faq-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none;
+    color: #fff;
+}
+
+.faq-summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-summary::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    transition: transform 0.3s;
+    font-weight: 400;
+}
+
+.faq-item[open] .faq-summary::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 0;
+    animation: fadeIn 0.4s ease;
+}
+
+.faq-answer p {
+    margin-bottom: 1rem;
+    /* Nuclear Option for Visibility */
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    animation: none !important;
+    transition: none !important;
+    display: block !important;
+}
+
+.faq-answer * {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .client-info {
     display: flex;
     align-items: center;

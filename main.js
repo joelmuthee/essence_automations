@@ -23,9 +23,12 @@ const observer = new IntersectionObserver((entries) => {
 
 // Global Animation Initializer
 // Global Animation Initializer - "Reveal on Scroll" for entire website
-const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper');
+const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper, .faq-item');
 
 animateElements.forEach((el, index) => {
+    // Exclude FAQ content from animation
+    if (el.closest('.faq-answer')) return;
+
     // Add base class if not present (default to slide-up "Reveal on Scroll")
     if (!el.classList.contains('slide-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right') && !el.classList.contains('fade-in') && !el.classList.contains('fade-in-up')) {
         el.classList.add('fade-in-up');
