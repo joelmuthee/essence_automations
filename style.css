@@ -640,7 +640,8 @@ footer {
 .card,
 .stat-card,
 .benefit-card,
-.review-card {
+.review-card,
+.faq-item {
     animation: borderFlow 4s infinite;
 }
 
