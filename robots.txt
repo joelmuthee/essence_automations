@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://essenceautomations.com/sitemap.xml
