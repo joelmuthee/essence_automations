@@ -1397,3 +1397,188 @@ iframe {
         }
     }
 }
+
+/* Team Section Styles */
+.team-layout {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    max-width: 1100px !important;
+}
+
+.staggered-container {
+    flex: 1;
+    position: relative;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.staggered-wrapper {
+    position: relative;
+    height: 400px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.stagger-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Layering logic for staggered effect */
+.layer-1 {
+    z-index: 3;
+    transform: translateX(0) scale(1);
+}
+
+.layer-2 {
+    z-index: 2;
+    transform: translateX(25px) translateY(-25px) scale(0.95);
+    opacity: 0.6;
+    filter: brightness(0.6);
+}
+
+.layer-3 {
+    z-index: 1;
+    transform: translateX(50px) translateY(-50px) scale(0.9);
+    opacity: 0.3;
+    filter: brightness(0.4);
+}
+
+/* Hover Effect: Fan out slightly */
+.staggered-wrapper:hover .layer-2 {
+    transform: translateX(40px) translateY(-40px) scale(0.95) rotate(3deg);
+    opacity: 0.8;
+}
+
+.staggered-wrapper:hover .layer-3 {
+    transform: translateX(80px) translateY(-80px) scale(0.9) rotate(6deg);
+    opacity: 0.6;
+}
+
+.founder-info {
+    margin-top: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 4;
+}
+
+.founder-info h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.role {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+}
+
+.team-content-wrapper {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.team-ladies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.team-member {
+    position: relative;
+}
+
+.member-image {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--glass-border);
+    transition: 0.4s;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.team-member:hover .member-image {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+/* Partner Highlight */
+.partner-card .member-image {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.15);
+}
+
+.partner-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, var(--primary-color), #ff9100);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .team-layout {
+        flex-direction: column;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .staggered-wrapper {
+        margin-left: -50px;
+        /* Offset the stagger look to center it visually */
+    }
+
+    /* Adjust centering since we offset */
+    .staggered-container {
+        padding-left: 50px;
+    }
+
+    .team-content-wrapper {
+        width: 100%;
+    }
+
+    .team-ladies-grid {
+        gap: 1rem;
+    }
+}
