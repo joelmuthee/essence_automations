@@ -1582,3 +1582,15 @@ iframe {
         gap: 1rem;
     }
 }
+/* FAQ Links */
+.faq-answer p a {
+    color: var(--primary-color);
+    text-decoration: underline !important;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.faq-answer p a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px var(--primary-color);
+}
