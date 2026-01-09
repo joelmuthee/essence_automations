@@ -25,6 +25,7 @@ $sectionHtml = @"
                     <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
                     <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
                     <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_7.png" alt="Trusted Client 7"></div>
                     <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
 
                     <!-- Duplicate Set for Seamless Loop -->
@@ -33,6 +34,7 @@ $sectionHtml = @"
                     <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
                     <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
                     <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_7.png" alt="Trusted Client 7"></div>
                     <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
                 </div>
             </div>
