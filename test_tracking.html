@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Test Page</title>
+</head>
+
+<body>
+    <h1>GoHighLevel Tracking Diagnostic</h1>
+    <p>This page tests if the tracking script is working correctly.</p>
+
+    <h2>Step 1: Open Console</h2>
+    <p>Press F12, go to the "Console" tab, and look for logs starting with <code>[LC Tracking]</code>.</p>
+
+    <h2>Step 2: Submit this Form</h2>
+    <p>Submitting this form should identify you to GoHighLevel and reveal this page view in your contact record.</p>
+
+    <!-- Native HTML Form for GHL Tracking -->
+    <!-- Essential elements: <form> tag and <input type="email"> -->
+    <form action="#" method="POST" id="test-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="test@essenceautomations.com" required>
+        <button type="submit">Submit Test</button>
+    </form>
+
+    <script>
+        document.getElementById('test-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            console.log("Form submitted. Check GHL for 'Form Submission' event and associated Page View.");
+            alert("Form submitted! Now check your GoHighLevel Attribution Report or Contact Activity for this email.");
+        });
+    </script>
+
+    <!-- GHL Tracking Script from index.html -->
+    <script src="https://link.essenceautomations.com/js/external-tracking.js"
+        data-tracking-id="tk_ed2385e52c284be3a90945e733a4e35f" data-debug="true">
+        </script>
+</body>
+
+</html>
