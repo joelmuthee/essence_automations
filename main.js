@@ -15,8 +15,23 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            // Determine scroll direction based on position
+            const rect = entry.boundingClientRect;
+            const windowHeight = window.innerHeight;
+
+            if (rect.top < windowHeight / 2) {
+                // Entering from top (scrolling up) -> fade in down
+                entry.target.classList.remove('fade-in-up');
+                entry.target.classList.add('fade-in-down');
+            } else {
+                // Entering from bottom (scrolling down) -> fade in up
+                entry.target.classList.remove('fade-in-down');
+                entry.target.classList.add('fade-in-up');
+            }
             entry.target.classList.add('visible');
-            // no inline styles needed, CSS handles it
+        } else {
+            // Reset state when scrolling away to allow re-animation
+            entry.target.classList.remove('visible');
         }
     });
 }, observerOptions);
