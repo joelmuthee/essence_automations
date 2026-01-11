@@ -18,38 +18,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
+        body {
+            background: var(--bg-color);
+            /* Ensure theme background is applied */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
         /* Specific styles for this standalone page */
         main {
-            min-height: 80vh;
+            flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             padding-top: 80px;
             /* Offset for fixed header */
+            background: radial-gradient(circle at top right, rgba(255, 133, 32, 0.1), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(255, 133, 32, 0.05), transparent 40%);
         }
 
         .feedback-system {
             width: 100%;
             background: transparent;
-            /* Remove glass effect background if specific to section, keeping container glass */
             padding: 2rem 5%;
         }
 
         .feedback-container {
             max-width: 800px;
             margin: 0 auto;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
+            background: rgba(255, 255, 255, 0.03);
+            /* Slightly more visible glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 4rem 3rem;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         @media (max-width: 768px) {
             .feedback-container {
-                padding: 2rem 1rem;
+                padding: 3rem 1.5rem;
             }
         }
     </style>
