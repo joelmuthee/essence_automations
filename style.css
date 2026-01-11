@@ -942,10 +942,19 @@ iframe {
     background: rgba(255, 255, 255, 0.1);
 }
 
+#review-cta h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
 #review-cta p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
