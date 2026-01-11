@@ -38,7 +38,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Global Animation Initializer
 // Global Animation Initializer - "Reveal on Scroll" for entire website
-const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper, .faq-item');
+const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper, .faq-item, .star-rating');
 
 animateElements.forEach((el, index) => {
     // Exclude FAQ content from animation
@@ -65,4 +65,48 @@ hamburger.addEventListener('click', () => {
 const yearSpan = document.getElementById('year');
 if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
+}
+// Review System Logic
+const stars = document.querySelectorAll('input[name="rating"]');
+const feedbackForm = document.getElementById('feedback-form');
+const reviewCta = document.getElementById('review-cta');
+
+stars.forEach(star => {
+    star.addEventListener('change', (e) => {
+        const rating = parseInt(e.target.value);
+
+        // Hide both initially with specific class handling
+        feedbackForm.classList.add('hidden');
+        reviewCta.classList.add('hidden');
+
+        // Small delay to allow transition if needed, or immediate
+        setTimeout(() => {
+            if (rating === 5) {
+                reviewCta.classList.remove('hidden');
+                // Optional: Scroll to it
+                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                feedbackForm.classList.remove('hidden');
+                feedbackForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }, 100);
+    });
+});
+
+function handleFeedbackSubmit(event) {
+    event.preventDefault();
+    const email = document.getElementById('feedback-email').value;
+    const message = document.getElementById('feedback-message').value;
+    const rating = document.querySelector('input[name="rating"]:checked')?.value || 'Unknown';
+
+    const subject = `Feedback from Website (${rating} Stars)`;
+    const body = `Rating: ${rating} Stars\nEmail: ${email}\n\nFeedback:\n${message}`;
+
+    // Construct mailto link
+    const mailtoLink = `mailto:chat@essenceautomations.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoLink;
+
+    // Optional: Show "Sent" state
+    event.target.innerHTML = '<h3>Thank you for your feedback!</h3>';
 }
