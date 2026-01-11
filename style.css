@@ -572,7 +572,14 @@ footer {
 /* Mobile Animation Fixes */
 /* Mobile Animation Fixes - Optimized */
 @media (max-width: 768px) {
-    /* Optional: Disable offsets for mobile if needed, but defaults work */
+    .calendar-container {
+        padding: 0.5rem !important;
+        min-height: 800px;
+    }
+
+    .reviews {
+        padding: 3rem 5% 1rem 5%;
+    }
 }
 
 .zoom-in {
