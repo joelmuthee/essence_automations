@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate Our Services | Essence Automations</title>
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rate Our Services | Essence Automations">
+    <meta property="og:description"
+        content="We value your feedback. Please take a moment to rate your experience with us.">
+    <meta property="og:image" content="https://essenceautomations.com/favicon.svg">
+    <meta property="og:url" content="https://essenceautomations.com/rate-us.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for this standalone page */
+        main {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+            /* Offset for fixed header */
+        }
+
+        .feedback-system {
+            width: 100%;
+            background: transparent;
+            /* Remove glass effect background if specific to section, keeping container glass */
+            padding: 2rem 5%;
+        }
+
+        .feedback-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .feedback-container {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor-glow"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo">Essence<span class="highlight">Automations</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#contact" class="btn-primary">Get Started</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="feedback-system" class="feedback-system">
+            <div class="feedback-container">
+                <h2 class="fade-in-up">How Would You Rate Our Services?</h2>
+                <p class="subtitle fade-in-up">Select a star rating below to share your feedback.</p>
+
+                <div class="star-rating fade-in-up">
+                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"
+                        title="5 stars">&#9733;</label>
+                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"
+                        title="4 stars">&#9733;</label>
+                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"
+                        title="3 stars">&#9733;</label>
+                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"
+                        title="2 stars">&#9733;</label>
+                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"
+                        title="1 star">&#9733;</label>
+                </div>
+
+                <!-- 1-4 Star Feedback Form -->
+                <div id="feedback-form" class="conditional-content hidden">
+                    <h3>We're sorry to hear that.</h3>
+                    <p>Please let us know how we can improve.</p>
+                    <form id="internal-feedback" onsubmit="handleFeedbackSubmit(event)">
+                        <div class="form-group">
+                            <input type="email" id="feedback-email" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="feedback-message" rows="4" placeholder="Your feedback..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Feedback</button>
+                    </form>
+                </div>
+
+                <!-- 5 Star Success Message -->
+                <div id="review-cta" class="conditional-content hidden">
+                    <h3>Thank you for your support!</h3>
+                    <p>We're thrilled you had a great experience. Could you please spare a moment to share your
+                        experience on our Google Business Profile? Your detailed feedback helps us grow and serve you
+                        better.</p>
+                    <a href="https://g.page/r/CR_sEbCTUfyYEBE/review" target="_blank" class="btn-primary">Rate Us on
+                        Google</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-bottom" style="margin-top: auto;">
+            <p>&copy; <span id="year"></span> Essence Automations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js?v=17"></script>
+    <script>
+        // Update year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
