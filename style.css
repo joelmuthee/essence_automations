@@ -1586,3 +1586,19 @@ iframe {
     color: #fff;
     text-shadow: 0 0 10px var(--primary-color);
 }
+
+/* Mobile Adjustments for Reviews */
+@media (max-width: 768px) {
+    .feedback-system {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem;
+    }
+
+    .star-rating label {
+        font-size: 2.2rem;
+    }
+
+    .feedback-container h2 {
+        font-size: 2rem;
+    }
+}
