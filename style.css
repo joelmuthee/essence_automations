@@ -887,8 +887,8 @@ iframe {
 .star-rating input:checked~label,
 .star-rating label:hover,
 .star-rating label:hover~label {
-    color: #ffd700;
-    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    color: #ff8520;
+    text-shadow: 0 0 15px rgba(255, 133, 32, 0.5);
     transform: scale(1.1);
     animation: none;
 }
