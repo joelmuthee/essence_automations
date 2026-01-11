@@ -70,6 +70,8 @@ if (yearSpan) {
 const stars = document.querySelectorAll('input[name="rating"]');
 const feedbackForm = document.getElementById('feedback-form');
 const reviewCta = document.getElementById('review-cta');
+const feedbackTitle = feedbackForm.querySelector('h3');
+const feedbackText = feedbackForm.querySelector('p');
 
 stars.forEach(star => {
     star.addEventListener('change', (e) => {
@@ -84,10 +86,25 @@ stars.forEach(star => {
             if (rating === 5) {
                 reviewCta.classList.remove('hidden');
                 // Optional: Scroll to it
-                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                reviewCta.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             } else {
+                // Dynamic text based on rating
+                if (rating === 4) {
+                    feedbackTitle.textContent = "Thank you for your feedback!";
+                    feedbackText.textContent = "We're glad you had a good experience. What could we do to make it a 5-star experience next time?";
+                } else {
+                    feedbackTitle.textContent = "We're sorry to hear that.";
+                    feedbackText.textContent = "Please let us know how we can improve.";
+                }
+
                 feedbackForm.classList.remove('hidden');
-                feedbackForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                feedbackForm.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
             }
         }, 100);
     });
