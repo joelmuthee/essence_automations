@@ -966,29 +966,32 @@ iframe {
 
 /* Custom Close Button for Forms */
 .close-form-btn {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    background: #ff4757;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s;
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    left: auto !important;
+    background: #ff4757 !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: transform 0.2s !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .close-form-btn:hover {
-    transform: scale(1.1);
-    background: #ff6b81;
+    transform: scale(1.1) !important;
+    background: #ff6b81 !important;
 }
 
 .conditional-content.hidden {
