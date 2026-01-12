@@ -70,43 +70,71 @@ if (yearSpan) {
 const stars = document.querySelectorAll('input[name="rating"]');
 const feedbackForm = document.getElementById('feedback-form');
 const reviewCta = document.getElementById('review-cta');
-const feedbackTitle = feedbackForm.querySelector('h3');
-const feedbackText = feedbackForm.querySelector('p');
+// const feedbackTitle = feedbackForm ? feedbackForm.querySelector('h3') : null; // Removed to prevent crash
+// const feedbackText = feedbackForm ? feedbackForm.querySelector('p') : null; // Removed to prevent crash
+
+// Helper to reset iframe logic (fixes reload issue)
+// Store pristine templates on load to ensure a fresh start every time
+const fourStarTemplate = document.getElementById('four-star-iframe')?.innerHTML;
+const negativeTemplate = document.getElementById('negative-review-iframe')?.innerHTML;
+
+// Helper to purely reload content from template (Nuclear Option)
+function loadTemplate(containerId, templateContent) {
+    const container = document.getElementById(containerId);
+    if (!container || !templateContent) return;
+
+    // 1. Reset Content
+    container.innerHTML = templateContent;
+
+    // 2. Show Container
+    container.classList.remove('hidden');
+    container.style.display = 'block';
+
+    // 3. Re-activate Scripts (innerHTML scripts don't run automatically)
+    const scripts = container.getElementsByTagName('script');
+    Array.from(scripts).forEach(oldScript => {
+        const newScript = document.createElement('script');
+
+        // Copy attributes (src, type, etc.)
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+
+        // Copy inline code if any
+        newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+
+        // Replace old script with executable new script
+        oldScript.parentNode.replaceChild(newScript, oldScript);
+    });
+
+    // 4. Scroll into view
+    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
 
 stars.forEach(star => {
-    star.addEventListener('change', (e) => {
+    // Use 'click' instead of 'change' to handle re-clicks on the same rating
+    star.addEventListener('click', (e) => {
         const rating = parseInt(e.target.value);
 
-        // Hide both initially with specific class handling
-        feedbackForm.classList.add('hidden');
+        // Hide all initially
         reviewCta.classList.add('hidden');
+        document.getElementById('negative-review-iframe')?.classList.add('hidden');
+        document.getElementById('four-star-iframe')?.classList.add('hidden');
 
-        // Small delay to allow transition if needed, or immediate
+        // Small delay to allow UI to update
         setTimeout(() => {
             if (rating === 5) {
+                // 5 Stars: Show Google Review CTA
                 reviewCta.classList.remove('hidden');
-                // Optional: Scroll to it
-                reviewCta.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else if (rating === 4) {
+                // 4 Stars: Show New Iframe Form
+                loadTemplate('four-star-iframe', fourStarTemplate);
+                // No scroll needed as it's right below
             } else {
-                // Dynamic text based on rating
-                if (rating === 4) {
-                    feedbackTitle.textContent = "Thank you for your feedback!";
-                    feedbackText.textContent = "We're glad you had a good experience. What could we do to make it a 5-star experience next time?";
-                } else {
-                    feedbackTitle.textContent = "We're sorry to hear that.";
-                    feedbackText.textContent = "Please let us know how we can improve.";
-                }
-
-                feedbackForm.classList.remove('hidden');
-                feedbackForm.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'center'
-                });
+                // 1-3 Stars: Show Negative Iframe Form
+                loadTemplate('negative-review-iframe', negativeTemplate);
+                // No scroll needed
             }
-        }, 100);
+        }, 50);
     });
 });
 
@@ -124,6 +152,10 @@ function handleFeedbackSubmit(event) {
 
     window.location.href = mailtoLink;
 
-    // Optional: Show "Sent" state
-    event.target.innerHTML = '<h3>Thank you for your feedback!</h3>';
+    // UI Updates: Show success message and hide form/redundant text
+    if (typeof feedbackTitle !== 'undefined') feedbackTitle.textContent = "Thank you for your feedback!";
+    // Hide the "Please let us know how we can improve" text
+    if (typeof feedbackText !== 'undefined') feedbackText.style.display = 'none';
+    // Hide the form itself
+    event.target.style.display = 'none';
 }

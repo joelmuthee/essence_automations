@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Essence Automations | Future of Marketing</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="style.css?v=19">
+    <link rel="stylesheet" href="style.css?v=28">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -351,19 +351,34 @@
                         title="1 star">&#9733;</label>
                 </div>
 
-                <!-- 1-4 Star Feedback Form -->
-                <div id="feedback-form" class="conditional-content hidden">
-                    <h3>We're sorry to hear that.</h3>
-                    <p>Please let us know how we can improve.</p>
-                    <form id="internal-feedback" onsubmit="handleFeedbackSubmit(event)">
-                        <div class="form-group">
-                            <input type="email" id="feedback-email" placeholder="Your Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="feedback-message" rows="4" placeholder="Your feedback..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Send Feedback</button>
-                    </form>
+                <!-- 4 Star Reviews Form (Iframe) -->
+                <div id="four-star-iframe" class="conditional-content hidden" style="min-height: 471px;">
+                    <iframe src="https://link.essenceautomations.com/widget/form/qJgHbzLXRj8PMIeXckPk"
+                        style="width:100%;height:100%;border:none;border-radius:10px" id="popup-qJgHbzLXRj8PMIeXckPk"
+                        data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                        data-activation-type="alwaysActivated" data-activation-value=""
+                        data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                        data-form-name="4-Star Reviews Form" data-height="471"
+                        data-layout-iframe-id="popup-qJgHbzLXRj8PMIeXckPk" data-form-id="qJgHbzLXRj8PMIeXckPk"
+                        title="4-Star Reviews Form">
+                    </iframe>
+                    <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+                </div>
+
+                <!-- 1-3 Star Negative Review Form (Iframe) -->
+                <div id="negative-review-iframe" class="conditional-content hidden" style="min-height: 471px;">
+                    <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
+                        title="Close Form">&times;</button>
+                    <iframe src="https://link.essenceautomations.com/widget/form/58GOsE6dxceCDCKrANfA"
+                        style="width:100%;height:100%;border:none;border-radius:10px" id="popup-58GOsE6dxceCDCKrANfA"
+                        data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow" data-trigger-value=""
+                        data-activation-type="alwaysActivated" data-activation-value=""
+                        data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                        data-form-name="Negative Reviews Form" data-height="471"
+                        data-layout-iframe-id="popup-58GOsE6dxceCDCKrANfA" data-form-id="58GOsE6dxceCDCKrANfA"
+                        title="Negative Reviews Form">
+                    </iframe>
+                    <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
                 </div>
 
                 <!-- 5 Star Success Message -->
@@ -450,7 +465,7 @@
         </div>
     </footer>
 
-    <script src="main.js?v=16"></script>
+    <script src="main.js?v=21"></script>
     <script src="https://beta.leadconnectorhq.com/loader.js"
         data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="6698bac0b120682ac60d5a7f">
@@ -461,6 +476,3 @@
 </body>
 
 </html>
-
-
-
