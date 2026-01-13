@@ -169,6 +169,13 @@ $IconMap = @{
     'CSV Bulk Uploader'     = $Folder
     'Approval Workflow'     = $Check
     'Stats & RSS Feeds'     = $Trend
+
+    # Reputation Management
+    'Negative Shield'       = U 0x1F6E1
+    'Google Booster'        = $Star
+    'Seamless Integration'  = $Loop
+    'Review Widget'         = $StarEyes
+    'Actionable Insights'   = $Trend
 }
 
 $files = Get-ChildItem -Path . -Filter *.html
