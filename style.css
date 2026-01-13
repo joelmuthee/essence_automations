@@ -679,7 +679,10 @@ footer {
     background: var(--glass-bg);
 }
 
-iframe {
+/* Scoped iframe styles to avoid affecting Chat Widget */
+.calendar-container iframe,
+.review-grid iframe,
+.conditional-content iframe {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -1679,5 +1682,19 @@ iframe {
 
     .feedback-container h2 {
         font-size: 2rem;
+    }
+}
+
+/* Chat Widget Mobile Fix */
+@media (max-width: 768px) {
+    #chat-widget-container {
+        z-index: 999999 !important;
+        bottom: 20px !important;
+    }
+
+    /* Ensure it isn't hidden by overflow */
+    body {
+        overflow-x: hidden;
+        /* Keep x hidden but ensure y allows scrolling */
     }
 }
