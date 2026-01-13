@@ -1775,3 +1775,19 @@ footer {
         -webkit-overflow-scrolling: touch;
     }
 }
+
+/* Discount Text Responsive Sizing */
+.discount-text {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    /* Mobile size */
+}
+
+@media (min-width: 768px) {
+    .discount-text {
+        font-size: 1.1rem;
+        /* Restored/Desktop size */
+    }
+}
