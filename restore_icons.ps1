@@ -161,6 +161,19 @@ $IconMap = @{
     'Tracking & Analytics'  = $Chart
     'Touchless Interaction' = $Wave
 
+    # Documents Management (Exact Titles)
+    'Proposals & Estimates' = U 0x1F4DD # Memo
+    'Digital Signatures'    = $Pen
+    'Template Library'      = $Folder
+    'Auto-Populate'         = $Zap
+
+    # QR Codes (Exact Titles)
+    'Dynamic QR Codes'      = $Loop
+    'Custom Designs'        = $Art
+    'Advanced Analytics'    = $Chart
+    'Review Collection'     = $Star
+
+    # Social Planner (Already present, reinforcing)
     'Image Editor'          = $Art
     'One-Click Publishing'  = $Rocket
     'Watermark Feature'     = $Drop
