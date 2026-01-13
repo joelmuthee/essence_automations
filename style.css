@@ -1528,8 +1528,24 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .two-column-grid {
+
+    /* Force single column for all grids on mobile */
+    .two-column-grid,
+    .grid-container {
+        display: flex !important;
+        flex-direction: column !important;
         grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .card,
+    .grid-container>*,
+    .two-column-grid>* {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        /* Remove centering margins that cause weird alignment */
+        flex: 1 1 100% !important;
     }
 }
 
