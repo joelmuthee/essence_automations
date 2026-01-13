@@ -97,9 +97,9 @@ $Down = U 0x25BC
 
 
 $GlobalMap = @{
-    'Services \?|Services &#9660;|Services &#\d+;' = "Services $Down"
-    '\?\? \+254|&#\d+; &#\d+; \+254'               = "$Phone +254"
-    '\?\? chat@|&#\d+; &#\d+; chat@'               = "$Email chat@"
+    'Services\s*(?:\?|&#9660;|▼|&#9660;&#8211;&#188;|&#\d+;)+' = "Services $Down"
+    '\?\? \+254|&#\d+; &#\d+; \+254'                           = "$Phone +254"
+    '\?\? chat@|&#\d+; &#\d+; chat@'                           = "$Email chat@"
 }
 
 $IconMap = @{
