@@ -119,20 +119,27 @@ stars.forEach(star => {
         document.getElementById('negative-review-iframe')?.classList.add('hidden');
         document.getElementById('four-star-iframe')?.classList.add('hidden');
 
-        // Small delay to allow UI to update
+        // Small delay to allow UI to update (optional, but keeps transition smooth)
         setTimeout(() => {
             if (rating === 5) {
                 // 5 Stars: Show Google Review CTA
                 reviewCta.classList.remove('hidden');
                 reviewCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
             } else if (rating === 4) {
-                // 4 Stars: Show New Iframe Form
-                loadTemplate('four-star-iframe', fourStarTemplate);
-                // No scroll needed as it's right below
+                // 4 Stars: Show New Iframe Form (Instant Show)
+                const formContainer = document.getElementById('four-star-iframe');
+                if (formContainer) {
+                    formContainer.classList.remove('hidden');
+                    // Ensure iframe is loaded (if it was lazy loaded or similar, but here it's just hidden)
+                    formContainer.style.display = 'block';
+                }
             } else {
-                // 1-3 Stars: Show Negative Iframe Form
-                loadTemplate('negative-review-iframe', negativeTemplate);
-                // No scroll needed
+                // 1-3 Stars: Show Negative Iframe Form (Instant Show)
+                const formContainer = document.getElementById('negative-review-iframe');
+                if (formContainer) {
+                    formContainer.classList.remove('hidden');
+                    formContainer.style.display = 'block';
+                }
             }
         }, 50);
     });
