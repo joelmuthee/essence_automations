@@ -465,8 +465,11 @@ footer {
     height: auto;
     display: block;
     margin-bottom: 0.5rem;
+    margin-left: 0;
+    /* Force left alignment */
+    padding: 0;
     mix-blend-mode: screen;
-    /* Ensures black background of logo (if any) blends with footer, 
+    /* Ensures black background of logo (if any) blends with footer,
        or simply helps it sit better. If transparency is already there, check edge cases. */
 }
 
