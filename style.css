@@ -457,7 +457,17 @@ footer {
 
 .footer-brand .brand {
     font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-logo {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    margin-bottom: 0.5rem;
+    mix-blend-mode: screen;
+    /* Ensures black background of logo (if any) blends with footer, 
+       or simply helps it sit better. If transparency is already there, check edge cases. */
 }
 
 .footer-links-grid {
