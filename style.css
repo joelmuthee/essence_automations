@@ -20,11 +20,15 @@
     scroll-behavior: smooth;
 }
 
+html,
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
     font-family: var(--font-main);
     overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
 }
 
@@ -265,6 +269,12 @@ a.logo {
     z-index: 1;
     z-index: 1;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .hero-visual {
+        display: none;
+    }
 }
 
 /* Review Widget Fix */
