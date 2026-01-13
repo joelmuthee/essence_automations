@@ -1461,17 +1461,26 @@ footer {
         right: 0;
     }
 
-    /* Hamburger Animation */
-    .nav-links.active+.hamburger span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 6px);
-    }
-
-    .nav-links.active+.hamburger span:nth-child(2) {
-        opacity: 0;
-    }
-
     .nav-links.active+.hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(8px, -6px);
+    }
+
+    /* Center Dropdown Items on Mobile */
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background: transparent !important;
+        border: none;
+        align-items: center;
+        /* Flex centering */
+    }
+
+    .dropdown-content a {
+        text-align: center !important;
+        padding: 15px;
+        width: 100%;
+        justify-content: center;
     }
 }
 
