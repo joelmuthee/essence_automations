@@ -1697,14 +1697,20 @@ footer {
 
 /* Chat Widget Mobile Fix */
 @media (max-width: 768px) {
-    #chat-widget-container {
-        z-index: 999999 !important;
-        bottom: 20px !important;
+
+    #chat-widget-container,
+    .lc_chat_widget,
+    iframe#chat-widget {
+        z-index: 2147483647 !important;
+        /* Max Z-Index */
+        bottom: 80px !important;
+        /* Move up slightly to avoid navbar collision */
     }
 
-    /* Ensure it isn't hidden by overflow */
+    /* Ensure body allows vertical scroll */
+    html,
     body {
-        overflow-x: hidden;
-        /* Keep x hidden but ensure y allows scrolling */
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
     }
 }
