@@ -1523,6 +1523,29 @@ footer {
     font-size: 1.1rem;
 }
 
+
+.three-column-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .three-column-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .three-column-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
 /* Custom 2-column grid for GBP Manager */
 .two-column-grid {
     display: grid !important;
