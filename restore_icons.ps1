@@ -103,115 +103,127 @@ $GlobalMap = @{
 }
 
 $IconMap = @{
-    'Modern Design'               = $Art
-    'Integrated Tools'            = $Tools
-    'Smart Contacts'              = $Phone
-    'Interactive Maps'            = $Map
-    'Filtered Reviews'            = $Star
-    'Website Tracking'            = $Chart
-    'Flexible Pricing'            = $Money
+    'Modern Design'                 = $Art
+    'Integrated Tools'              = $Tools
+    'Smart Contacts'                = $Phone
+    'Interactive Maps'              = $Map
+    'Filtered Reviews'              = $Star
+    'Website Tracking'              = $Chart
+    'Flexible Pricing'              = $Money
     
-    'Instant Reach'               = $Zap
-    'Automated Campaigns'         = $Gear
-    '2-Way Conversations'         = $Speech
-    'High ROI'                    = $Bag
+    'Instant Reach'                 = $Zap
+    'Automated Campaigns'           = $Gear
+    '2-Way Conversations'           = $Speech
+    'High ROI'                      = $Bag
     
-    'Drag & Drop Builder'         = $Art
-    'Smart Automation'            = $Bot
-    'Precise Segmentation'        = $Target
-    'Detailed Analytics'          = $Chart
+    'Drag & Drop Builder'           = $Art
+    'Smart Automation'              = $Bot
+    'Precise Segmentation'          = $Target
+    'Detailed Analytics'            = $Chart
     
-    'Easy Integration'            = $Link
-    'Embed & Share'               = $Earth
-    'Automated Reminders'         = $Bell
-    'Team Scheduling'             = $People
+    'Easy Integration'              = $Link
+    'Embed & Share'                 = $Earth
+    'Automated Reminders'           = $Bell
+    'Team Scheduling'               = $People
     
-    'Multi-Platform'              = $Mobile
-    'Bulk Scheduling'             = $CalFrame
-    'Content Calendar'            = $Cal
-    'Analytics'                   = $Chart
+    'Multi-Platform'                = $Mobile
+    'Bulk Scheduling'               = $CalFrame
+    'Content Calendar'              = $Cal
+    'Analytics'                     = $Chart
     
-    'Templates'                   = $Page
-    'E-Signatures'                = $Pen
-    'Tracking'                    = $Eye
-    'Secure Storage'              = $Lock
+    'Templates'                     = $Page
+    'E-Signatures'                  = $Pen
+    'Tracking'                      = $Eye
+    'Secure Storage'                = $Lock
     
-    'Unified Inbox'               = $Inbox
-    'Pipeline Management'         = $Chart
-    'Mobile App'                  = $Mobile
-    'Missed Call Text Back'       = $Hook
+    'Unified Inbox'                 = $Inbox
+    'Pipeline Management'           = $Chart
+    'Mobile App'                    = $Mobile
+    'Missed Call Text Back'         = $Hook
     
-    'Local SEO'                   = $Pin
-    'Customer Interaction'        = $Speech
-    'Insights'                    = $Trend
-    'Post Updates'                = $Horn
+    'Local SEO'                     = $Pin
+    'Customer Interaction'          = $Speech
+    'Insights'                      = $Trend
+    'Post Updates'                  = $Horn
     
-    'Cross-Platform'              = $Globe
-    'AI Optimization'             = $Bot
-    'Real-Time Analytics'         = $Chart
-    'Budget Control'              = $Bag
+    'Cross-Platform'                = $Globe
+    'AI Optimization'               = $Bot
+    'Real-Time Analytics'           = $Chart
+    'Budget Control'                = $Bag
     
-    '24/7 Availability'           = $Moon
-    'Lead Capture'                = $Magnet
-    'Instant Answers'             = $Zap
-    'Human Handoff'               = $Shake
+    '24/7 Availability'             = $Moon
+    'Lead Capture'                  = $Magnet
+    'Instant Answers'               = $Zap
+    'Human Handoff'                 = $Shake
     
-    'Dynamic Codes'               = $Loop
-    'Custom Design'               = $Art
-    'Tracking & Analytics'        = $Chart
-    'Touchless Interaction'       = $Wave
+    'Dynamic Codes'                 = $Loop
+    'Custom Design'                 = $Art
+    'Tracking & Analytics'          = $Chart
+    'Touchless Interaction'         = $Wave
 
     # Documents Management (Exact Titles)
-    'Proposals & Estimates'       = U 0x1F4DD # Memo
-    'Digital Signatures'          = $Pen
-    'Template Library'            = $Folder
-    'Auto-Populate'               = $Zap
+    'Proposals & Estimates'         = U 0x1F4DD # Memo
+    'Digital Signatures'            = $Pen
+    'Template Library'              = $Folder
+    'Auto-Populate'                 = $Zap
 
     # QR Codes (Exact Titles)
-    'Dynamic QR Codes'            = $Loop
-    'Custom Designs'              = $Art
-    'Advanced Analytics'          = $Chart
-    'Review Collection'           = $Star
+    'Dynamic QR Codes'              = $Loop
+    'Custom Designs'                = $Art
+    'Advanced Analytics'            = $Chart
+    'Review Collection'             = $Star
 
     # Social Planner (Already present, reinforcing)
-    'Image Editor'                = $Art
-    'One-Click Publishing'        = $Rocket
-    'Watermark Feature'           = $Drop
-    'Smart Resizing'              = $Ruler
-    'AI Content Assistant'        = $Bot
-    'CSV Bulk Uploader'           = $Folder
-    'Approval Workflow'           = $Check
-    'Stats & RSS Feeds'           = $Trend
+    'Image Editor'                  = $Art
+    'One-Click Publishing'          = $Rocket
+    'Watermark Feature'             = $Drop
+    'Smart Resizing'                = $Ruler
+    'AI Content Assistant'          = $Bot
+    'CSV Bulk Uploader'             = $Folder
+    'Approval Workflow'             = $Check
+    'Stats & RSS Feeds'             = $Trend
 
     # Reputation Management
-    'Negative Shield'             = U 0x1F6E1
-    'Google Booster'              = $Star
-    'Seamless Integration'        = $Loop
-    'Review Widget'               = $StarEyes
-    'Actionable Insights'         = $Trend
+    'Negative Shield'               = U 0x1F6E1
+    'Google Booster'                = $Star
+    'Seamless Integration'          = $Loop
+    'Review Widget'                 = $StarEyes
+    'Actionable Insights'           = $Trend
 
     # HOMEPAGE - Ecosystem
-    'Ultra-modern Websites'       = $Art
-    'AI Support Chat'             = $Bot
-    'AI Chat'                     = $Bot
-    'GBP Booster'                 = $Rocket
-    'CRM & Mobile App'            = $Mobile
-    'AI Ads Manager'              = $Target
-    'Google Reviews'              = $Star
-    'SMS Marketing'               = $Phone
-    'Email Marketing'             = $Email
-    'Online Appointment Calendar' = $Cal
-    'Document Management'         = $Folder
-    'Social Media Management'     = $CalFrame
-    'QR Codes'                    = $Loop
+    'Ultra-modern Websites'         = $Art
+    'AI Support Chat'               = $Bot
+    'AI Chat'                       = $Bot
+    'GBP Booster'                   = $Rocket
+    'CRM & Mobile App'              = $Mobile
+    'AI Ads Manager'                = $Target
+    'Google Reviews'                = $Star
+    'SMS Marketing'                 = $Phone
+    'Email Marketing'               = $Email
+    'Online Appointment Calendar'   = $Cal
+    'Document Management'           = $Folder
+    'Social Media Management'       = $CalFrame
+    'QR Codes'                      = $Loop
+
+    # AI Support Chat (Detailed)
+    'Instant Responses'             = $Zap
+    'Appointment Booking'           = $Cal
+    'Lead Qualification'            = $Check
+    'Custom Knowledge Base'         = U 0x1F9E0 # Brain
+    'Image Upload & Sharing'        = U 0x1F4F7 # Camera
+    'Social Media Integration'      = $Speech
+    'Live Chats'                    = $Speech
+    'Number of Leads Added'         = $Trend
+    'Number of Appointments Booked' = $Cal
+    'AI Chat Integration'           = $Bot
 
     # HOMEPAGE - Who we build for
-    'Schools'                     = U 0x1F3EB # School
-    'Clinics'                     = U 0x1F3E5 # Hospital
-    'Consulting Firms'            = U 0x1F4BC # Briefcase
-    'Engineers & Architects'      = U 0x1F3D7 # Building Construction
-    'Law Firms'                   = U 0x2696  # Scales
-    'Gyms'                        = U 0x1F4AA # Bicep
+    'Schools'                       = U 0x1F3EB # School
+    'Clinics'                       = U 0x1F3E5 # Hospital
+    'Consulting Firms'              = U 0x1F4BC # Briefcase
+    'Engineers & Architects'        = U 0x1F3D7 # Building Construction
+    'Law Firms'                     = U 0x2696  # Scales
+    'Gyms'                          = U 0x1F4AA # Bicep
 }
 
 $files = Get-ChildItem -Path . -Filter *.html
