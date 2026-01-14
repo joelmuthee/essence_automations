@@ -132,6 +132,7 @@ stars.forEach(star => {
                     formContainer.classList.remove('hidden');
                     // Ensure iframe is loaded (if it was lazy loaded or similar, but here it's just hidden)
                     formContainer.style.display = 'block';
+                    formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             } else {
                 // 1-3 Stars: Show Negative Iframe Form (Instant Show)
@@ -139,6 +140,7 @@ stars.forEach(star => {
                 if (formContainer) {
                     formContainer.classList.remove('hidden');
                     formContainer.style.display = 'block';
+                    formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
         }, 50);

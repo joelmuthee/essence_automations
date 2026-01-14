@@ -12,8 +12,8 @@ foreach ($file in $files) {
     # Using regex to match style.css?v=\d+
     $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=30'
     
-    # Update main.js?v=20 or 21 -> v=22
-    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=22'
+    # Update main.js?v=20, 21, 22 -> v=23
+    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=23'
     
     if ($newContent -ne $content) {
         $newContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline
