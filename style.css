@@ -396,8 +396,8 @@ iframe.lc_reviews_widget {
 
 /* Icon Styling for SVGs */
 .icon svg {
-    width: 48px;
-    height: 48px;
+    width: 36px;
+    height: 36px;
     stroke: var(--primary-color);
     fill: none;
     stroke-width: 1.5;
