@@ -394,6 +394,25 @@ iframe.lc_reviews_widget {
     transform: translateX(5px);
 }
 
+/* Icon Styling for SVGs */
+.icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: var(--primary-color);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 107, 0, 0.3));
+}
+
+.card:hover .icon svg {
+    stroke: var(--accent-color);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+}
+
 /* About Section */
 .about {
     padding: 5rem 5%;
