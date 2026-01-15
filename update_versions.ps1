@@ -8,12 +8,11 @@ foreach ($file in $files) {
     
     $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
     
-    # Update style.css?v=29 -> v=30 (or whatever it is, force to 30)
-    # Using regex to match style.css?v=\d+
-    $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=30'
+    # Update style.css?v=30 -> v=31
+    $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=31'
     
-    # Update main.js?v=20, 21, 22 -> v=23
-    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=23'
+    # Update main.js?v=23 -> v=24
+    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=24'
     
     if ($newContent -ne $content) {
         $newContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline
@@ -27,6 +26,8 @@ if (Test-Path $backupFile) {
     Remove-Item $backupFile -Force
     Write-Host "Deleted $backupFile"
 }
-else {
-    Write-Host "$backupFile not found"
-}
+
+# Create new backup
+Write-Host "Creating new backup..."
+Get-ChildItem -Exclude $backupFile | Compress-Archive -DestinationPath $backupFile
+Write-Host "Backup created: $backupFile"
