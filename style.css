@@ -1793,3 +1793,20 @@ footer {
         /* Restored/Desktop size */
     }
 }
+
+/* Mobile Footer Logo Resize & Center */
+@media (max-width: 768px) {
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 180px;
+        /* Reduced specific size for mobile */
+        height: auto;
+        margin: 0 auto;
+    }
+}
