@@ -1809,4 +1809,15 @@ footer {
         height: auto;
         margin: 0 auto;
     }
+
+    .contact-info {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-info a {
+        justify-content: center;
+    }
 }
