@@ -849,7 +849,8 @@ footer {
 }
 
 /* 3. Link Magnetic/Underline Effect */
-.nav-links a::after {
+/* 3. Link Magnetic/Underline Effect */
+.nav-links>li>a::after {
     content: '';
     display: block;
     width: 0;
@@ -859,7 +860,7 @@ footer {
     margin-top: 2px;
 }
 
-.nav-links a:hover::after {
+.nav-links>li>a:hover::after {
     width: 100%;
 }
 
