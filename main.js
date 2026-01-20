@@ -209,3 +209,64 @@ function handleFeedbackSubmit(event) {
     // Hide the form itself
     event.target.style.display = 'none';
 }
+
+// Custom Chat Widget Styling (Shadow DOM Injection)
+function customizeChatWidget() {
+    // We need to wait for the generic 'chat-widget' or specific 'leadconnector-widget' to appear
+    const observer = new MutationObserver((mutations, obs) => {
+        // Try to find the widget host element
+        const widget = document.querySelector('chat-widget') || document.querySelector('leadconnector-widget');
+
+        if (widget && widget.shadowRoot) {
+            // Create our custom style override
+            const style = document.createElement('style');
+            style.textContent = `
+                /* 
+                   Target likely launcher elements inside the Shadow DOM.
+                   We use !important to ensure we override the default inline or internal styles.
+                */
+                :host {
+                    --primary-color: #ff6b00; 
+                }
+                
+                /* Common class names for the launcher button in these widgets */
+                .launcher-button, 
+                .lc_text_launcher,
+                .lc-launcher-button,
+                button[class*="launcher"],
+                div[class*="launcher"] {
+                    background: linear-gradient(45deg, #ff6b00, #ff9100) !important;
+                    opacity: 1 !important;
+                    border: none !important;
+                    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.4) !important;
+                }
+
+                /* Ensure icons/text inside are visible */
+                .launcher-button svg, 
+                .launcher-button i,
+                [class*="launcher"] svg {
+                    fill: #ffffff !important;
+                    color: #ffffff !important;
+                }
+            `;
+
+            // Inject into the Shadow Root
+            widget.shadowRoot.appendChild(style);
+
+            // Optional: Log success
+            console.log('Essence Automations: Chat widget styles injected.');
+
+            // Stop observing once done
+            obs.disconnect();
+        }
+    });
+
+    // Start observing the document body for added nodes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Initialize the widget customization
+customizeChatWidget();
