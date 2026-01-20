@@ -66,7 +66,35 @@ animateElements.forEach((el, index) => {
 });
 
 
+// Mobile Scroll Interaction Observer
+// Triggers "hover" effects when elements are in the center of the viewport
+if (window.innerWidth <= 768) {
+    const mobileActiveOptions = {
+        threshold: 0.3, // Trigger when 30% visible (easier trigger)
+        rootMargin: "-20% 0px -20% 0px" // Active in the middle 60% of the screen
+    };
+
+    const mobileActiveObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('scroll-active');
+            } else {
+                entry.target.classList.remove('scroll-active');
+            }
+        });
+    }, mobileActiveOptions);
+
+    // Elements to animate on scroll
+    // Select specific elements that have hover effects we want to trigger
+    const mobileInteractiveElements = document.querySelectorAll('.card, .btn-primary, .btn-secondary, .link-styled, .footer-column a, .contact-info a');
+
+    mobileInteractiveElements.forEach(el => {
+        mobileActiveObserver.observe(el);
+    });
+}
+
 // Mobile Menu Toggle
+
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 

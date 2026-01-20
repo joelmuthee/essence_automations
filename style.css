@@ -80,7 +80,8 @@ a.logo {
     transition: 0.3s;
 }
 
-.link-styled:hover {
+.link-styled:hover,
+.link-styled.scroll-active {
     color: #fff;
     text-shadow: 0 0 10px var(--primary-color);
 }
@@ -188,7 +189,8 @@ a.logo {
     align-items: center;
 }
 
-.nav-links a:not(.btn-primary):hover {
+.nav-links a:not(.btn-primary):hover,
+.nav-links a:not(.btn-primary).scroll-active {
     color: var(--primary-color);
     text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
@@ -203,7 +205,8 @@ a.logo {
     box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary.scroll-active {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
 }
@@ -216,7 +219,8 @@ a.logo {
     background: transparent;
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary.scroll-active {
     border-color: var(--text-color);
     background: rgba(255, 255, 255, 0.05);
 }
@@ -362,7 +366,8 @@ iframe.lc_reviews_widget {
     /* For stretched link */
 }
 
-.card:hover {
+.card:hover,
+.card.scroll-active {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.08);
     border-color: var(--primary-color);
@@ -390,7 +395,8 @@ iframe.lc_reviews_widget {
     z-index: 1;
 }
 
-.card a:hover {
+.card a:hover,
+.card.scroll-active a {
     transform: translateX(5px);
 }
 
@@ -499,7 +505,8 @@ footer {
     font-size: 1rem;
 }
 
-.footer-column a:hover {
+.footer-column a:hover,
+.footer-column a.scroll-active {
     color: var(--primary-color);
     transform: translateX(5px);
 }
@@ -762,7 +769,8 @@ footer {
     text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
 }
 
-.contact-info a:hover {
+.contact-info a:hover,
+.contact-info a.scroll-active {
     color: var(--primary-color);
     text-decoration-color: var(--primary-color);
 }
