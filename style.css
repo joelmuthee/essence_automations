@@ -798,6 +798,101 @@ footer {
     }
 }
 
+/* --- NEW COOL ANIMATIONS --- */
+
+/* 1. Button Shine Effect */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    /* Ensure swipe doesn't spill out */
+    z-index: 1;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: skewX(-20deg);
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+    transition: 0.5s;
+}
+
+/* 2. Card Neon Lift & Inner Glow */
+.card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy feel */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+}
+
+.card:hover {
+    transform: translateY(-12px) scale(1.02);
+    /* Lift + slight zoom */
+    border-color: var(--primary-color);
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(255, 107, 0, 0.4),
+        /* Outer primary glow */
+        inset 0 0 20px rgba(255, 107, 0, 0.1);
+    /* Inner subtle glow */
+}
+
+/* 3. Link Magnetic/Underline Effect */
+.nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s;
+    margin-top: 2px;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* 4. Extra Delays for Staggered Animations */
+.delay-3 {
+    animation-delay: 0.6s;
+    transition-delay: 0.6s;
+}
+
+.delay-4 {
+    animation-delay: 0.8s;
+    transition-delay: 0.8s;
+}
+
+/* 5. Mobile Scroll Improvements */
+@media (max-width: 768px) {
+
+    /* Reduce drastic movements on mobile for smoother feel */
+    .fade-in-up {
+        transform: translateY(20px);
+        /* Smaller distance */
+    }
+
+    .fade-in-down {
+        transform: translateY(-20px);
+    }
+
+    .zoom-in {
+        transform: scale(0.95);
+    }
+}
+
+
 .card {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);

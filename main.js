@@ -8,8 +8,10 @@ document.addEventListener('mousemove', (e) => {
 });
 
 // Scroll Animations
+// Scroll Animations
 const observerOptions = {
-    threshold: 0.05
+    threshold: 0.1, // Trigger slightly later
+    rootMargin: "0px 0px -50px 0px" // Don't trigger until 50px inside viewport (cleaner on mobile)
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -30,22 +32,33 @@ const observer = new IntersectionObserver((entries) => {
             }
             entry.target.classList.add('visible');
         } else {
-            // Reset state when scrolling away to allow re-animation
+            // Reset state when scrolling away to allow re-animation (Infinite Scroll Effect)
             entry.target.classList.remove('visible');
         }
     });
 }, observerOptions);
 
+// Auto-Stagger Grid Animations
+document.querySelectorAll('.grid-container, .benefit-cards-grid, .two-column-grid').forEach(grid => {
+    const children = grid.children;
+    Array.from(children).forEach((child, index) => {
+        // Cycle delays: 1, 2, 3, 4, 1, 2...
+        const delayNum = (index % 4) + 1;
+        child.classList.add(`delay-${delayNum}`);
+        child.classList.add('zoom-in'); // Ensure base animation is there
+    });
+});
+
 // Global Animation Initializer
 // Global Animation Initializer - "Reveal on Scroll" for entire website
-const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-outline, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper, .faq-item, .star-rating');
+const animateElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, img, .btn, .btn-primary, .btn-secondary, .btn-cta, .card, .stat-card, .benefit-card, .review-card, .service-item, .project-card, .gallery-item, .vm-card, .about-text, .contact-form, .map-wrapper, .marquee-wrapper, .faq-item, .star-rating');
 
 animateElements.forEach((el, index) => {
     // Exclude FAQ content from animation
     if (el.closest('.faq-answer')) return;
 
     // Add base class if not present (default to slide-up "Reveal on Scroll")
-    if (!el.classList.contains('slide-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right') && !el.classList.contains('fade-in') && !el.classList.contains('fade-in-up')) {
+    if (!el.classList.contains('slide-up') && !el.classList.contains('zoom-in') && !el.classList.contains('slide-in-left') && !el.classList.contains('slide-in-right') && !el.classList.contains('fade-in') && !el.classList.contains('fade-in-up') && !el.classList.contains('fade-in-down')) {
         el.classList.add('fade-in-up');
     }
     // Add observer
