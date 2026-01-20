@@ -685,7 +685,7 @@ footer {
 .benefit-card,
 .review-card,
 .faq-item {
-    animation: borderFlow 4s infinite;
+    animation: glassBreathe 5s ease-in-out infinite alternate;
 }
 
 
@@ -908,6 +908,20 @@ footer {
     position: relative;
     /* For stretched link */
     /* animation: pulseGlow 4s infinite; Removed per user request - too distracting */
+    animation: glassBreathe 5s ease-in-out infinite alternate;
+}
+
+@keyframes glassBreathe {
+    0% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 5px 20px rgba(255, 107, 0, 0.15);
+        /* Very subtle primary glow */
+        border-color: rgba(255, 107, 0, 0.2);
+    }
 }
 
 .review-card {
