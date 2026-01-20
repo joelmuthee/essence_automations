@@ -5,8 +5,8 @@ $outputPath = "c:\Users\Joel\OneDrive\Documents\Anti Gravity\Essence Automations
 $bgColor = [System.Drawing.Color]::FromArgb(255, 5, 5, 16) # #050510
 $canvasWidth = 1200
 $canvasHeight = 630
-$logoMaxWidth = 800
-$logoMaxHeight = 500
+$logoMaxWidth = 1200
+$logoMaxHeight = 600
 
 try {
     if (-not (Test-Path $logoPath)) {
