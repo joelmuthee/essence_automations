@@ -1163,6 +1163,7 @@ footer {
         right: 0 !important;
         border-radius: 12px;
         /* Slight rounding for a better card look */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
     }
 }
 
