@@ -98,6 +98,15 @@ if (window.innerWidth <= 768) {
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
 
+// Helper function to open the services popup
+function openServicesPopup() {
+    const p = document.getElementById('services-needed-popup');
+    const i = p.querySelector('iframe');
+    i.src = i.src; // Reload iframe to reset form
+    p.classList.remove('hidden');
+    p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
