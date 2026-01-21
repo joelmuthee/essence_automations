@@ -1979,20 +1979,29 @@ footer {
 
 
 /* 3 Column Grid Utility */
+/* 3 Column Grid Utility (Flex for Centering) */
 .three-column-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 2rem;
     max-width: 1200px;
     margin: 2rem auto;
 }
 
+.three-column-grid>* {
+    flex: 0 1 calc(33.333% - 2rem);
+    min-width: 300px;
+}
+
 @media (max-width: 1024px) {
-    .three-column-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+    .three-column-grid>* {
+        flex: 0 1 calc(50% - 2rem);
     }
 }
 
 @media (max-width: 768px) {
-    .three-column-grid {
-        grid-template-columns: 1fr !important;
+    .three-column-grid>* {
+        flex: 0 1 100%;
     }
 }
