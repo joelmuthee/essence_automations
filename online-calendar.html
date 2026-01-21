@@ -72,7 +72,8 @@
                 <h1 class="fade-in-up">Seamless <span class="gradient-text">Scheduling</span></h1>
                 <p class="fade-in-up delay-1">Eliminate the back-and-forth email tag forever.</p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <a href="#contact" class="btn-primary">Book a Demo</a>
+                    <button onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});" class="btn-primary" style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm Interested</button>
+                    <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
         </section>
@@ -302,3 +303,5 @@
 </body>
 
 </html>
+
+
