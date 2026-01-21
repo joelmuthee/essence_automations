@@ -209,6 +209,8 @@ a.logo {
 .btn-primary.scroll-active {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+    border: none !important;
+    text-decoration: none !important;
 }
 
 .btn-secondary {
