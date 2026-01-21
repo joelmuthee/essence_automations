@@ -1976,3 +1976,23 @@ footer {
         grid-template-columns: 1fr !important;
     }
 }
+
+
+/* 3 Column Grid Utility */
+.three-column-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+@media (max-width: 1024px) {
+    .three-column-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .three-column-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
