@@ -2005,3 +2005,4 @@ footer {
         flex: 0 1 100%;
     }
 }
+@media (max-width: 768px) { .center-text { margin-bottom: 4rem !important; } }
