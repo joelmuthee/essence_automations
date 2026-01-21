@@ -150,6 +150,53 @@ function loadTemplate(containerId, templateContent) {
     container.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+// Hardcoded clean template to ensure 100% reliable reset on mobile
+const servicesPopupHTML = `
+    <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form" style="background: #ff6b00 !important;">&times;</button>
+    <iframe
+        src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=Google%20Reviews"
+        style="display:none;width:100%;height:100%;border:none;border-radius:4px"
+        id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{"id":"INLINE"}' data-trigger-type="alwaysShow"
+        data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+        data-deactivation-type="neverDeactivate" data-deactivation-value=""
+        data-form-name="Services Needed Form" data-height="849"
+        data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
+        title="Services Needed Form">
+    </iframe>
+    <script src="https://link.essenceautomations.com/js/form_embed.js"><\/script>
+`;
+
+window.showServicesPopup = function () {
+    console.log('Opening Services Popup...'); // Debug log
+    const container = document.getElementById('services-needed-popup');
+    if (!container) return;
+
+    if (container.dataset.opened === 'true') {
+        // Subsequent Opens: Nuclear Reset (Reliable for Mobile)
+        // We completely replace HTML to strip all GHL script state
+        container.innerHTML = servicesPopupHTML;
+
+        // Re-activate script (innerHTML script doesn't run automatically)
+        const oldScript = container.querySelector('script');
+        if (oldScript) {
+            const newScript = document.createElement('script');
+            newScript.src = oldScript.src;
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+        }
+
+        container.classList.remove('hidden');
+        container.style.display = 'block';
+    } else {
+        // First Open: Instant Show (Fast)
+        container.classList.remove('hidden');
+        container.style.display = 'block';
+        container.dataset.opened = 'true';
+    }
+
+    // 3. Scroll into view
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
+
 stars.forEach(star => {
     // Use 'click' instead of 'change' to handle re-clicks on the same rating
     star.addEventListener('click', (e) => {

@@ -1108,6 +1108,13 @@ footer {
     padding: 10px;
     position: relative;
     /* For absolute positioning of close button */
+    scroll-margin-top: 180px;
+    /* Offset for sticky header + border visibility */
+    /* Desktop Sizing (Moved from inline) */
+    min-height: 849px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Custom Close Button for Forms */
@@ -1116,7 +1123,8 @@ footer {
     top: 10px !important;
     right: 10px !important;
     left: auto !important;
-    background: #ff4757 !important;
+    background: #ff6b00 !important;
+    /* Hardcoded Orange to bypass variable issues on mobile */
     color: white !important;
     border: none !important;
     border-radius: 50% !important;
@@ -1137,11 +1145,25 @@ footer {
 
 .close-form-btn:hover {
     transform: scale(1.1) !important;
-    background: #ff6b81 !important;
+    background: #ff8533 !important;
+    /* Hardcoded lighter orange */
 }
 
 .conditional-content.hidden {
     display: none !important;
+}
+
+@media (max-width: 768px) {
+    .conditional-content {
+        width: 90% !important;
+        margin-left: 5% !important;
+        /* Explicit centering */
+        margin-right: 5% !important;
+        left: 0 !important;
+        right: 0 !important;
+        border-radius: 12px;
+        /* Slight rounding for a better card look */
+    }
 }
 
 #internal-feedback {
@@ -1342,7 +1364,7 @@ footer {
 
 .source-icon::after {
     content: 'G';
-    color: #4285F4;
+    color: var(--primary-color);
     font-weight: bold;
     font-size: 14px;
     font-family: sans-serif;
