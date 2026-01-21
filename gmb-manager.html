@@ -23,7 +23,7 @@
     <meta property="og:image" content="https://essenceautomations.com/social-share.png">
     <meta property="og:url" content="https://essenceautomations.com/gmb-manager.html">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=53">
+    <link rel="stylesheet" href="style.css?v=55">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -57,6 +57,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="faq.html">FAQs</a></li>
                 <li><a href="rate-us.html">Rate Us</a></li>
+                <li><a href="demos.html">Demos</a></li>
                 <li><a href="#contact" class="btn-primary">Get Started</a></li>
             </ul>
             <div class="hamburger">
@@ -95,45 +96,31 @@
             </div>
         </section>
         <section class="services">
+            
             <div class="section-header">
-                <h2 class="fade-in-up">Why GBP Matters</h2>
-                <p>Google is the #1 search engine in the world with over 90% market share.</p>
-            </div>
-            <div class="grid-container two-column-grid">
-                <div class="card glass-effect">
-                    <div class="icon">&#128205;</div>
-                    <h3>Local SEO</h3>
-                    <p>Rank higher on Google Maps and Search automatically.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128172;</div>
-                    <h3>Customer Interaction</h3>
-                    <p>Respond to questions and reviews directly from our app.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128200;</div>
-                    <h3>Insights</h3>
-                    <p>Track calls, clicks, direction requests, chats, and profile views seamlessly.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128226;</div>
-                    <h3>Post Updates</h3>
-                    <p>Publish offers, events, and updates to your profile instantly.</p>
+                <h2 class="fade-in-up">Interested in GBP Booster?</h2>
+                <p>Let us know and we'll send you more details.</p>
+                <div style="margin-top: 2rem;">
+                    <button onclick="showServicesPopup('GBP Booster')" class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm Interested</button>
                 </div>
             </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="section-header">
-                <h2 class="fade-in-up">Book a Demo</h2>
-                <p>See how we can optimize your GBP profile today.</p>
-            </div>
-            <div class="calendar-container glass-effect">
-                <iframe src="https://link.essenceautomations.com/widget/booking/oO6WgghbYEmmjvXHx8fK"
-                    style="width: 100%;border:none;overflow: hidden; height: 100%; min-height: 600px;" scrolling="no"
-                    id="oO6WgghbYEmmjvXHx8fK_1767021081688"></iframe>
-                <script src="https://link.essenceautomations.com/js/form_embed.js" type="text/javascript"></script>
-            </div>
+        <!-- Services Needed Form (Pop-up/Inline) -->
+        <div id="services-needed-popup" class="conditional-content hidden">
+            <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
+                title="Close Form">&times;</button>
+            <iframe
+                src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=GBP%20Booster"
+                style="display:none;width:100%;height:100%;border:none;border-radius:4px"
+                id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow"
+                data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+                data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                data-form-name="Services Needed Form" data-height="849"
+                data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
+                title="Services Needed Form">
+            </iframe>
+            <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+        </div>
         </section>
 
         <section id="reviews" class="reviews">
@@ -296,7 +283,7 @@
             </div>
         </div>
     </footer>
-    <script src="main.js?v=45"></script>
+    <script src="main.js?v=48"></script>
     <script src="https://beta.leadconnectorhq.com/loader.js"
         data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="6698bac0b120682ac60d5a7f">

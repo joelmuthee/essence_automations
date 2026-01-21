@@ -22,7 +22,7 @@
     <meta property="og:image" content="https://essenceautomations.com/social-share.png">
     <meta property="og:url" content="https://essenceautomations.com/online-calendar.html">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=53">
+    <link rel="stylesheet" href="style.css?v=55">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -56,6 +56,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="faq.html">FAQs</a></li>
                 <li><a href="rate-us.html">Rate Us</a></li>
+                <li><a href="demos.html">Demos</a></li>
                 <li><a href="#contact" class="btn-primary">Get Started</a></li>
             </ul>
             <div class="hamburger">
@@ -92,99 +93,31 @@
             </div>
         </section>
         <section class="services">
+            
             <div class="section-header">
-                <h2 class="fade-in-up">Your Time, Managed</h2>
-                <p>Efficient booking for you and your clients.</p>
-            </div>
-            <div class="grid-container two-column-grid">
-                <div class="card glass-effect">
-                    <div class="icon">&#128279;</div>
-                    <h3>Easy Integration</h3>
-                    <p>Syncs with Google, Outlook, and iCloud calendars.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#127757;</div>
-                    <h3>Embed & Share</h3>
-                    <p>Embed on any website or share links via Email, sms, WhatsApp etc.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128276;</div>
-                    <h3>Automated Reminders</h3>
-                    <p>Reduce no-shows with SMS and Email reminders.</p>
-                </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128101;</div>
-                    <h3>Team Scheduling</h3>
-                    <p>Round-robin assignment and team availability management.</p>
-                </div>
-                <div class="card glass-effect"
-                    style="grid-column: span 2; max-width: 400px; margin: 0 auto; width: 100%;">
-                    <div class="icon">&#129302;</div>
-                    <h3>AI Chat Integration</h3>
-                    <p>Seamlessly integrates with our AI Chat to automatically book appointments directly within
-                        conversations.</p>
+                <h2 class="fade-in-up">Interested in Online Appointment Calendar?</h2>
+                <p>Let us know and we'll send you more details.</p>
+                <div style="margin-top: 2rem;">
+                    <button onclick="showServicesPopup('Online Appointment Calendar')" class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm Interested</button>
                 </div>
             </div>
-        </section>
-
-        <section class="case-study" style="padding: 5rem 5%; position: relative;">
-            <div class="section-header">
-                <h2 class="fade-in-up">See It In Action</h2>
-                <p class="fade-in-up delay-1">Real results for real businesses.</p>
-            </div>
-
-            <div class="glass-effect"
-                style="max-width: 800px; margin: 0 auto; padding: 3rem; text-align: center; border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 0 30px rgba(0,0,0,0.3);">
-                <div class="icon" style="font-size: 3rem; margin-bottom: 1.5rem;">&#128640;</div>
-                <div class="about-text">
-                    <p style="margin-bottom: 2rem; font-size: 1.2rem; color: rgba(255,255,255,0.95); line-height: 1.8;">
-                        For example, we integrated a <strong class="gradient-text">smart booking calendar</strong>
-                        directly into
-                        <a href="https://scsinternational.sc.ke/appointments/" target="_blank"
-                            style="color: inherit; text-decoration: underline; text-decoration-color: var(--primary-color);">St.
-                            Christopher's International
-                            School's</a> existing website.
-                    </p>
-                    <div class="hero-buttons fade-in-up delay-1">
-                        <a href="https://scsinternational.sc.ke/appointments/" target="_blank" class="btn-primary"
-                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">Visit Website &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="impact" style="padding: 5rem 5%;">
-            <div class="section-header">
-                <h2 class="fade-in-up">Eliminate No-Shows</h2>
-                <p>Automated reminders work.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card glass-effect">
-                    <h3>80%</h3>
-                    <p>Fewer No-Shows</p>
-                </div>
-                <div class="stat-card glass-effect">
-                    <h3>24/7</h3>
-                    <p>Booking</p>
-                </div>
-                <div class="stat-card glass-effect">
-                    <h3>Auto</h3>
-                    <p>Time Zone Detection</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact" id="contact">
-            <div class="section-header">
-                <h2 class="fade-in-up">Get Organized</h2>
-                <p>Take control of your calendar today.</p>
-            </div>
-            <div class="calendar-container glass-effect">
-                <iframe src="https://link.essenceautomations.com/widget/booking/oO6WgghbYEmmjvXHx8fK"
-                    style="width: 100%;border:none;overflow: hidden; height: 100%; min-height: 600px;" scrolling="no"
-                    id="oO6WgghbYEmmjvXHx8fK_1767021081688"></iframe>
-                <script src="https://link.essenceautomations.com/js/form_embed.js" type="text/javascript"></script>
-            </div>
+        <!-- Services Needed Form (Pop-up/Inline) -->
+        <div id="services-needed-popup" class="conditional-content hidden">
+            <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
+                title="Close Form">&times;</button>
+            <iframe
+                src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=Online%20Appointment%20Calendar"
+                style="display:none;width:100%;height:100%;border:none;border-radius:4px"
+                id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow"
+                data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+                data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                data-form-name="Services Needed Form" data-height="849"
+                data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
+                title="Services Needed Form">
+            </iframe>
+            <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+        </div>
         </section>
 
         <section id="reviews" class="reviews">
@@ -347,7 +280,7 @@
             </div>
         </div>
     </footer>
-    <script src="main.js?v=45"></script>
+    <script src="main.js?v=48"></script>
     <script src="https://beta.leadconnectorhq.com/loader.js"
         data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="6698bac0b120682ac60d5a7f">
