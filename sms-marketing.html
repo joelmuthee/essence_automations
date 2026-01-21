@@ -5,11 +5,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BC3LFX851"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-      gtag('config', 'G-7BC3LFX851');
+        gtag('config', 'G-7BC3LFX851');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,8 @@
 
     <header>
         <nav class="navbar">
-            <a href="index.html" class="logo"><img src="logo-header.png" alt="Essence Automations" style="height: 120px;"></a>
+            <a href="index.html" class="logo"><img src="logo-header.png" alt="Essence Automations"
+                    style="height: 120px;"></a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li class="dropdown">
@@ -71,7 +72,11 @@
                 <h1 class="fade-in-up">Direct to <span class="gradient-text">Customer</span></h1>
                 <p class="fade-in-up delay-1">98% open rates using the power of SMS Marketing.</p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <button onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});" class="btn-primary" style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm Interested</button>
+                    <button
+                        onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});"
+                        class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
+                        Interested</button>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
@@ -93,36 +98,64 @@
                 </div>
             </div>
         </section>
+        </section>
+
+        <div class="center-text" style="text-align: center; margin-top: 5rem;">
+            <h2 class="fade-in-up">Powerful Features</h2>
+            <div class="grid-container three-column-grid" style="justify-content: center; margin-top: 2rem;">
+                <div class="card glass-effect">
+                    <div class="icon">&#128100;</div>
+                    <h3>Personalization</h3>
+                    <p>Send messages that feel personal. Automatically include customer names and details for higher
+                        engagement.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128172;</div>
+                    <h3>2-Way SMS</h3>
+                    <p>Have real conversations. Customers can reply to your texts, allowing for instant support and
+                        sales.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128640;</div>
+                    <h3>Automated & Bulk</h3>
+                    <p>Trigger texts based on actions or send announcements to your entire list with one click.</p>
+                </div>
+            </div>
+        </div>
+
         <section class="services">
-            
-            
-            
+
+
+
             <div class="section-header">
                 <h2 class="fade-in-up">Interested in SMS Marketing?</h2>
                 <p>Provide your details and we'll be in touch</p>
                 <div style="margin-top: 2rem;">
-                    <button onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});" class="btn-primary"
-                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm Interested</button>
+                    <button
+                        onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});"
+                        class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
+                        Interested</button>
                     <a href="#contact" class="btn-outline">Get Started</a>
                 </div>
             </div>
 
-        <!-- Services Needed Form (Pop-up/Inline) -->
-        <div id="services-needed-popup" class="conditional-content hidden">
-            <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
-                title="Close Form">&times;</button>
-            <iframe
-                src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=SMS%20Marketing"
-                style="width:100%;height:100%;border:none;border-radius:4px"
-                id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow"
-                data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-                data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                data-form-name="Services Needed Form" data-height="849"
-                data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
-                title="Services Needed Form">
-            </iframe>
-            <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
-        </div>
+            <!-- Services Needed Form (Pop-up/Inline) -->
+            <div id="services-needed-popup" class="conditional-content hidden">
+                <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
+                    title="Close Form">&times;</button>
+                <iframe
+                    src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=SMS%20Marketing"
+                    style="width:100%;height:100%;border:none;border-radius:4px" id="popup-g9F8xoEZgZjMUDIIP6hN"
+                    data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow" data-trigger-value=""
+                    data-activation-type="alwaysActivated" data-activation-value=""
+                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                    data-form-name="Services Needed Form" data-height="849"
+                    data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
+                    title="Services Needed Form">
+                </iframe>
+                <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+            </div>
         </section>
 
         <section id="reviews" class="reviews">
@@ -197,7 +230,8 @@
                     <p>We're thrilled you had a great experience. Could you please spare a moment to share your
                         experience on our <span class="gradient-text" style="font-weight: 800;">Google Business
                             Profile</span>? Your detailed feedback helps us grow and serve you better.</p>
-                    <p class="discount-text">As a token of our appreciation, your 5-star Google review earns you a discount on your next payment!</p>
+                    <p class="discount-text">As a token of our appreciation, your 5-star Google review earns you a
+                        discount on your next payment!</p>
                     <a href="https://g.page/r/CR_sEbCTUfyYEBE/review" target="_blank" class="btn-primary">Rate Us on
                         Google</a>
                 </div>
@@ -234,20 +268,25 @@
         <div class="footer-divider"></div>
         <div class="footer-content">
             <div class="footer-main">
-                                <div class="footer-brand">
+                <div class="footer-brand">
                     <div class="brand">
-                        <a href="index.html"><img src="logo-footer.png" alt="Essence Automations" class="footer-logo"></a>
+                        <a href="index.html"><img src="logo-footer.png" alt="Essence Automations"
+                                class="footer-logo"></a>
                     </div>
                     <div class="contact-info">
                         <a href="tel:+254720615606">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                             </svg>
                             +254 720 615 606
                         </a>
                         <a href="mailto:chat@essenceautomations.com">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
                             </svg>
                             chat@essenceautomations.com
                         </a>
@@ -296,14 +335,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
