@@ -1963,3 +1963,16 @@ footer {
         justify-content: center;
     }
 }
+
+/* 2 Column Grid Utility */
+.two-column-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 900px;
+    margin: 2rem auto;
+}
+
+@media (max-width: 768px) {
+    .two-column-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
