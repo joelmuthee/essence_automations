@@ -188,7 +188,9 @@
                 <h2 class="fade-in-up">Interested in Ultra-modern Websites?</h2>
                 <p>Provide your details and we'll be in touch.</p>
                 <div style="margin-top: 2rem;">
-                    <button onclick="showServicesPopup('Ultra-modern Websites')" class="btn-primary"
+                    <button
+                        onclick="document.getElementById('services-needed-popup').classList.remove('hidden'); document.getElementById('services-needed-popup').scrollIntoView({behavior: 'smooth', block: 'start'});"
+                        class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
                         Interested</button>
                 </div>
@@ -198,15 +200,14 @@
             <div id="services-needed-popup" class="conditional-content hidden">
                 <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
                     title="Close Form">&times;</button>
-                <iframe
-                    src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=Ultra-modern%20Websites"
+                <iframe src="https://link.essenceautomations.com/widget/form/1fDfreN5oMYY5wp3VN8j"
                     style="display:none;width:100%;height:100%;border:none;border-radius:4px"
-                    id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{"id":"INLINE"}' data-trigger-type="alwaysShow"
+                    id="popup-1fDfreN5oMYY5wp3VN8j" data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow"
                     data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
                     data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="Services Needed Form" data-height="849"
-                    data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
-                    title="Services Needed Form">
+                    data-form-name="Ultra-modern Website Form" data-height="478"
+                    data-layout-iframe-id="popup-1fDfreN5oMYY5wp3VN8j" data-form-id="1fDfreN5oMYY5wp3VN8j"
+                    title="Ultra-modern Website Form">
                 </iframe>
                 <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
             </div>
