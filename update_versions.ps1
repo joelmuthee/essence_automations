@@ -8,11 +8,11 @@ foreach ($file in $files) {
     
     $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
     
-    # Update style.css?v=54 -> v55
-    $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=55'
+    # Update style.css?v=55 -> v56
+    $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=56'
     
-    # Update main.js?v=47 -> v48
-    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=48'
+    # Update main.js?v=48 -> v49
+    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=49'
     
     if ($newContent -ne $content) {
         $newContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline

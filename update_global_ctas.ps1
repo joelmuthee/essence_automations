@@ -74,50 +74,36 @@ foreach ($file in $files) {
         $modified = $true
     }
 
-    # 3. Swap CTA
+    # 3. Swap CTA (Refined logic to update EXISTING "Interested" blocks too)
     if ($serviceMap.ContainsKey($file.Name)) {
         $serviceName = $serviceMap[$file.Name]
         $encodedService = [uri]::EscapeDataString($serviceName)
         
-        # Regex to find Calendar Section
-        # Matches <div class="section-header"> ... <iframe ... booking ... iframe> ... </div>
-        # We need to capture the whole inner content of the section to replace it.
-        # Or just the iframe container?
-        # The Python script matched: section-header...calendar-container...iframe...
+        # Regex to find OLD Calendar Section (In case any missed)
+        $calendarPattern = '(?s)<div class="section-header">.*?<h2.*?>.*?</h2>.*?</div>\s*<div class="calendar-container.*?">.*?<iframe.*?booking/oO6WgghbYEmmjvXHx8fK.*?</iframe>.*?</div>'
         
-        $pattern = '(?s)<div class="section-header">.*?<h2.*?>.*?</h2>.*?</div>\s*<div class="calendar-container.*?">.*?<iframe.*?booking/oO6WgghbYEmmjvXHx8fK.*?</iframe>.*?</div>'
+        # Regex to find NEW "Interested" Section (To update service name)
+        # Matches: section-header -> Interested in ... -> I'm Interested button ... -> Close div -> Close div
+        # AND optionally the popup div following it.
+        $newCtaPattern = '(?s)<div class="section-header">.*?Interested in.*?<button onclick="showServicesPopup\(''.*?''\).*?I''m Interested</button>.*?</div>\s*</div>(?:\s*<!-- Services Needed Form.*?services-needed-popup.*?</div>)?'
+
+        $matched = $false
         
-        if ($content -match $pattern) {
-            Write-Host "Found Calendar in $($file.Name)"
+        if ($content -match $calendarPattern) {
+            Write-Host "Replacing Calendar in $($file.Name)"
             $newCTA = $ctaTemplate -f $serviceName
-            $content = $content -replace $pattern, $newCTA
+            $finalPopup = $popupHTML -f $encodedService
+            # Combine CTA + Popup
+            $replacement = $newCTA + "`n" + $finalPopup
+            $content = $content -replace $calendarPattern, $replacement
             $modified = $true
         }
-        
-        # Check if CTA was updated (either now or previously) but Popup is missing
-        if ($content -match "I'm Interested" -and $content -notmatch 'id="services-needed-popup"') {
-            Write-Host "Injecting missing popup in $($file.Name)"
+        elseif ($content -match $newCtaPattern) {
+            Write-Host "Updating CTA Service Name in $($file.Name) to '$serviceName'"
+            $newCTA = $ctaTemplate -f $serviceName
             $finalPopup = $popupHTML -f $encodedService
-            
-            # regex to match the end of the CTA block
-            # Matches: I'm Interested</button> ... </div> ... </div>
-            $ctaEndPattern = '(?s)(I''m Interested</button>.*?</div>\s*</div>)'
-            
-            if ($content -match $ctaEndPattern) {
-                $content = $content -replace $ctaEndPattern, ('$1' + $finalPopup)
-                $modified = $true
-            }
-            else {
-                Write-Warning "Could not find CTA end to inject popup in $($file.Name)"
-            }
-        }
-        elseif ($file.Name -eq "websites.html") {
-            # Special case: websites.html has the BUTTON but OLD TEXT "Start Your Build"
-            # And it HAS the popup already.
-            Write-Host "Updating copy in websites.html"
-            $content = $content -replace 'Start Your Build', "Interested in $serviceName?"
-            $content = $content -replace 'Ready to launch your ultra-modern website\?', "Let us know and we'll send you more details."
-            $content = $content -replace 'Get Your Website Now', "I'm Interested"
+            $replacement = $newCTA + "`n" + $finalPopup
+            $content = $content -replace $newCtaPattern, $replacement
             $modified = $true
         }
     }
