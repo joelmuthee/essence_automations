@@ -22,7 +22,7 @@ $popupHTML = '
             <button class="close-form-btn" onclick="this.parentElement.classList.add(''hidden'');"
                 title="Close Form">&times;</button>
             <iframe
-                src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed={0}"
+                src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?zyqVSE2pWYgjr1m9135H={0}"
                 style="display:none;width:100%;height:100%;border:none;border-radius:4px"
                 id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout=''{{ "id":"INLINE" }}'' data-trigger-type="alwaysShow"
                 data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
@@ -37,7 +37,7 @@ $popupHTML = '
 $ctaTemplate = '
             <div class="section-header">
                 <h2 class="fade-in-up">Interested in {0}?</h2>
-                <p>Let us know and we''ll send you more details.</p>
+                <p>Provide your details and we''ll be in touch</p>
                 <div style="margin-top: 2rem;">
                     <button onclick="showServicesPopup(''{0}'')" class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I''m Interested</button>
@@ -50,27 +50,25 @@ foreach ($file in $files) {
     $content = Get-Content -Path $file.FullName -Raw -Encoding UTF8
     $modified = $false
     
-    # 1. Add Demos to Header
-    if ($content -notmatch 'href="demos.html"' -and $content -match 'href="rate-us.html"') {
+    # 1. Add Demos to Header (Check if "Book a Call" is missing)
+    if ($content -notmatch 'Book a Call' -and $content -match 'href="rate-us.html"') {
         $content = $content -replace '<li><a href="rate-us.html">Rate Us</a></li>', 
         '<li><a href="rate-us.html">Rate Us</a></li>
-                <li><a href="demos.html">Demos</a></li>'
+                <li><a href="demos.html">Book a Call</a></li>'
         $modified = $true
     }
     
-    # 2. Add Demos to Footer
-    # Use a regex that finds Rate Us link NOT followed by Demos
-    # But simple Replace is safer if we check -notmatch first (done above)
-    # BE CAREFUL: Header replace added typos? No, looks ok.
-    # Footer replace:
+    # 2. Add Book a Call to Footer
     if ($content -match '<a href="rate-us.html">Rate Us</a>' -and $content -notmatch '<a href="demos.html">' ) {
-        # Identify footer context. Just Replace the string. 
-        # The header one is already replaced, so it contains Demos now.
-        # So searching for "Rate Us" WITHOUT "Demos" nearby is tricky globally.
-        # But the header ONE is `<li><a...`. The footer ONE is just `<a...`.
         $content = $content -replace '(?<!<li>)<a href="rate-us.html">Rate Us</a>', 
         '<a href="rate-us.html">Rate Us</a>
-                        <a href="demos.html">Demos</a>'
+                        <a href="demos.html">Book a Call</a>'
+        $modified = $true
+    }
+    
+    # Ensure "Demos" is renamed to "Book a Call" everywhere (Safety cleanup)
+    if ($content -match '>Demos</a>') {
+        $content = $content -replace '>Demos</a>', '>Book a Call</a>'
         $modified = $true
     }
 
@@ -82,9 +80,8 @@ foreach ($file in $files) {
         # Regex to find OLD Calendar Section (In case any missed)
         $calendarPattern = '(?s)<div class="section-header">.*?<h2.*?>.*?</h2>.*?</div>\s*<div class="calendar-container.*?">.*?<iframe.*?booking/oO6WgghbYEmmjvXHx8fK.*?</iframe>.*?</div>'
         
-        # Regex to find NEW "Interested" Section (To update service name)
-        # Matches: section-header -> Interested in ... -> I'm Interested button ... -> Close div -> Close div
-        # AND optionally the popup div following it.
+        # Regex to find NEW "Interested" Section (To update service name or copy)
+        # Matches any "Interested in" block
         $newCtaPattern = '(?s)<div class="section-header">.*?Interested in.*?<button onclick="showServicesPopup\(''.*?''\).*?I''m Interested</button>.*?</div>\s*</div>(?:\s*<!-- Services Needed Form.*?services-needed-popup.*?</div>)?'
 
         $matched = $false
@@ -93,18 +90,25 @@ foreach ($file in $files) {
             Write-Host "Replacing Calendar in $($file.Name)"
             $newCTA = $ctaTemplate -f $serviceName
             $finalPopup = $popupHTML -f $encodedService
-            # Combine CTA + Popup
             $replacement = $newCTA + "`n" + $finalPopup
             $content = $content -replace $calendarPattern, $replacement
             $modified = $true
         }
         elseif ($content -match $newCtaPattern) {
-            Write-Host "Updating CTA Service Name in $($file.Name) to '$serviceName'"
+            Write-Host "Updating CTA/Popup in $($file.Name)"
             $newCTA = $ctaTemplate -f $serviceName
             $finalPopup = $popupHTML -f $encodedService
             $replacement = $newCTA + "`n" + $finalPopup
             $content = $content -replace $newCtaPattern, $replacement
             $modified = $true
+        }
+        
+        # Special case: Verify websites.html uses new copy if not caught by pattern (e.g. if I manually edited it differently)
+        if ($file.Name -eq "websites.html") {
+            if ($content -match "Let us know and we'll send you more details") {
+                $content = $content -replace "Let us know and we'll send you more details", "Provide your details and we'll be in touch"
+                $modified = $true
+            }
         }
     }
 
