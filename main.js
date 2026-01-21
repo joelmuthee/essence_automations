@@ -151,10 +151,13 @@ function loadTemplate(containerId, templateContent) {
 }
 
 // Hardcoded clean template to ensure 100% reliable reset on mobile
-const servicesPopupHTML = `
+// function to generate hardcoded clean template to ensure 100% reliable reset on mobile
+const getServicesPopupHTML = (serviceName) => {
+    const service = serviceName ? encodeURIComponent(serviceName) : 'Google%20Reviews';
+    return `
     <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form" style="background: #ff6b00 !important;">&times;</button>
     <iframe
-        src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=Google%20Reviews"
+        src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=${service}"
         style="display:none;width:100%;height:100%;border:none;border-radius:4px"
         id="popup-g9F8xoEZgZjMUDIIP6hN" data-layout='{"id":"INLINE"}' data-trigger-type="alwaysShow"
         data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
@@ -165,16 +168,19 @@ const servicesPopupHTML = `
     </iframe>
     <script src="https://link.essenceautomations.com/js/form_embed.js"><\/script>
 `;
+};
 
-window.showServicesPopup = function () {
-    console.log('Opening Services Popup...'); // Debug log
+window.showServicesPopup = function (serviceName) {
+    console.log('Opening Services Popup for:', serviceName);
     const container = document.getElementById('services-needed-popup');
     if (!container) return;
 
+    // Use provided service or default
+    const targetService = serviceName || 'Google Reviews';
+
     if (container.dataset.opened === 'true') {
-        // Subsequent Opens: Nuclear Reset (Reliable for Mobile)
-        // We completely replace HTML to strip all GHL script state
-        container.innerHTML = servicesPopupHTML;
+        // Subsequent Opens: Nuclear Reset with NEW Service Name
+        container.innerHTML = getServicesPopupHTML(targetService);
 
         // Re-activate script (innerHTML script doesn't run automatically)
         const oldScript = container.querySelector('script');
@@ -187,7 +193,16 @@ window.showServicesPopup = function () {
         container.classList.remove('hidden');
         container.style.display = 'block';
     } else {
-        // First Open: Instant Show (Fast)
+        // First Open: Instant Show
+        // MUST update iframe src if the requested service differs from what is pre-loaded
+        const iframe = container.querySelector('iframe');
+        if (iframe) {
+            const newSrc = `https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=${encodeURIComponent(targetService)}`;
+            if (!iframe.src.includes(encodeURIComponent(targetService))) {
+                iframe.src = newSrc;
+            }
+        }
+
         container.classList.remove('hidden');
         container.style.display = 'block';
         container.dataset.opened = 'true';
