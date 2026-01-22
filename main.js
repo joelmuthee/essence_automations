@@ -237,7 +237,7 @@ stars.forEach(star => {
                 // 5 Stars: Show Google Review CTA
                 reviewCta.classList.remove('hidden');
                 // Use 'nearest' or 'center' depending on preference, but 'center' coupled with correct CSS height is best
-                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else if (rating === 4) {
                 // 4 Stars: Show New Iframe Form (Instant Show)
                 const formContainer = document.getElementById('four-star-iframe');

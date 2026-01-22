@@ -12,7 +12,7 @@ foreach ($file in $files) {
     $newContent = $content -replace 'style\.css\?v=\d+', 'style.css?v=61'
     
     # Update main.js?v=52 -> v53
-    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=53'
+    $newContent = $newContent -replace 'main\.js\?v=\d+', 'main.js?v=54'
     
     if ($newContent -ne $content) {
         $newContent | Set-Content -Path $file.FullName -Encoding UTF8 -NoNewline
