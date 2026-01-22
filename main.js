@@ -342,3 +342,14 @@ function customizeChatWidget() {
 
 // Initialize the widget customization
 customizeChatWidget();
+
+// Enhancing Close Buttons to Reset Ratings
+document.querySelectorAll('.close-form-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Uncheck all stars to allow re-selection
+        document.querySelectorAll('input[name="rating"]').forEach(input => input.checked = false);
+
+        // Hide CTA just in case
+        if (reviewCta) reviewCta.classList.add('hidden');
+    });
+});
