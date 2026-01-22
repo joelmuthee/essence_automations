@@ -252,12 +252,11 @@ stars.forEach(star => {
                 }
             }
 
-            // Scroll to the main container to keep stars visible at the top
-            // Using 'start' will align the container (and stars) to the top of the viewport
-            // The CSS scroll-margin-top will prevent it from being hidden by the header
-            const container = e.target.closest('.feedback-container');
-            if (container) {
-                container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Scroll to the star rating container specifically
+            // This will position the stars at the top (under header), hiding the title above it
+            const starContainer = e.target.closest('.star-rating');
+            if (starContainer) {
+                starContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
 
         }, 50);
