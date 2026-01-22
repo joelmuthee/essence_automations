@@ -236,16 +236,12 @@ stars.forEach(star => {
             if (rating === 5) {
                 // 5 Stars: Show Google Review CTA
                 reviewCta.classList.remove('hidden');
-                // Use 'nearest' or 'center' depending on preference, but 'center' coupled with correct CSS height is best
-                reviewCta.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
             } else if (rating === 4) {
                 // 4 Stars: Show New Iframe Form (Instant Show)
                 const formContainer = document.getElementById('four-star-iframe');
                 if (formContainer) {
                     formContainer.classList.remove('hidden');
-                    // Ensure iframe is loaded (if it was lazy loaded or similar, but here it's just hidden)
                     formContainer.style.display = 'block';
-                    formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             } else {
                 // 1-3 Stars: Show Negative Iframe Form (Instant Show)
@@ -253,9 +249,14 @@ stars.forEach(star => {
                 if (formContainer) {
                     formContainer.classList.remove('hidden');
                     formContainer.style.display = 'block';
-                    formContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
+
+            // Scroll to the main container to keep stars visible at the top
+            // Using 'start' will align the container (and stars) to the top of the viewport
+            // The CSS scroll-margin-top will prevent it from being hidden by the header
+            document.querySelector('.feedback-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
         }, 50);
     });
 });

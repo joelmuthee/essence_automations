@@ -923,6 +923,9 @@ footer {
 .feedback-container {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
+    /* Ensure title is not covered by sticky header when scrolled to */
+    scroll-margin-top: 150px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -1132,13 +1135,12 @@ footer {
 
 @media (max-width: 768px) {
     .conditional-content {
-        width: 95% !important;
+        width: 100% !important;
+        /* Maximize width */
         margin: 0 auto !important;
-        /* Center properly */
         left: unset !important;
         right: unset !important;
         border-radius: 12px;
-        /* Slight rounding for a better card look */
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
     }
 }
