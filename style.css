@@ -2001,3 +2001,40 @@ footer {
         margin-bottom: 4rem !important;
     }
 }
+
+/* Stats Section - Mobile Optimization */
+.stats-section {
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .stats-section .grid-container {
+        gap: 0.5rem !important;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .stats-section .grid-container>.stat-card {
+        flex: 1 1 28% !important;
+        /* Allow 3 side-by-side (approx 30% each) */
+        min-width: 80px;
+        padding: 0.8rem !important;
+    }
+
+    .stat-card h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .stat-card p {
+        font-size: 0.75rem !important;
+        line-height: 1.2;
+        margin-top: 0.2rem;
+    }
+}
