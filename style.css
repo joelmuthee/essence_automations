@@ -925,7 +925,7 @@ footer {
     margin: 0 auto;
     text-align: center;
     /* Ensure title is not covered by sticky header when scrolled to */
-    scroll-margin-top: 150px;
+    scroll-margin-top: 120px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
