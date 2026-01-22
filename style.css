@@ -1089,7 +1089,7 @@ footer {
     scroll-margin-top: 180px;
     /* Offset for sticky header + border visibility */
     /* Desktop Sizing (Moved from inline) */
-    min-height: 849px;
+    min-height: 200px;
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
