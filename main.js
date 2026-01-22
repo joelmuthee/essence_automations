@@ -347,6 +347,7 @@ function customizeChatWidget() {
 customizeChatWidget();
 
 // Enhancing Close Buttons to Reset Ratings
+// Enhancing Close Buttons to Reset Ratings
 document.querySelectorAll('.close-form-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         // Uncheck all stars to allow re-selection
@@ -354,5 +355,11 @@ document.querySelectorAll('.close-form-btn').forEach(btn => {
 
         // Hide CTA just in case
         if (reviewCta) reviewCta.classList.add('hidden');
+
+        // Autoscroll stars to center of page
+        const starContainer = document.querySelector('.star-rating');
+        if (starContainer) {
+            starContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     });
 });
