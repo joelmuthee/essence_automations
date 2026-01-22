@@ -348,18 +348,20 @@ customizeChatWidget();
 
 // Enhancing Close Buttons to Reset Ratings
 // Enhancing Close Buttons to Reset Ratings
-document.querySelectorAll('.close-form-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
+// Global Event Delegation for Close Buttons (Handling Dynamic Elements)
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.close-form-btn');
+    if (btn) {
         // Uncheck all stars to allow re-selection
         document.querySelectorAll('input[name="rating"]').forEach(input => input.checked = false);
 
         // Hide CTA just in case
-        if (reviewCta) reviewCta.classList.add('hidden');
+        if (typeof reviewCta !== 'undefined' && reviewCta) reviewCta.classList.add('hidden');
 
         // Autoscroll stars to center of page
         const starContainer = document.querySelector('.star-rating');
         if (starContainer) {
             starContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    });
+    }
 });
