@@ -239,36 +239,12 @@ window.showServicesPopup = function (serviceName) {
     container.classList.remove('hidden');
     container.style.display = 'block'; // Ensure visibility
 
-    // FORCE RELOAD IFRAME (Destroy & Recreate Strategy)
-    // This is the only 100% reliable way to reset the internal state of a cross-origin iframe
-    // that has closed itself via internal scripts.
-    if (iframe) {
-        const oldSrc = iframe.src;
-        const oldId = iframe.id;
-        const oldStyle = iframe.getAttribute('style');
-        const oldTitle = iframe.title;
-        // Copy data attributes
-        const dataAttrs = {};
-        Array.from(iframe.attributes).forEach(attr => {
-            if (attr.name.startsWith('data-')) {
-                dataAttrs[attr.name] = attr.value;
-            }
-        });
-
-        // Create Fresh Iframe
-        const newIframe = document.createElement('iframe');
-        newIframe.src = oldSrc;
-        newIframe.id = oldId;
-        if (oldStyle) newIframe.setAttribute('style', oldStyle);
-        newIframe.style.display = 'block'; // Ensure iframe is visible despite inline styles
-        newIframe.title = oldTitle;
-        // Restore data attributes
-        Object.keys(dataAttrs).forEach(key => newIframe.setAttribute(key, dataAttrs[key]));
-
-        // Swap them
-        iframe.parentNode.replaceChild(newIframe, iframe);
-        console.log('Iframe force-refreshed via DOM replacement');
-    }
+    // OPTIMIZATION: Removed "Force Refresh via DOM Replacement"
+    // Previously, we destroyed and recreated the iframe to "reset" the form state.
+    // However, this causes a full network reload delay every time.
+    // Now, we keep the iframe alive. If the user successfully submitted, the form usually shows a "Thank You" screen.
+    // We accept that "Thank You" screen persists until a full page refresh or service switch.
+    // This trade-off significantly improves popup open speed (instant vs 1-2s delay).
 
     // container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
