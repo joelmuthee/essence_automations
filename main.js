@@ -196,7 +196,7 @@ window.showServicesPopup = function (serviceName) {
 
     if (container.dataset.opened === 'true') {
         // Subsequent Opens
-        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8')) {
+        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8') && !iframe.id.includes('popup-qE7JEAuhYOJqcmXTTvhv')) {
             // Only overwrite if it's NOT one of our customized manual forms
             console.log('Switching service, reloading...');
             container.innerHTML = getServicesPopupHTML(targetService);
@@ -220,7 +220,8 @@ window.showServicesPopup = function (serviceName) {
             iframe.id.includes('z4nalKLbhSGK9yUOnMoh') || // GBP
             iframe.id.includes('05EkqHahM76Tfa4ttGZc') || // Chat
             iframe.id.includes('AP1GiOfA6x5vbBsgrFF9') || // Reviews
-            iframe.id.includes('EOcnKMN2iPUJX53QjWf8')    // CRM
+            iframe.id.includes('EOcnKMN2iPUJX53QjWf8') || // CRM
+            iframe.id.includes('qE7JEAuhYOJqcmXTTvhv')    // WhatsApp
         );
 
         if (!isCustomForm && !isServiceMatch && iframe) {
