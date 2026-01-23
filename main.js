@@ -236,11 +236,34 @@ window.showServicesPopup = function (serviceName) {
     container.classList.remove('hidden');
     container.style.display = 'block'; // Ensure visibility
 
-    // FORCE RELOAD IFRAME to reset internal state (Fixes "Not Reopening" bug)
-    // If the form's internal button was clicked, the iframe content might be hidden.
-    // Reloading it brings it back to the initial state.
+    // FORCE RELOAD IFRAME (Destroy & Recreate Strategy)
+    // This is the only 100% reliable way to reset the internal state of a cross-origin iframe
+    // that has closed itself via internal scripts.
     if (iframe) {
-        iframe.src = iframe.src;
+        const oldSrc = iframe.src;
+        const oldId = iframe.id;
+        const oldStyle = iframe.getAttribute('style');
+        const oldTitle = iframe.title;
+        // Copy data attributes
+        const dataAttrs = {};
+        Array.from(iframe.attributes).forEach(attr => {
+            if (attr.name.startsWith('data-')) {
+                dataAttrs[attr.name] = attr.value;
+            }
+        });
+
+        // Create Fresh Iframe
+        const newIframe = document.createElement('iframe');
+        newIframe.src = oldSrc;
+        newIframe.id = oldId;
+        if (oldStyle) newIframe.setAttribute('style', oldStyle);
+        newIframe.title = oldTitle;
+        // Restore data attributes
+        Object.keys(dataAttrs).forEach(key => newIframe.setAttribute(key, dataAttrs[key]));
+
+        // Swap them
+        iframe.parentNode.replaceChild(newIframe, iframe);
+        console.log('Iframe force-refreshed via DOM replacement');
     }
 
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
