@@ -1,9 +1,9 @@
-import os
+﻿import os
 
 files_to_update = [
     "email-marketing.html",
     "documents.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "about.html",
@@ -71,4 +71,5 @@ for filename in files_to_update:
             # Debug: print snippet
             # idx = content.find("footer-brand")
             # print(content[idx:idx+200])
+
 

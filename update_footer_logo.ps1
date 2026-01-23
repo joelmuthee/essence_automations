@@ -1,7 +1,7 @@
-$files = @(
+﻿$files = @(
     "email-marketing.html",
     "documents.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "about.html",
@@ -110,3 +110,4 @@ foreach ($file in $files) {
         Write-Host "File not found: $path"
     }
 }
+

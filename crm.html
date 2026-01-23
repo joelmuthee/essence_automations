@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,14 +13,14 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMS Marketing | Essence Automations</title>
+    <title>Unified CRM With Desktop & Mobile App | Essence Automations</title>
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="SMS Marketing | Essence Automations">
+    <meta property="og:title" content="Unified CRM With Desktop & Mobile App | Essence Automations">
     <meta property="og:description"
-        content="Reach customers instantly with 98% open rates using powerful SMS marketing automation.">
+        content="Unified CRM With Desktop & Mobile App. Manage your entire business from the palm of your hand.">
     <meta property="og:image" content="https://essenceautomations.com/social-share.png">
-    <meta property="og:url" content="https://essenceautomations.com/sms-marketing.html">
+    <meta property="og:url" content="https://essenceautomations.com/crm.html">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css?v=67">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,10 +43,10 @@
                         <a href="websites.html">Ultra-modern Websites</a>
                         <a href="ai-chat.html">AI Support Chat</a>
                         <a href="gmb-manager.html">GBP Booster</a>
-                        <a href="crm-mobile.html">CRM With App</a>
+                        <a href="crm.html">CRM With App</a>
                         <a href="ads-manager.html">AI Ads Manager</a>
                         <a href="reputation-management.html">Google Reviews</a>
-                        <a href="sms-marketing.html">SMS Marketing</a>
+                        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
                         <a href="email-marketing.html">Email Marketing</a>
                         <a href="online-calendar.html">Online Appointment Calendar</a>
                         <a href="documents.html">Document Management</a>
@@ -69,12 +69,13 @@
     <main>
         <section class="hero" style="justify-content: center; text-align: center;">
             <div class="hero-content">
-                <h1 class="fade-in-up">Direct to <span class="gradient-text">Customer</span></h1>
-                <p class="fade-in-up delay-1">98% open rates using the power of SMS Marketing.<br><span
-                        style="font-size: 0.8em; opacity: 0.8;">Powered by GoHighLevel</span></p>
+                <h1 class="fade-in-up">Unified <span class="gradient-text">CRM With App</span></h1>
+                <p class="fade-in-up delay-1">Manage your entire business from your desktop or the palm of your
+                    hand.<br><span style="font-size: 0.8em; opacity: 0.8;">Powered by <span class="gradient-text"
+                            style="font-weight: 600;">GoHighLevel</span></span></p>
                 <div class="hero-buttons fade-in-up delay-2">
                     <button
-                        onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});"
+                        onclick="showServicesPopup('CRM With App')"
                         class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
                         Interested</button>
@@ -85,8 +86,8 @@
         <section class="stats-section">
             <div class="grid-container">
                 <div class="stat-card glass-effect ">
-                    <h3 class="gradient-text">98%</h3>
-                    <p>Open rate within 3 minutes.</p>
+                    <h3 class="gradient-text">3x</h3>
+                    <p>Faster lead follow-up.</p>
                 </div>
                 <div class="stat-card glass-effect " style="animation-delay: 0.2s;">
                     <h3 class="gradient-text">24/7</h3>
@@ -98,27 +99,60 @@
                 </div>
             </div>
         </section>
-        </section>
 
         <div class="center-text" style="text-align: center; margin-top: 5rem;">
             <h2 class="fade-in-up">Powerful Features</h2>
-            <div class="grid-container three-column-grid" style="justify-content: center; margin-top: 2rem;">
+            <div class="grid-container three-column-grid">
                 <div class="card glass-effect">
-                    <div class="icon">&#128100;</div>
-                    <h3>Personalization</h3>
-                    <p>Send messages that feel personal. Automatically include customer names and details for higher
-                        engagement.</p>
+                    <div class="icon">&#128172;</div>
+                    <h3>Unified Inbox</h3>
+                    <p>Streamline all communications. View and reply to SMS, Emails, FB Messenger, and IG DMs in one
+                        stream.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128200;</div>
+                    <h3>Smart Pipelines</h3>
+                    <p>Visualise your sales process. Drag and drop opportunities as they move through your custom deal
+                        stages.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128241;</div>
+                    <h3>Mobile App</h3>
+                    <p>Run your business from anywhere. Access contacts, conversations, and tasks directly from your
+                        phone.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128242;</div>
+                    <h3>WhatsApp Marketing</h3>
+                    <p>Reach customers instantly with automated text campaigns that have 98% open rates.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128231;</div>
+                    <h3>Email Marketing</h3>
+                    <p>Send beautiful newsletters and automated follow-up sequences that convert leads into sales.</p>
                 </div>
                 <div class="card glass-effect">
                     <div class="icon">&#128172;</div>
-                    <h3>2-Way SMS</h3>
-                    <p>Have real conversations. Customers can reply to your texts, allowing for instant support and
-                        sales.</p>
+                    <h3>WhatsApp Marketing</h3>
+                    <p>Connect with your audience on the world's most popular messaging app for higher engagement.</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128221;</div>
+                    <h3>Tasks & Reminders</h3>
+                    <p>Stay organized. Add specialized notes, set tasks, and receive automated reminders so nothing
+                        slips through...</p>
+                </div>
+                <div class="card glass-effect">
+                    <div class="icon">&#128101;</div>
+                    <h3>Team Collaboration</h3>
+                    <p>Assign leads, track agent performance, and collaborate seamlessly with unlimited team members.
+                    </p>
                 </div>
                 <div class="card glass-effect">
                     <div class="icon">&#128640;</div>
-                    <h3>Automated & Bulk</h3>
-                    <p>Trigger texts based on actions or send announcements to your entire list with one click.</p>
+                    <h3>GoHighLevel CRM</h3>
+                    <p>Powered by the world's #1 All-In-One Marketing Platform, giving you enterprise-grade tools at a
+                        fraction of the cost.</p>
                 </div>
             </div>
         </div>
@@ -128,11 +162,11 @@
 
 
             <div class="section-header">
-                <h2 class="fade-in-up">Interested in SMS Marketing?</h2>
-                <p>Ready to reach customers instantly? Let's build your SMS strategy.</p>
+                <h2 class="fade-in-up">Interested in GoHighLevel CRM (With App)?</h2>
+                <p>Manage your business from anywhere. Get the power of CRM on your desktop and mobile devices.</p>
                 <div style="margin-top: 2rem;">
                     <button
-                        onclick="const p = document.getElementById('services-needed-popup'); const i = p.querySelector('iframe'); i.src = i.src; p.classList.remove('hidden'); p.scrollIntoView({behavior: 'smooth', block: 'start'});"
+                        onclick="showServicesPopup('CRM With App')"
                         class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
                         Interested</button>
@@ -144,7 +178,7 @@
                 <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
                     title="Close Form">&times;</button>
                 <iframe
-                    src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=SMS%20Marketing"
+                    src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=CRM%20%26%20Mobile%20App"
                     style="width:100%;height:100%;border:none;border-radius:4px" id="popup-g9F8xoEZgZjMUDIIP6hN"
                     data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow" data-trigger-value=""
                     data-activation-type="alwaysActivated" data-activation-value=""
@@ -174,7 +208,7 @@
         <section id="feedback-system" class="feedback-system glass-effect">
             <div class="feedback-container">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    
+
                     <h2 class="fade-in-up" style="margin-top: 1rem;">Rate Your Experience</h2>
                     <p class="subtitle fade-in-up">We value your feedback. Please select a star to rate us.</p>
                 </div>
@@ -234,7 +268,10 @@
                 <div id="review-cta" class="conditional-content hidden">
                     <h3>Thank you for your support!</h3>
                     <p>We're thrilled you had a great experience. Could you please spare a moment to share your
-                        experience on our <a href="https://g.page/r/CR_sEbCTUfyYEBE/review" target="_blank" class="gradient-text" style="font-weight: 800; text-decoration: underline; cursor: pointer;">Google Business Profile</a>? Your detailed feedback helps us grow and serve you better.</p>
+                        experience on our <a href="https://g.page/r/CR_sEbCTUfyYEBE/review" target="_blank"
+                            class="gradient-text"
+                            style="font-weight: 800; text-decoration: underline; cursor: pointer;">Google Business
+                            Profile</a>? Your detailed feedback helps us grow and serve you better.</p>
                     <p class="discount-text">As a token of our appreciation, your 5-star Google review earns you a
                         discount on your next payment!</p>
                     <a href="https://g.page/r/CR_sEbCTUfyYEBE/review" target="_blank" class="btn-primary">Rate Us on
@@ -312,10 +349,10 @@
                         <a href="websites.html">Ultra-modern Websites</a>
                         <a href="ai-chat.html">AI Support Chat</a>
                         <a href="gmb-manager.html">GBP Booster</a>
-                        <a href="crm-mobile.html">CRM With App</a>
+                        <a href="crm.html">CRM With App</a>
                         <a href="ads-manager.html">AI Ads Manager</a>
                         <a href="reputation-management.html">Google Reviews</a>
-                        <a href="sms-marketing.html">SMS Marketing</a>
+                        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
                         <a href="email-marketing.html">Email Marketing</a>
                         <a href="online-calendar.html">Online Appointment Calendar</a>
                         <a href="documents.html">Document Management</a>
@@ -340,3 +377,7 @@
 </body>
 
 </html>
+
+
+
+

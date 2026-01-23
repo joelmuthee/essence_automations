@@ -1,4 +1,4 @@
-
+﻿
 import os
 import re
 
@@ -16,7 +16,7 @@ files_to_clean = [
     "faq.html",
     "email-marketing.html",
     "documents.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "about.html",
@@ -65,3 +65,4 @@ for filename in files_to_clean:
         remove_section(filepath)
     else:
         print(f"File not found: {filename}")
+

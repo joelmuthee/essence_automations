@@ -1,11 +1,11 @@
-import os
+﻿import os
 import re
 
 files_to_update = [
     "index.html",
     "email-marketing.html",
     "documents.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "about.html",
@@ -92,3 +92,4 @@ for filename in files_to_update:
         print(f"Error processing {filename}: {e}")
 
 print(f"Total files updated: {count_updated}")
+

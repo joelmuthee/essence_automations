@@ -1,11 +1,11 @@
-$root = "c:\Users\Joel\OneDrive\Documents\Anti Gravity\Essence Automations"
+﻿$root = "c:\Users\Joel\OneDrive\Documents\Anti Gravity\Essence Automations"
 $files = Get-ChildItem -Path $root -Filter "*.html" | Where-Object { $_.Name -ne "demos.html" }
 
 $serviceMap = @{
     "websites.html"              = "Ultra-modern Websites"
     "ai-chat.html"               = "AI Support Chat"
     "gmb-manager.html"           = "GBP Booster"
-    "crm-mobile.html"            = "CRM & Mobile App"
+    "crm.html"            = "CRM & Mobile App"
     "ads-manager.html"           = "AI Ads Manager"
     "reputation-management.html" = "Google Reviews"
     "sms-marketing.html"         = "SMS Marketing"
@@ -117,3 +117,4 @@ foreach ($file in $files) {
         Write-Host "Updated $($file.Name)"
     }
 }
+

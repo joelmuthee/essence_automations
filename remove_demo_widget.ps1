@@ -1,4 +1,4 @@
-
+﻿
 $directory = "c:\Users\Joel\OneDrive\Documents\Anti Gravity\Essence Automations"
 
 # Files to CLEAN (remove the section from)
@@ -12,7 +12,7 @@ $filesToClean = @(
     "faq.html",
     "email-marketing.html",
     "documents.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "about.html",
@@ -43,3 +43,4 @@ foreach ($filename in $filesToClean) {
         Write-Host "File not found: $filename"
     }
 }
+

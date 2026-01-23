@@ -1,9 +1,9 @@
-
+﻿
 $files = @(
     "about.html",
     "ads-manager.html",
     "ai-chat.html",
-    "crm-mobile.html",
+    "crm.html",
     "documents.html",
     "email-marketing.html",
     "gmb-manager.html",
@@ -64,3 +64,4 @@ foreach ($filename in $files) {
         Write-Host "Skipping $filename : </main> tag not found"
     }
 }
+

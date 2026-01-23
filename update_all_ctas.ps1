@@ -1,9 +1,9 @@
-# Mapping of file names to checkbox values
+﻿# Mapping of file names to checkbox values
 $ServiceMapping = @{
     "websites.html"              = "Ultra-modern Websites"
     "ai-chat.html"               = "AI Support Chat"
     "gmb-manager.html"           = "GBP Booster"
-    "crm-mobile.html"            = "CRM & Mobile App"
+    "crm.html"            = "CRM & Mobile App"
     "ads-manager.html"           = "AI Ads Manager"
     "reputation-management.html" = "Google Reviews"
     "sms-marketing.html"         = "SMS Marketing"
@@ -110,3 +110,4 @@ foreach ($file in $ServiceMapping.Keys) {
         Write-Host "Saved changes to $file"
     }
 }
+

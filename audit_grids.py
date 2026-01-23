@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 
 files = [
@@ -7,7 +7,7 @@ files = [
     "gmb-manager.html",
     "documents.html",
     "email-marketing.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "sms-marketing.html",
@@ -70,3 +70,4 @@ for filename in files:
             needs_fix = False # Already fixed
             
     print(f"{filename:<30} | {count:<5} | {needs_fix}")
+

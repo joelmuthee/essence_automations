@@ -101,8 +101,8 @@ const navLinks = document.querySelector('.nav-links');
 // Helper function to open the services popup
 function openServicesPopup() {
     const p = document.getElementById('services-needed-popup');
-    const i = p.querySelector('iframe');
-    i.src = i.src; // Reload iframe to reset form
+    // const i = p.querySelector('iframe');
+    // i.src = i.src; // Reload iframe to reset form - REMOVED to prevent blinking
     p.classList.remove('hidden');
     p.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -187,37 +187,45 @@ window.showServicesPopup = function (serviceName) {
 
     // Use provided service or default
     const targetService = serviceName || 'Google Reviews';
+    const iframe = container.querySelector('iframe');
+
+    // Check if current iframe SRC already matches the target service
+    // We check for the service name in the SRC string
+    const currentSrc = iframe ? iframe.src : '';
+    const isServiceMatch = currentSrc.includes(encodeURIComponent(targetService));
 
     if (container.dataset.opened === 'true') {
-        // Subsequent Opens: Nuclear Reset with NEW Service Name
-        container.innerHTML = getServicesPopupHTML(targetService);
+        // Subsequent Opens
+        if (!isServiceMatch) {
+            // Only reset if the service is DIFFERENT (e.g. switching from "Websites" to "SEO")
+            console.log('Switching service, reloading...');
+            container.innerHTML = getServicesPopupHTML(targetService);
 
-        // Re-activate script (innerHTML script doesn't run automatically)
-        const oldScript = container.querySelector('script');
-        if (oldScript) {
-            const newScript = document.createElement('script');
-            newScript.src = oldScript.src;
-            oldScript.parentNode.replaceChild(newScript, oldScript);
+            // Re-activate script
+            const oldScript = container.querySelector('script');
+            if (oldScript) {
+                const newScript = document.createElement('script');
+                newScript.src = oldScript.src;
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            }
+        } else {
+            console.log('Service match, showing existing frame (No Blink)');
+            // Do nothing (iframe stays as is)
         }
-
-        container.classList.remove('hidden');
-        container.style.display = 'block';
     } else {
-        // First Open: Instant Show
-        // MUST update iframe src if the requested service differs from what is pre-loaded
-        const iframe = container.querySelector('iframe');
-        if (iframe) {
+        // First Open
+        if (!isServiceMatch && iframe) {
+            console.log('First open, setting correct service...');
             const newSrc = `https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=${encodeURIComponent(targetService)}&t=${new Date().getTime()}`;
-            // Always update to ensure freshness
             iframe.src = newSrc;
+        } else {
+            console.log('First open, service already matches pre-load (No Blink)');
         }
-
-        container.classList.remove('hidden');
-        container.style.display = 'block';
         container.dataset.opened = 'true';
     }
 
-    // 3. Scroll into view
+    container.classList.remove('hidden');
+    container.style.display = 'block'; // Ensure visibility
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 

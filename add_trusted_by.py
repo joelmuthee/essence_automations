@@ -1,4 +1,4 @@
-
+﻿
 import os
 
 section_html = """
@@ -30,7 +30,7 @@ files = [
     "about.html",
     "ads-manager.html",
     "ai-chat.html",
-    "crm-mobile.html",
+    "crm.html",
     "documents.html",
     "email-marketing.html",
     "gmb-manager.html",
@@ -73,3 +73,4 @@ for filename in files:
         print(f"Updated {filename}")
     else:
         print(f"Skipping {filename}: </main> tag not found")
+

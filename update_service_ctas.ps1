@@ -1,9 +1,9 @@
-# Service Page Mapping
+﻿# Service Page Mapping
 $ServiceMapping = @{
     "websites.html"        = "Ultra-modern Websites"
     "ai-chat.html"         = "AI Support Chat"
     "gmb-manager.html"     = "GBP Booster"
-    "crm-mobile.html"      = "CRM & Mobile App"
+    "crm.html"      = "CRM & Mobile App"
     "ads-manager.html"     = "AI Ads Manager"
     "sms-marketing.html"   = "SMS Marketing"
     "email-marketing.html" = "Email Marketing"
@@ -103,3 +103,4 @@ $formattedPopup
         Write-Host "Saved changes to $file"
     }
 }
+

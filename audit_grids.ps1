@@ -1,10 +1,10 @@
-$files = @(
+﻿$files = @(
     "reputation-management.html",
     "qr-codes.html",
     "gmb-manager.html",
     "documents.html",
     "email-marketing.html",
-    "crm-mobile.html",
+    "crm.html",
     "ai-chat.html",
     "ads-manager.html",
     "sms-marketing.html",
@@ -57,3 +57,4 @@ foreach ($file in $files) {
         Write-Host ("{0,-30} | {1,-5} | {2}" -f $file, "N/A", "No Grid")
     }
 }
+

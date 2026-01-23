@@ -1,4 +1,4 @@
-import os
+﻿import os
 import urllib.parse
 
 # Mapping of file names to checkbox values
@@ -7,7 +7,7 @@ SERVICE_MAPPING = {
     "websites.html": "Ultra-modern Websites",
     "ai-chat.html": "AI Support Chat",
     "gmb-manager.html": "GBP Booster",
-    "crm-mobile.html": "CRM & Mobile App",
+    "crm.html": "CRM & Mobile App",
     "ads-manager.html": "AI Ads Manager",
     "reputation-management.html": "Google Reviews", # Already done, but good to have in list
     "sms-marketing.html": "SMS Marketing",
@@ -185,3 +185,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

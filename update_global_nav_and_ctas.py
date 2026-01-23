@@ -1,4 +1,4 @@
-import os
+﻿import os
 import re
 
 # Logic:
@@ -14,7 +14,7 @@ service_map = {
     "websites.html": "Ultra-modern Websites", # Already done manually, but script can verify
     "ai-chat.html": "AI Support Chat",
     "gmb-manager.html": "GBP Booster",
-    "crm-mobile.html": "CRM & Mobile App",
+    "crm.html": "CRM & Mobile App",
     "ads-manager.html": "AI Ads Manager",
     "reputation-management.html": "Google Reviews", # Already done manually
     "sms-marketing.html": "SMS Marketing",
@@ -148,3 +148,4 @@ def process_file(filepath, filename):
 for filename in os.listdir(root_dir):
     if filename.endswith(".html") and filename != "demos.html": # Skip demos.html to keep calendar there!
         process_file(os.path.join(root_dir, filename), filename)
+
