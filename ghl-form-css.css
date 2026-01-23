@@ -130,9 +130,28 @@ input[type="radio"] {
 }
 
 /* Error Messages */
-.text-danger,
-.error-message {
-    color: #ff4757 !important;
-    font-size: 12px !important;
-    font-weight: 600 !important;
+color: #ff4757 !important;
+font-size: 12px !important;
+font-weight: 600 !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: #050510 !important;
+    /* Theme Background */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #ff6b00, #8a2be2) !important;
+    /* Theme Gradient */
+    border-radius: 4px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff6b00 !important;
+    /* Solid orange on hover */
 }
