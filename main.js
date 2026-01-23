@@ -235,6 +235,14 @@ window.showServicesPopup = function (serviceName) {
 
     container.classList.remove('hidden');
     container.style.display = 'block'; // Ensure visibility
+
+    // FORCE RELOAD IFRAME to reset internal state (Fixes "Not Reopening" bug)
+    // If the form's internal button was clicked, the iframe content might be hidden.
+    // Reloading it brings it back to the initial state.
+    if (iframe) {
+        iframe.src = iframe.src;
+    }
+
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     // Click Background to Close Logic
@@ -386,10 +394,13 @@ document.addEventListener('click', (e) => {
         // Hide CTA just in case
         if (typeof reviewCta !== 'undefined' && reviewCta) reviewCta.classList.add('hidden');
 
-        // Autoscroll stars to center of page
-        const starContainer = document.querySelector('.star-rating');
-        if (starContainer) {
-            starContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // Autoscroll stars to center of page - ONLY if NOT the main service popup
+        // This prevents the "Scroll to Stars" bug when closing lead forms
+        if (!btn.closest('#services-needed-popup')) {
+            const starContainer = document.querySelector('.star-rating');
+            if (starContainer) {
+                starContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
     }
 });
