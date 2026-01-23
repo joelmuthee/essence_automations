@@ -431,3 +431,39 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+// Google Analytics Event Tracking
+// Automatically tracks clicks on all buttons and links
+document.addEventListener('click', (e) => {
+    // Find the closest clickable element (a, button, or .btn)
+    const target = e.target.closest('a, button, input[type="submit"], input[type="button"], .btn');
+
+    // If a clickable element was found
+    if (target) {
+        // Extract identification data
+        // Priority: 1. data-ga-label, 2. Text Content, 3. Aria Label, 4. ID, 5. HREF
+        let label = target.getAttribute('data-ga-label') ||
+            target.innerText.trim() ||
+            target.getAttribute('aria-label') ||
+            target.id ||
+            target.getAttribute('href') ||
+            'Unknown Element';
+
+        // Truncate label if too long
+        if (label.length > 50) label = label.substring(0, 50) + '...';
+
+        const category = target.getAttribute('data-ga-category') || 'Button/Link Click';
+        const action = target.getAttribute('data-ga-action') || 'click';
+
+        // Send to Google Analytics (GA4)
+        if (typeof gtag === 'function') {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label,
+                'link_url': target.href || 'N/A',
+                'link_text': target.innerText.trim()
+            });
+            // console.log('GA4 Event Sent:', { category, action, label });
+        }
+    }
+});
