@@ -260,6 +260,7 @@ window.showServicesPopup = function (serviceName) {
         newIframe.src = oldSrc;
         newIframe.id = oldId;
         if (oldStyle) newIframe.setAttribute('style', oldStyle);
+        newIframe.style.display = 'block'; // Ensure iframe is visible despite inline styles
         newIframe.title = oldTitle;
         // Restore data attributes
         Object.keys(dataAttrs).forEach(key => newIframe.setAttribute(key, dataAttrs[key]));
