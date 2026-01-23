@@ -1,0 +1,76 @@
+Robust Popup & Animation Implementation Guide
+
+Use these instructions to replicate the button, startup animation, and popup functionality in other workspaces without debugging loops.
+
+---
+
+1. The "Invisible Button" Rule (Scroll Animations)
+Problem: Buttons or elements appear invisible (opacity: 0) and never appear.
+Cause: The element has a CSS animation class (e.g., .fade-in-up) but is NOT being watched by the IntersectionObserver in JavaScript.
+
+The Protocol:
+- HTML: Apply the class: <div class="hero-buttons fade-in-up">
+- JavaScript (Critical): You MUST add the selector to the animateElements list in main.js.
+   // main.js - ADD YOUR CLASS HERE
+   const animateElements = document.querySelectorAll('..., .btn, .hero-buttons, ...');
+- Check: If an element needs to animate, it must be in that querySelector list.
+
+---
+
+2. Popup Form Pre-Selection Strategy
+Problem: Popups open, but the specific service/option is not selected or the form is blank.
+Cause: Mismatch between the "Service Name" string passed in HTML and the "Option Value" in the form/database.
+
+The Protocol:
+- Exact String Matching: The string passed in onclick MUST match the form option exactly (Case-sensitive, spacing-sensitive).
+   * Correct: onclick="showServicesPopup('Ultra-modern Websites')"
+   * Target: Form Option Value = "Ultra-modern Websites"
+   
+- Standard Function Pattern:
+   Use this pattern for the popup handler to ensure robust pre-filling:
+   
+   function showServicesPopup(serviceName) {
+       // 1. Show the popup overlay
+       document.getElementById('servicesPopup').style.display = 'block';
+       
+       // 2. Target the iframe or form input
+       const iframe = document.getElementById('highlevel-form-iframe');
+       
+       // 3. Construct URL with query param
+       // NOTE: Ensure your form provider (GoHighLevel, etc.) accepts this specific param key (e.g., 'service_interested')
+       if (serviceName) {
+           const specificUrl = `https://link.to.form?service=${encodeURIComponent(serviceName)}`;
+           iframe.src = specificUrl;
+       }
+   }
+
+---
+
+3. Z-Index Layering Standard
+To prevent "unclickable" buttons or popups hiding behind navbars:
+
+Element                 | Z-Index | Notes
+----------------------- | ------- | ------------------------
+Standard Content        | 1-10    | Text, images, cards
+Sticky Navbar           | 100     | Must float above content
+Floating Widgets        | 900     | Chat bots, WhatsApp buttons
+Popup Overlay           | 998     | The dark background dimming
+Popup Content           | 999     | The actual modal window
+Notifications/Toasts    | 1000+   | Urgent alerts
+
+---
+
+4. Universal "Hero" Structure
+For consistent "wow" factor hero sections, use this structure which is pre-validated for the animation engine:
+
+<section class="hero-section">
+    <!-- Text Content -->
+    <div class="hero-content fade-in-up"> <!-- "fade-in-up" handles the entry -->
+       <h1>Headline</h1>
+       <div class="hero-buttons fade-in-up"> <!-- "fade-in-up" added here too -->
+           <button class="btn btn-primary">Primary Action</button>
+       </div>
+    </div>
+</section>
+
+*Note: Ensure .hero-content and .hero-buttons are both in the IntersectionObserver list.*

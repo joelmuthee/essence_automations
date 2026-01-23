@@ -269,7 +269,7 @@ window.showServicesPopup = function (serviceName) {
         console.log('Iframe force-refreshed via DOM replacement');
     }
 
-    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // container.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
     // Click Background to Close Logic
     const closeOnBackgroundClick = (e) => {
