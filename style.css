@@ -2053,3 +2053,35 @@ footer {
     height: 100vh !important;
     /* Full viewport height */
 }
+
+@media (max-width: 768px) {
+    #services-needed-popup iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+    }
+
+    #services-needed-popup {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+}
+
+/* Service Popup - Full Width Fix */
+#services-needed-popup {
+    width: 100% !important;
+    max-width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 !important;
+}
+
+#services-needed-popup iframe {
+    width: 100% !important;
+    height: 100vh !important;
+    /* Full viewport height */
+}
