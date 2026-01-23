@@ -603,6 +603,10 @@ footer {
     }
 }
 
+.zoom-in {
+    animation: zoomIn 0.3s ease-out forwards;
+}
+
 /* Mobile Animation Fixes */
 /* Mobile Animation Fixes - Optimized */
 @media (max-width: 768px) {

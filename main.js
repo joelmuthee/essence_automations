@@ -104,7 +104,7 @@ function openServicesPopup() {
     // const i = p.querySelector('iframe');
     // i.src = i.src; // Reload iframe to reset form - REMOVED to prevent blinking
     p.classList.remove('hidden');
-    p.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // p.scrollIntoView({ behavior: 'smooth', block: 'start' }); // REMOVED: Auto-scroll causes disorientation
 }
 
 hamburger.addEventListener('click', () => {
