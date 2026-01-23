@@ -196,8 +196,8 @@ window.showServicesPopup = function (serviceName) {
 
     if (container.dataset.opened === 'true') {
         // Subsequent Opens
-        if (!isServiceMatch) {
-            // Only reset if the service is DIFFERENT (e.g. switching from "Websites" to "SEO")
+        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9')) {
+            // Only overwrite if it's NOT one of our customized manual forms
             console.log('Switching service, reloading...');
             container.innerHTML = getServicesPopupHTML(targetService);
 
@@ -209,17 +209,25 @@ window.showServicesPopup = function (serviceName) {
                 oldScript.parentNode.replaceChild(newScript, oldScript);
             }
         } else {
-            console.log('Service match, showing existing frame (No Blink)');
-            // Do nothing (iframe stays as is)
+            console.log('Service match or Custom Form detected, showing existing frame');
         }
     } else {
         // First Open
-        if (!isServiceMatch && iframe) {
-            console.log('First open, setting correct service...');
+        // CRITICAL FIX: Do NOT overwrite src if it is a manual custom form (checked by ID)
+        const isCustomForm = iframe && (
+            iframe.id.includes('1fDfreN5oMYY5wp3VN8j') || // Websites
+            iframe.id.includes('ntPz2EvEej9hA4iFW83Q') || // Ads
+            iframe.id.includes('z4nalKLbhSGK9yUOnMoh') || // GBP
+            iframe.id.includes('05EkqHahM76Tfa4ttGZc') || // Chat
+            iframe.id.includes('AP1GiOfA6x5vbBsgrFF9')    // Reviews
+        );
+
+        if (!isCustomForm && !isServiceMatch && iframe) {
+            console.log('First open, setting correct service (Generic)...');
             const newSrc = `https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=${encodeURIComponent(targetService)}&t=${new Date().getTime()}`;
             iframe.src = newSrc;
         } else {
-            console.log('First open, service already matches pre-load (No Blink)');
+            console.log('First open, preserving Custom Form or matched service');
         }
         container.dataset.opened = 'true';
     }
@@ -227,6 +235,17 @@ window.showServicesPopup = function (serviceName) {
     container.classList.remove('hidden');
     container.style.display = 'block'; // Ensure visibility
     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Click Background to Close Logic
+    const closeOnBackgroundClick = (e) => {
+        if (e.target === container) {
+            container.classList.add('hidden');
+            container.style.display = 'none';
+            // Remove listener to prevent memory leaks
+            container.removeEventListener('click', closeOnBackgroundClick);
+        }
+    };
+    container.addEventListener('click', closeOnBackgroundClick);
 };
 
 stars.forEach(star => {
