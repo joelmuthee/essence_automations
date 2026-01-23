@@ -76,7 +76,7 @@
                         style="font-weight: 800; text-decoration: underline; cursor: pointer;">Google Business
                         Profile</a>
                     rankings on autopilot.</p>
-                <div class="hero-buttons fade-in-up delay-2">
+                <div class="hero-buttons" style="margin-top: 3rem;">
                     <button onclick="showServicesPopup('GBP Booster')" class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
                         Interested</button>
@@ -142,21 +142,7 @@
                 </div>
             </div>
 
-            <!-- Services Needed Form (Pop-up/Inline) -->
-            <div id="services-needed-popup" class="conditional-content hidden">
-                <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
-                    style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: absolute; top: 10px; right: 10px; opacity: 1;">&times;</button>
-                <iframe src="https://link.essenceautomations.com/widget/form/z4nalKLbhSGK9yUOnMoh"
-                    style="display:none;width:100%;height:100%;border:none;border-radius:4px"
-                    id="popup-z4nalKLbhSGK9yUOnMoh" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
-                    data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="GBP Booster Website Form" data-height="614"
-                    data-layout-iframe-id="popup-z4nalKLbhSGK9yUOnMoh" data-form-id="z4nalKLbhSGK9yUOnMoh"
-                    title="GBP Booster Website Form">
-                </iframe>
 
-            </div>
         </section>
 
         <section id="reviews" class="reviews">
@@ -342,6 +328,19 @@
     <script src="https://link.essenceautomations.com/js/external-tracking.js"
         data-tracking-id="tk_ed2385e52c284be3a90945e733a4e35f" data-debug="true">
         </script>
+    <!-- Services Needed Form (Pop-up/Inline) - MOVED TO BODY ROOT -->
+    <div id="services-needed-popup" class="conditional-content hidden zoom-in">
+        <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
+            style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: fixed; top: 20px; right: 20px; opacity: 1; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">&times;</button>
+        <iframe src="https://link.essenceautomations.com/widget/form/z4nalKLbhSGK9yUOnMoh"
+            style="display:none;width:100%;height:100%;border:none;border-radius:4px" id="popup-z4nalKLbhSGK9yUOnMoh"
+            data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+            data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
+            data-deactivation-value="" data-form-name="GBP Booster Website Form" data-height="614"
+            data-layout-iframe-id="popup-z4nalKLbhSGK9yUOnMoh" data-form-id="z4nalKLbhSGK9yUOnMoh"
+            title="GBP Booster Website Form">
+        </iframe>
+    </div>
 </body>
 
 </html>

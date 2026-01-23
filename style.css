@@ -2066,6 +2066,30 @@ footer {
     /* Full viewport height */
 }
 
+/* Mobile CTA Button Animation - Classy Pulse */
+@media (max-width: 768px) {
+    .btn-primary {
+        animation: cta-classy-pulse 3s infinite ease-in-out;
+    }
+}
+
+@keyframes cta-classy-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    }
+
+    50% {
+        transform: scale(1.03);
+        box-shadow: 0 8px 25px rgba(255, 107, 0, 0.5);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    }
+}
+
 @media (max-width: 768px) {
     #services-needed-popup iframe {
         width: 100% !important;

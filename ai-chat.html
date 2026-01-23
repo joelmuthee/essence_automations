@@ -72,7 +72,7 @@
                 <h1 class="fade-in-up">24/7 Intelligent <span class="gradient-text">Support</span></h1>
                 <p class="fade-in-up delay-1">Never miss a lead, even while you sleep.<br><span
                         style="font-size: 0.8em; opacity: 0.8;">Powered by GoHighLevel</span></p>
-                <div class="hero-buttons fade-in-up delay-2">
+                <div class="hero-buttons" style="margin-top: 3rem;">
                     <button onclick="showServicesPopup('AI Support Chat')" class="btn-primary"
                         style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
                         Interested</button>
@@ -164,21 +164,7 @@
                 </div>
             </div>
 
-            <!-- Services Needed Form (Pop-up/Inline) -->
-            <div id="services-needed-popup" class="conditional-content hidden">
-                <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
-                    style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: absolute; top: 10px; right: 10px; opacity: 1;">&times;</button>
-                <iframe src="https://link.essenceautomations.com/widget/form/05EkqHahM76Tfa4ttGZc"
-                    style="display:none;width:100%;height:100%;border:none;border-radius:4px"
-                    id="popup-05EkqHahM76Tfa4ttGZc" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
-                    data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="AI Chat Website Form" data-height="614"
-                    data-layout-iframe-id="popup-05EkqHahM76Tfa4ttGZc" data-form-id="05EkqHahM76Tfa4ttGZc"
-                    title="AI Chat Website Form">
-                </iframe>
 
-            </div>
         </section>
 
         <section id="reviews" class="reviews">
@@ -364,6 +350,19 @@
     <script src="https://link.essenceautomations.com/js/external-tracking.js"
         data-tracking-id="tk_ed2385e52c284be3a90945e733a4e35f" data-debug="true">
         </script>
+    <!-- Services Needed Form (Pop-up/Inline) - MOVED TO BODY ROOT -->
+    <div id="services-needed-popup" class="conditional-content hidden zoom-in">
+        <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
+            style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: fixed; top: 20px; right: 20px; opacity: 1; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">&times;</button>
+        <iframe src="https://link.essenceautomations.com/widget/form/05EkqHahM76Tfa4ttGZc"
+            style="display:none;width:100%;height:100%;border:none;border-radius:4px" id="popup-05EkqHahM76Tfa4ttGZc"
+            data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+            data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
+            data-deactivation-value="" data-form-name="AI Chat Website Form" data-height="614"
+            data-layout-iframe-id="popup-05EkqHahM76Tfa4ttGZc" data-form-id="05EkqHahM76Tfa4ttGZc"
+            title="AI Chat Website Form">
+        </iframe>
+    </div>
 </body>
 
 </html>
