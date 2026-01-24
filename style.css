@@ -1931,10 +1931,14 @@ footer {
 }
 
 /* Discount Text Responsive Sizing */
+#review-cta p {
+    margin-bottom: 0.2rem;
+}
+
 .discount-text {
     color: var(--primary-color);
     font-weight: bold;
-    margin-top: 0.2rem;
+    margin-top: 0;
     font-size: 0.9rem;
     /* Mobile size */
 }
