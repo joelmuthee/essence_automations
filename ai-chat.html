@@ -66,6 +66,25 @@
         </nav>
     </header>
 
+
+    <style>
+        .mobile-headline {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-headline {
+                display: block !important;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .desktop-headline {
+                display: none !important;
+            }
+        }
+    </style>
     <main>
         <section class="hero" style="justify-content: center; text-align: center;">
             <div class="hero-content">
@@ -154,21 +173,26 @@
         <section class="case-study" style="padding: 5rem 5%; position: relative;">
             <div class="glass-effect"
                 style="padding: 3rem; border-radius: 20px; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; margin-bottom: 5rem;">
+
+                <h2 class="gradient-text mobile-headline" style="font-size: 2.5rem;">See It In Action</h2>
+
                 <div class="case-study-image" style="flex: 1 1 400px;">
                     <img src="st_christophers_logo.jpg" alt="St. Christopher's Schools"
                         style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
                 </div>
                 <div class="case-study-content" style="flex: 1 1 400px;">
-                    <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1.5rem;">See It In Action</h2>
+                    <h2 class="gradient-text desktop-headline" style="font-size: 2.5rem; margin-bottom: 1.5rem;">See It
+                        In Action</h2>
                     <h3 style="margin-bottom: 1rem;">St. Christopher's Schools</h3>
                     <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">For example, we integrated an
                         <strong>AI Chat, School Visit Calendar, and Careers Form</strong> into
                         <strong>St. Christopher's International School's</strong> existing website. The result?
-                        <strong>More enrollments</strong>, instant responses 24/7, and a transparent <strong>visual pipeline</strong> for admissions.
+                        <strong>More enrollments</strong>, instant responses 24/7, and a transparent <strong>visual
+                            pipeline</strong> for admissions.
                     </p>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="https://scsinternational.sc.ke/" target="_blank" class="btn-primary"
-                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">Visit Website &rarr;</a>
+                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">Visit SCIS Website &rarr;</a>
                     </div>
                 </div>
             </div>
