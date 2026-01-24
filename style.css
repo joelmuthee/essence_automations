@@ -281,6 +281,22 @@ a.logo {
     .hero-visual {
         display: none;
     }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons button,
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 /* Review Widget Fix */
