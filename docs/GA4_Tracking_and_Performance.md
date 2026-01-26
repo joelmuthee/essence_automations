@@ -22,7 +22,7 @@ For specific tracking control (e.g., distinguishing between two "Learn More" but
 
 **Example from `index.html` (Hero Section):**
 ```html
-<a href="#contact" 
+<a href="#contact" d
    class="btn-primary" 
    data-ga-category="Hero Section" 
    data-ga-label="Book Demo CTA">
