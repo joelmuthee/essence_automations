@@ -2180,4 +2180,21 @@ footer {
     .case-study {
         padding: 3rem 5% !important;
     }
+
+    /* Mobile Visibility Utilities */
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-only {
+        display: block !important;
+        margin-top: 2rem;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
 }
