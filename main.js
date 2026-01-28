@@ -443,3 +443,28 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+// Read More Toggle Function
+function toggleReadMore(contentId, linkElement) {
+    const content = document.getElementById(contentId);
+    if (!content) return;
+
+    if (content.classList.contains('hidden')) {
+        content.classList.remove('hidden');
+        content.style.display = 'block'; // Ensure visibility if overridden
+        // Add fade-in animation
+        content.style.opacity = '0';
+        content.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => content.style.opacity = '1', 10);
+
+        linkElement.innerText = "Read Less";
+    } else {
+        content.style.opacity = '0';
+        setTimeout(() => {
+            content.classList.add('hidden');
+            content.style.display = 'none';
+        }, 300); // Wait for fade out
+
+        linkElement.innerText = "Read More...";
+    }
+}

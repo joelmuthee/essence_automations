@@ -198,9 +198,15 @@
 
                 <h2 class="gradient-text mobile-headline" style="font-size: 2.5rem;">See AI In Action</h2>
 
-                <div class="case-study-image" style="flex: 1 1 400px;">
+                <div class="case-study-image"
+                    style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: center;">
                     <img src="st_christophers_logo.jpg" alt="St. Christopher's Schools"
                         style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div
+                        style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem;">
+                        <a href="https://scsinternational.sc.ke/" target="_blank" class="btn-primary"
+                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">Visit SCIS Website &rarr;</a>
+                    </div>
                 </div>
                 <div class="case-study-content" style="flex: 1 1 400px;">
                     <h2 class="gradient-text desktop-headline" style="font-size: 2.5rem; margin-bottom: 1.5rem;">See AI
@@ -220,14 +226,23 @@
                         the child's
                         current year/grade, and track every
                         lead.</p>
-                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">A clear <strong>visual
-                            pipeline</strong> monitors appointments: <strong>honoured</strong>, <strong>missed</strong>,
-                        and <strong>enrolled</strong>. This sophisticated automation removes friction and
-                        directly results in <strong>higher enrollment numbers</strong>.</p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://scsinternational.sc.ke/" target="_blank" class="btn-primary"
-                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">Visit SCIS Website &rarr;</a>
+                    <p class="read-more-link" onclick="toggleReadMore('more-content-chat', this)">Read More...</p>
+                    <div id="more-content-chat" class="hidden">
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">A clear <strong>visual
+                                pipeline</strong> monitors appointments: <strong>honoured</strong>,
+                            <strong>missed</strong>,
+                            and <strong>enrolled</strong>. This sophisticated automation removes friction and
+                            directly results in <strong>higher enrollment numbers</strong>.</p>
+                        <p
+                            style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; border-left: 3px solid #ff6b00; padding-left: 1rem;">
+                            <strong>Fully Customizable:</strong> While this highlights our work for the education
+                            sector,
+                            our engines are designed to adapt to <em>any</em> business model. We tailor every detail to
+                            fit
+                            your specific workflow. Reach out today to discuss your vision.
+                        </p>
                     </div>
+
                 </div>
             </div>
 

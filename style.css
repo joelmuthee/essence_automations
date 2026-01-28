@@ -2142,3 +2142,23 @@ footer {
     height: 100vh !important;
     /* Full viewport height */
 }
+
+/* Utility Class for Hidden Content */
+.hidden {
+    display: none !important;
+}
+
+/* Read More Link Styling */
+.read-more-link {
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: all 0.3s;
+}
+
+.read-more-link:hover {
+    text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+    text-decoration: underline;
+}

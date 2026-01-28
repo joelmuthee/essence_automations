@@ -181,9 +181,15 @@
 
                 <h2 class="gradient-text mobile-headline" style="font-size: 2.5rem;">See It In Action</h2>
 
-                <div class="case-study-image" style="flex: 1 1 400px;">
+                <div class="case-study-image"
+                    style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: center;">
                     <img src="st_christophers_logo.jpg" alt="St. Christopher's Schools"
                         style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div
+                        style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem;">
+                        <a href="https://scsinternational.sc.ke/appointments/" target="_blank" class="btn-primary"
+                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">See AI In Action &rarr;</a>
+                    </div>
                 </div>
                 <div class="case-study-content" style="flex: 1 1 400px;">
                     <h2 class="gradient-text desktop-headline" style="font-size: 2.5rem; margin-bottom: 1.5rem;">See It
@@ -204,17 +210,25 @@
                         intelligently <strong>assign school visit appointments to the relevant staff member</strong>
                         based on the
                         child's year/grade, ensuring the right conversation happens every time.</p>
-
-                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Meanwhile, a smart
-                        <strong>visual pipeline</strong> tracks every
-                        appointment: <strong>honoured</strong>,
-                        <strong>missed</strong>, or <strong>enrolled</strong>. The result is a frictionless, high-end
-                        journey that directly converts interest into <strong>more enrollments</strong>.
-                    </p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://scsinternational.sc.ke/appointments/" target="_blank" class="btn-primary"
-                            style="padding: 1rem 2.5rem; font-size: 1.1rem;">See AI In Action &rarr;</a>
+                    <p class="read-more-link" onclick="toggleReadMore('more-content-calendar', this)">Read More...</p>
+                    <div id="more-content-calendar" class="hidden">
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Meanwhile, a smart
+                            <strong>visual pipeline</strong> tracks every
+                            appointment: <strong>honoured</strong>,
+                            <strong>missed</strong>, or <strong>enrolled</strong>. The result is a frictionless,
+                            high-end
+                            journey that directly converts interest into <strong>more enrollments</strong>.
+                        </p>
+                        <p
+                            style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; border-left: 3px solid #ff6b00; padding-left: 1rem;">
+                            <strong>Fully Customizable:</strong> While this highlights our work for the education
+                            sector,
+                            our engines are designed to adapt to <em>any</em> business model. We tailor every detail to
+                            fit
+                            your specific workflow. Reach out today to discuss your vision.
+                        </p>
                     </div>
+
                 </div>
             </div>
         </section>
