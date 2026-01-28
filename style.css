@@ -2162,3 +2162,22 @@ footer {
     text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
     text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+    .glass-effect {
+        padding: 1.5rem !important;
+        /* Reduce padding on mobile to fix 'squeezed' text */
+    }
+
+    .case-study .glass-effect>div {
+        flex: 1 1 100% !important;
+        /* Ensure full width on mobile */
+        min-width: 0 !important;
+        /* Prevent overflow */
+    }
+
+    /* Ensure case-study section padding is also manageable if inline styles persist */
+    .case-study {
+        padding: 3rem 5% !important;
+    }
+}
