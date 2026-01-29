@@ -1036,6 +1036,8 @@ footer {
     flex-direction: row-reverse;
     gap: 15px;
     margin-bottom: 0.5rem;
+    scroll-margin-top: 250px;
+    /* Ensure visible below fixed header on scroll */
 }
 
 .star-rating input {

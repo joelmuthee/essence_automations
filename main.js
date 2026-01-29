@@ -86,7 +86,7 @@ if (window.innerWidth <= 768) {
 
     // Elements to animate on scroll
     // Select specific elements that have hover effects we want to trigger
-    const mobileInteractiveElements = document.querySelectorAll('.card, .btn-primary, .btn-secondary, .link-styled, .footer-column a, .contact-info a');
+    const mobileInteractiveElements = document.querySelectorAll('.card, .btn-primary, .btn-secondary, .link-styled, .footer-column a, .contact-info a, .glow-effect-img');
 
     mobileInteractiveElements.forEach(el => {
         mobileActiveObserver.observe(el);
@@ -295,7 +295,7 @@ stars.forEach(star => {
             // This will position the stars at the top (under header), hiding the title above it
             const starContainer = e.target.closest('.star-rating');
             if (starContainer) {
-                starContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                starContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
 
         }, 50);
