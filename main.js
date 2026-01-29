@@ -86,7 +86,7 @@ if (window.innerWidth <= 768) {
 
     // Elements to animate on scroll
     // Select specific elements that have hover effects we want to trigger
-    const mobileInteractiveElements = document.querySelectorAll('.card, .btn-primary, .btn-secondary, .link-styled, .footer-column a, .contact-info a, .glow-effect-img');
+    const mobileInteractiveElements = document.querySelectorAll('.card, .btn-primary, .btn-secondary, .link-styled, .footer-column a, .contact-info a, .glow-effect-img, .image-wrapper');
 
     mobileInteractiveElements.forEach(el => {
         mobileActiveObserver.observe(el);
