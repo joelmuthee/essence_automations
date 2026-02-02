@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BC3LFX851"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-7BC3LFX851');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Automation for Schools | Essence Automations</title>
+    <meta name="description"
+        content="Automate admissions, streamline recruitment, and provide 24/7 AI support for parents.">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AI & Automation for Schools | Essence Automations">
+    <meta property="og:description"
+        content="Automate admissions, streamline recruitment, and provide 24/7 AI support for parents.">
+    <meta property="og:image" content="https://essenceautomations.com/social-share.png">
+    <meta property="og:url" content="https://essenceautomations.com/schools-solution.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css?v=67">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="cursor-glow"></div>
+
+    <header>
+        <nav class="navbar">
+            <a href="https://essenceautomations.com" class="logo"><img src="logo-header.png" alt="Essence Automations"
+                    style="height: 120px;"></a>
+            <ul class="nav-links">
+                <li><a href="https://essenceautomations.com">Main Site</a></li>
+                <!-- Simplified Nav for Landing Page -->
+                <li><a href="#st-christophers">Case Study</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="rate-us.html">Rate Us</a></li>
+
+                <li><button onclick="showServicesPopup('School Growth System')" class="btn-primary"
+                        style="cursor: pointer; border: none; font-family: inherit; font-size: inherit;">Schedule a
+                        Meeting</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <style>
+        .mobile-headline {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-headline {
+                display: block !important;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+
+            .desktop-headline {
+                display: none !important;
+            }
+
+            .case-study .btn-primary {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+                white-space: nowrap !important;
+                width: auto !important;
+                display: inline-block !important;
+                max-width: 90vw !important;
+            }
+
+            .case-study-content {
+                text-align: center !important;
+            }
+
+            .case-study-content div[style*="display: flex"] {
+                justify-content: center !important;
+            }
+        }
+    </style>
+    <main>
+        <section class="hero" style="justify-content: center; text-align: center;">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Automate Your <span class="gradient-text">School's Growth</span></h1>
+                <p class="fade-in-up delay-1">24/7 AI Admissions Support, Automated School Visits,<br>and Streamlined
+                    Staff Recruitment.</p>
+                <div class="hero-buttons" style="margin-top: 3rem; display: flex; gap: 1rem; justify-content: center;">
+                    <button onclick="showServicesPopup('School Growth System')" class="btn-primary"
+                        data-ga-category="Schools Hero" data-ga-label="I'm Interested (Top)"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
+                        Interested</button>
+                    <a href="#st-christophers" class="btn-primary"
+                        style="padding: 12px 24px; text-decoration: none; border-radius: 50px; border: 1px solid #ff6b00; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); color: white; transition: all 0.3s ease;">See
+                        Case
+                        Study</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="grid-container">
+                <div class="stat-card glass-effect fade-in-up">
+                    <h3 class="gradient-text">&lt; 3 sec</h3>
+                    <p>Response Time</p>
+                </div>
+                <div class="stat-card glass-effect fade-in-up" style="animation-delay: 0.1s;">
+                    <h3 class="gradient-text">24/7</h3>
+                    <p>Admissions Open</p>
+                </div>
+                <div class="stat-card glass-effect fade-in-up" style="animation-delay: 0.2s;">
+                    <h3 class="gradient-text">-80%</h3>
+                    <p>Admin Workload</p>
+                </div>
+                <div class="stat-card glass-effect fade-in-up" style="animation-delay: 0.3s;">
+                    <h3 class="gradient-text">3x</h3>
+                    <p>Enrollment Rate</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="center-text" style="text-align: center; margin-top: 5rem;">
+            <h2 class="fade-in-up">Complete School Management</h2>
+            <div class="grid-container three-column-grid" style="justify-content: center; margin-top: 2rem;">
+                <!-- AI Chat Features -->
+                <div class="card glass-effect">
+                    <div class="icon">&#129302;</div>
+                    <h3>AI Admissions Officer</h3>
+                    <p>Instantly answers parents' FAQs about fees, curriculum, and transport, 24/7.</p>
+                </div>
+
+                <!-- Calendar Features -->
+                <div class="card glass-effect">
+                    <div class="icon">&#128197;</div>
+                    <h3>Automated Visits</h3>
+                    <p>Parents book school tours online. Appointments are auto-assigned to the right staff member.</p>
+                </div>
+
+                <div class="card glass-effect">
+                    <div class="icon">&#128276;</div>
+                    <h3>Smart Reminders</h3>
+                    <p>Automated Email/WhatsApp reminders ensure parents show up for visits and staff show up for
+                        interviews.</p>
+                </div>
+
+                <div class="card glass-effect">
+                    <div class="icon">&#128202;</div>
+                    <h3>Enrollment Pipeline</h3>
+                    <p>Visualise every prospective student's journey from "Inquiry" to "Enrolled".</p>
+                </div>
+
+                <!-- Recruitment Features -->
+                <div class="card glass-effect">
+                    <div class="icon">&#128100;</div>
+                    <h3>Teacher Recruitment</h3>
+                    <p>Streamline hiring with automated application forms, screening, and interview scheduling.</p>
+                </div>
+
+                <div class="card glass-effect">
+                    <div class="icon">&#128172;</div>
+                    <h3>Omnichannel Comms</h3>
+                    <p>Manage emails and WhatsApp for all parents and applicants from one unified inbox.</p>
+                </div>
+            </div>
+        </div>
+
+        <section id="st-christophers" class="case-study" style="padding: 5rem 5%; position: relative;">
+            <div class="glass-effect"
+                style="padding: 3rem; border-radius: 20px; max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 3rem; margin-bottom: 5rem;">
+
+                <h2 class="gradient-text mobile-headline" style="font-size: 2.5rem;">See It In Action</h2>
+
+                <div class="case-study-image"
+                    style="flex: 1 1 400px; display: flex; flex-direction: column; align-items: center;">
+                    <img src="st_christophers_logo.jpg" alt="St. Christopher's Schools"
+                        style="width: 100%; max-width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                    <div class="desktop-only"
+                        style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1.5rem;">
+                        <a href="https://scsinternational.sc.ke/appointments/" target="_blank" class="link-styled"
+                            style="font-size: 1.1rem;">Visit SCIS Website &rarr;</a>
+                    </div>
+                </div>
+                <div class="case-study-content" style="flex: 1 1 400px;">
+                    <h2 class="gradient-text desktop-headline" style="font-size: 2.5rem; margin-bottom: 1.5rem;">See It
+                        In Action</h2>
+                    <h3 style="margin-bottom: 1rem;">St. Christopher's Schools</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">By seamlessly integrating an
+                        <strong>AI Admissions Chat</strong> and <strong>School Visit Calendar</strong> into <strong>St.
+                            Christopher's International
+                            School's</strong> website, we delivered a polished, <strong>premium experience</strong> that
+                        parents love. The AI provides <strong>instant 24/7 responses</strong> to inquiries about fees
+                        and curriculum.
+                    </p>
+
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Simultaneously, the
+                        <strong>automated booking system</strong> allows parents to schedule school tours online.
+                        Crucially, the system intelligently <strong>assigns the appointment to the correct staff
+                            member</strong> based on the child's year group, ensuring the right expert is available.
+                    </p>
+
+                    <div class="read-more-link" onclick="toggleReadMore('more-content-school', this)">Read More...</div>
+                    <div id="more-content-school" class="hidden">
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.6;">Appointment reminders are
+                            sent automatically via Email to prevent no-shows. A clear <strong>visual
+                                pipeline</strong> monitors every prospective student, with <strong>automated
+                                follow-ups</strong> nurturing them towards enrollment. This sophisticated automation
+                            removes friction and directly results in higher enrollments.</p>
+
+                        <p
+                            style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6; border-left: 3px solid #ff6b00; padding-left: 1rem;">
+                            <strong>Fully Customizable:</strong> Our Education Solution adapts to your school's unique
+                            workflow. Whether you need to manage open days, streamline teacher recruitment, or automate
+                            fee reminders via WhatsApp, we tailor every detail to help you <strong>grow faster</strong>.
+                        </p>
+                        <div class="mobile-only" style="margin-bottom: 1.5rem;">
+                            <a href="https://scsinternational.sc.ke/appointments/" target="_blank" class="link-styled"
+                                style="font-size: 1.1rem;">Visit SCIS Website &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2 class="fade-in-up">Ready to Transform Your School?</h2>
+                <p>Increase enrollments, save admin time, and impress every parent.</p>
+                <div style="margin-top: 2rem;">
+                    <button onclick="showServicesPopup('School Growth System')" class="btn-primary"
+                        data-ga-category="Schools Bottom" data-ga-label="I'm Interested (Bottom)"
+                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
+                        Interested</button>
+                </div>
+            </div>
+
+
+        </section>
+
+        <section id="reviews" class="reviews">
+            <div class="section-header">
+                <h2 class="fade-in-up">What Our Clients Say</h2>
+            </div>
+            <div class="review-grid">
+                <script type='text/javascript'
+                    src='https://reputationhub.site/reputation/assets/review-widget.js'></script><iframe
+                    class='lc_reviews_widget'
+                    src='https://reputationhub.site/reputation/widgets/review_widget/UGyMPqkOwlJiQduljqMm'
+                    frameborder='0' scrolling='no' style='min-width: 100%; width: 100%;'></iframe>
+            </div>
+        </section>
+
+
+        <section id="feedback-cta" class="glass-effect" style="text-align: center; padding: 4rem 2rem; margin: 4rem 0;">
+            <h2 class="gradient-text fade-in-up" style="font-size: 2.5rem; margin-bottom: 1rem;">How Was Your
+                Experience?</h2>
+            <p class="fade-in-up delay-1"
+                style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8);">
+                Whether you've partnered with us or are just exploring our site, your feedback helps us grow. Please
+                take a moment to rate your visit.
+            </p>
+            <a href="rate-us.html" class="btn-primary fade-in-up delay-2"
+                style="padding: 1rem 3rem; font-weight: 600; letter-spacing: 1px; text-decoration: none; display: inline-block;">RATE
+                YOUR EXPERIENCE</a>
+        </section>
+
+        <section class="trusted-by">
+            <h2 class="trusted-title fade-in-up">Trusted By Our Satisfied Clients</h2>
+            <div class="slider">
+                <div class="slide-track">
+                    <!-- Original Set -->
+                    <div class="slide"><img src="client_1.png" alt="Trusted Client 1"></div>
+                    <div class="slide"><img src="client_2.jpg" alt="Trusted Client 2"></div>
+                    <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
+                    <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
+                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_7.png" alt="Trusted Client 7"></div>
+                    <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
+
+                    <!-- Duplicate Set for Seamless Loop -->
+                    <div class="slide"><img src="client_1.png" alt="Trusted Client 1"></div>
+                    <div class="slide"><img src="client_2.jpg" alt="Trusted Client 2"></div>
+                    <div class="slide"><img src="client_3.jpg" alt="Trusted Client 3"></div>
+                    <div class="slide"><img src="client_4.jpg" alt="Trusted Client 4"></div>
+                    <div class="slide"><img src="client_5.png" alt="Trusted Client 5" class="trusted-logo-large"></div>
+                    <div class="slide"><img src="client_7.png" alt="Trusted Client 7"></div>
+                    <div class="slide"><img src="client_6.jpg" alt="Trusted Client 6" class="trusted-logo-large"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-divider"></div>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <a href="https://essenceautomations.com"><img src="logo-footer.png" alt="Essence Automations"
+                                class="footer-logo"></a>
+                    </div>
+                    <div class="contact-info">
+                        <a href="tel:+254720615606">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                            </svg>
+                            +254 720 615 606
+                        </a>
+                        <a href="mailto:chat@essenceautomations.com">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                            </svg>
+                            chat@essenceautomations.com
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-grid">
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="faq.html">FAQs</a>
+                        <a href="rate-us.html">Rate Us</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Other Services</h4>
+                        <!-- Simplified Footer for Schools Landing Page -->
+                        <a href="websites.html">Websites</a>
+                        <a href="ai-chat.html">AI Chat</a>
+                        <a href="whatsapp-marketing.html">WhatsApp Marketing</a>
+                        <a href="documents.html">Document Management</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> Essence Automations. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="main.js?v=63"></script>
+    <script src="https://beta.leadconnectorhq.com/loader.js"
+        data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="6698bac0b120682ac60d5a7f">
+        </script>
+    <script src="https://link.essenceautomations.com/js/external-tracking.js"
+        data-tracking-id="tk_ed2385e52c284be3a90945e733a4e35f" data-debug="true">
+        </script>
+    <!-- Services Needed Form (Pop-up/Inline) - MOVED TO BODY ROOT -->
+    <div id="services-needed-popup" class="conditional-content hidden zoom-in">
+        <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
+            style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: fixed; top: 20px; right: 20px; opacity: 1; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">&times;</button>
+        <iframe src="https://link.essenceautomations.com/widget/form/gdiKGB1iMuF2PVoxVkVi"
+            style="display:none;width:100%;height:100%;border:none;border-radius:0" id="popup-gdiKGB1iMuF2PVoxVkVi"
+            data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow" data-trigger-value=""
+            data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
+            data-deactivation-value="" data-form-name="Schools AI Chat Landing Page Form" data-height="699"
+            data-layout-iframe-id="popup-gdiKGB1iMuF2PVoxVkVi" data-form-id="gdiKGB1iMuF2PVoxVkVi"
+            title="Schools AI Chat Landing Page Form">
+        </iframe>
+        <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+    </div>
+</body>
+
+</html>

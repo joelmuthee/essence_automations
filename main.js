@@ -196,7 +196,7 @@ window.showServicesPopup = function (serviceName) {
 
     if (container.dataset.opened === 'true') {
         // Subsequent Opens
-        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8') && !iframe.id.includes('popup-qE7JEAuhYOJqcmXTTvhv') && !iframe.id.includes('popup-gQP0iBekFMuwQCi7M2sI') && !iframe.id.includes('popup-zqMk0zUNQWj0Wc8Ym4K5')) {
+        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8') && !iframe.id.includes('popup-qE7JEAuhYOJqcmXTTvhv') && !iframe.id.includes('popup-gQP0iBekFMuwQCi7M2sI') && !iframe.id.includes('popup-zqMk0zUNQWj0Wc8Ym4K5') && !iframe.id.includes('popup-gdiKGB1iMuF2PVoxVkVi')) {
             // Only overwrite if it's NOT one of our customized manual forms
             console.log('Switching service, reloading...');
             container.innerHTML = getServicesPopupHTML(targetService);
@@ -223,7 +223,8 @@ window.showServicesPopup = function (serviceName) {
             iframe.id.includes('EOcnKMN2iPUJX53QjWf8') || // CRM
             iframe.id.includes('qE7JEAuhYOJqcmXTTvhv') || // WhatsApp
             iframe.id.includes('gQP0iBekFMuwQCi7M2sI') || // Email Marketing
-            iframe.id.includes('zqMk0zUNQWj0Wc8Ym4K5')    // Online Calendar
+            iframe.id.includes('zqMk0zUNQWj0Wc8Ym4K5') || // Online Calendar
+            iframe.id.includes('gdiKGB1iMuF2PVoxVkVi')    // Schools Solution
         );
 
         if (!isCustomForm && !isServiceMatch && iframe) {
@@ -468,3 +469,25 @@ function toggleReadMore(contentId, linkElement) {
         linkElement.innerText = "Read More...";
     }
 }
+
+// GHL Form Submission Tracking (Iframe Message Listener)
+window.addEventListener('message', function (event) {
+    // Basic security check: ensure it's from a trusted domain if possible, or just check payload structure
+    // GHL/LeadConnector often sends object data
+    const data = event.data;
+
+    // Check for common GHL form submission signals
+    // Adjust condition based on exact signal if known, but this catches standard GHL/LC forms
+    if (data && (data.type === 'form-submit' || data.action === 'form_submitted' || data.id === 'form-submit')) {
+        // console.log('Tracked GHL Form Submission:', data);
+
+        // Send to Google Analytics
+        if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+                'event_category': 'Form',
+                'event_label': 'Lead Form Submission',
+                'value': 1
+            });
+        }
+    }
+});
