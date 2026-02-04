@@ -2264,7 +2264,9 @@ footer {
     .mobile-only {
         display: none !important;
     }
-}/* Case Study Stats Grid */
+}
+
+/* Case Study Stats Grid */
 .case-study-stats-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -2309,10 +2311,17 @@ footer {
     line-height: 1.3;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .case-study-stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .cs-stat-item {
+        flex: 0 1 calc(50% - 0.6rem);
+        min-width: 130px;
     }
 
     .cs-stat-number {
