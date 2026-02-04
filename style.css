@@ -2167,20 +2167,24 @@ footer {
     left: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
-    z-index: 9999 !important;
-    background: rgba(0, 0, 0, 0.8) !important;
-    /* Dimmed background */
+    z-index: 99999 !important;
+    background: rgba(0, 0, 0, 0.95);
     margin: 0 !important;
     padding: 0 !important;
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
+    overflow: hidden !important;
 }
 
 #services-needed-popup iframe {
     width: 100% !important;
-    height: 100vh !important;
-    /* Full viewport height */
+    height: 100% !important;
+    border: none;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 0 !important;
 }
 
 /* Mobile CTA Button Animation - Classy Pulse */
@@ -2207,37 +2211,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    #services-needed-popup iframe {
-        width: 100% !important;
-        height: 100% !important;
-        border-radius: 0 !important;
-    }
-
-    #services-needed-popup {
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
-}
-
-/* Service Popup - Full Width Fix */
-#services-needed-popup {
-    width: 100% !important;
-    max-width: 100% !important;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 !important;
-}
-
-#services-needed-popup iframe {
-    width: 100% !important;
-    height: 100vh !important;
-    /* Full viewport height */
-}
+/* Redundant blocks removed to ensure the single consolidated rule above takes precedence */
 
 /* Utility Class for Hidden Content */
 .hidden {
