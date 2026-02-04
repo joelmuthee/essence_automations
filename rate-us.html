@@ -24,7 +24,7 @@
     <meta property="og:image" content="https://essenceautomations.com/social-share.png">
     <meta property="og:url" content="https://essenceautomations.com/rate-us.html">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css?v=97">
+    <link rel="stylesheet" href="style.css?v=98">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
@@ -47,6 +47,24 @@
             /* Offset for fixed header */
             background: radial-gradient(circle at top right, rgba(255, 133, 32, 0.1), transparent 40%),
                 radial-gradient(circle at bottom left, rgba(255, 133, 32, 0.05), transparent 40%);
+        }
+
+        /* Force scrollability on mobile */
+        @media (max-width: 768px) {
+
+            html,
+            body {
+                height: auto !important;
+                overflow-y: auto !important;
+            }
+
+            main {
+                padding-top: 180px;
+                /* Increased Top Margin for Mobile */
+                padding-bottom: 50px;
+                display: block;
+                /* Allow flow layout */
+            }
         }
 
         .feedback-system {
