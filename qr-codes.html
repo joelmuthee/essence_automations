@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -74,9 +74,13 @@
                         style="font-size: 0.8em; opacity: 0.8;">Powered by <span
                             class="gradient-text">GoHighLevel</span></span></p>
                 <div class="hero-buttons fade-in-up delay-2">
-                    <button onclick="showServicesPopup('QR Codes')" class="btn-primary"
-                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
-                        Interested</button>
+                    <button
+                        onclick="document.getElementById('services-needed-popup').classList.remove('hidden'); document.getElementById('services-needed-popup').style.display='block';"
+                        class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; display: inline-flex; flex-direction: column; align-items: center; padding: 0.8rem 2rem;">
+                        <span style="font-size: 1.1rem; line-height: 1.2;">Create Smart QRs</span>
+                        <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Get My Free QR Trial</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -97,73 +101,256 @@
                 </div>
             </div>
         </section>
-        </section>
 
+        <!-- The Game-Changing Benefits Section (Replaces Powerful Features) -->
         <div class="center-text" style="text-align: center; margin-top: 5rem;">
-            <h2 class="fade-in-up">Powerful Features</h2>
+            <h2 class="fade-in-up">The Game-Changing Benefits</h2>
             <div class="grid-container three-column-grid">
-                <div class="card glass-effect">
-                    <div class="icon">&#11088;</div>
-                    <h3>Review Request QRs</h3>
-                    <p>Direct customers instantly to your Google Review page with a simple scan.</p>
+                <!-- Card 1 -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">📊</div>
+                    <h3 style="color: #ff6b00;">Lead Capture & Engagement</h3>
+                    <ul
+                        style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.9); text-align: left;">
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Instant Lead
+                                Gen:</strong> Prospects reach landing pages, and forms in one scan. No typing needed.
+                        </li>
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Low-Friction
+                                Entry:</strong> The easiest way for customers to engage from offline print ads.</li>
+                        <li><span style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Seamless
+                                Booking:</strong> "Scan-to-Book" frictionlessly fills your calendar.</li>
+                    </ul>
                 </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128179;</div>
-                    <h3>Payment QRs</h3>
-                    <p>Collect payments on the spot. Scan to pay via Stripe or text-to-pay link.</p>
+
+                <!-- Card 3 -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">📱</div>
+                    <h3 style="color: #ff6b00;">Customer Experience</h3>
+                    <ul
+                        style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.9); text-align: left;">
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>No App
+                                Needed:</strong> Works native with just the phone camera.</li>
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Universal:</strong>
+                            Perfect performance on both Android and iPhone.</li>
+                        <li><span style="color: #ff6b00; margin-right: 5px;">&#10003;</span>
+                            <strong>Context-Sensitive:</strong> Tailor the destination (Menu vs. Demo) based on the
+                            specific code.
+                        </li>
+                    </ul>
                 </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128203;</div>
-                    <h3>Check-in QRs</h3>
-                    <p>Streamline event or appointment check-ins. Scan to verify attendance instantly.</p>
+                <!-- Card 4 -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🧠</div>
+                    <h3 style="color: #ff6b00;">Data & Tracking</h3>
+                    <ul
+                        style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.9); text-align: left;">
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Scan
+                                Analytics:</strong> Know exactly when, where, and how often scans occur.</li>
+                        <li><span style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Offline
+                                ROI:</strong> Finally measure which physical posters or footprints drive revenue.</li>
+                    </ul>
                 </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128279;</div>
-                    <h3>Quick Links</h3>
-                    <p>Drive traffic to any landing page, social profile, or special offer.</p>
+                <!-- Card 5 -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🤝</div>
+                    <h3 style="color: #ff6b00;">Integrations & CRM</h3>
+                    <ul
+                        style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.9); text-align: left;">
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Auto-CRM
+                                Entry:</strong> Scans creating contacts with source tags automatically.</li>
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Smart
+                                Segmentation:</strong> Tag contacts by funnel source for hyper-personalization.</li>
+                        <li><span style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Instant
+                                Follow-Up:</strong> Trigger SMS or email campaigns the moment they scan.</li>
+                    </ul>
                 </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128242;</div>
-                    <h3>SMS Opt-in</h3>
-                    <p>Grow your subscriber list. Scan to start an automated text conversation.</p>
+                <!-- Card 6 -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">📈</div>
+                    <h3 style="color: #ff6b00;">Marketing Synergy</h3>
+                    <ul
+                        style="list-style: none; padding: 0; margin-top: 1rem; font-size: 0.95rem; color: rgba(255,255,255,0.9); text-align: left;">
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Hybrid
+                                Campaigns:</strong> Seamlessly connect physical print materials (posters, flyers) to
+                            your digital funnels.</li>
+                        <li style="margin-bottom: 1rem;"><span
+                                style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Event Power:</strong>
+                            Capture leads at booths instantly without paper forms.</li>
+                        <li><span style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Custom
+                                Offers:</strong> Drive exclusivity with "Scan-Only" promotions.</li>
+                    </ul>
                 </div>
-                <div class="card glass-effect">
-                    <div class="icon">&#128640;</div>
-                    <h3>GoHighLevel CRM</h3>
-                    <p>Powered by the world's #1 All-In-One Marketing Platform, giving you enterprise-grade tools at a
-                        fraction of the cost.</p>
+                <!-- Card 7 (Centered) -->
+                <div class="card glass-effect"
+                    style="text-align: center; grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🎨</div>
+                    <h3 style="color: #ff6b00;">Branding & Customization</h3>
+                    <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem;">
+                        <ul
+                            style="list-style: none; padding: 0; font-size: 0.95rem; color: rgba(255,255,255,0.9); flex: 1; min-width: 250px; text-align: left;">
+                            <li style="margin-bottom: 0.5rem;"><span
+                                    style="color: #ff6b00; margin-right: 5px;">&#10003;</span> <strong>Styled
+                                    QRs:</strong> Branded designs to increase trust and recognition.</li>
+                        </ul>
+                        <ul
+                            style="list-style: none; padding: 0; font-size: 0.95rem; color: rgba(255,255,255,0.9); flex: 1; min-width: 250px; text-align: left;">
+                            <li style="margin-bottom: 0.5rem;"><span
+                                    style="color: #ff6b00; margin-right: 5px;">&#10003;</span>
+                                <strong>Multi-Variants:</strong> Different codes for different audiences, all tracked
+                                separately.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW Use Cases Section -->
+        <div class="center-text" style="text-align: center; margin-top: 5rem;">
+            <h2 class="fade-in-up">Use Cases That Work Great</h2>
+            <div class="grid-container three-column-grid">
+                <!-- Schools -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🎓</div>
+                    <h3>Schools</h3>
+                    <p>Scan to book campus tours instantly, or give reviews.</p>
+                </div>
+                <!-- Events -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🎟️</div>
+                    <h3>Events</h3>
+                    <p>Scan to join waitlists or receive digital materials.</p>
+                </div>
+                <!-- Retail -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🛍️</div>
+                    <h3>Retail</h3>
+                    <p>Scan for exclusive discounts, loyalty signups, or give reviews.</p>
+                </div>
+                <!-- Restaurants -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🍽️</div>
+                    <h3>Restaurants</h3>
+                    <p>Scan for digital menus, instant reservations, or give reviews.</p>
+                </div>
+                <!-- Real Estate -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">🏡</div>
+                    <h3>Real Estate</h3>
+                    <p>Scan to get property brochures and contact agents.</p>
+                </div>
+                <!-- Service Businesses -->
+                <div class="card glass-effect" style="text-align: center;">
+                    <div class="icon" style="margin: 0 auto 1rem;">💼</div>
+                    <h3>Service Businesses</h3>
+                    <p>Scan to get quotes or schedule appointments.</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!-- NEW Comparison Section -->
+        <div class="center-text" style="text-align: center; margin-top: 5rem; margin-bottom: 5rem;">
+            <h2 class="fade-in-up">Why Our QR Codes Are Better</h2>
+            <p class="fade-in-up delay-1" style="max-width: 700px; margin: 0 auto 3rem; color: rgba(255,255,255,0.7);">
+                Deeply integrated into a full marketing CRM ecosystem, not just a standalone tool.
+            </p>
+
+            <div class="grid-container two-column-grid" style="align-items: start;">
+                <!-- Feature 1 -->
+                <div class="card glass-effect" style="text-align: left; padding: 2.5rem;">
+                    <h3 style="color: #ff6b00; margin-bottom: 1rem;">1. Native Integration</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Free Tools:</strong> Link to a basic URL or vCard.</p>
+                    <p><strong>Our Solution:</strong> Link directly to funnels, forms, payments, reviews, and chats.
+                        Scans trigger full workflows: Scan &rarr; Form Submit &rarr; Tag in CRM &rarr; Auto-Follow-up.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="card glass-effect" style="text-align: left; padding: 2.5rem;">
+                    <h3 style="color: #ff6b00; margin-bottom: 1rem;">2. Truly Dynamic</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Free Tools:</strong> Often static. Can't change link later.
+                    </p>
+                    <p><strong>Our Solution:</strong> Edit the destination anytime without reprinting. Includes built-in
+                        analytics for scans, unique users, and locations—all tied to your dashboard.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="card glass-effect" style="text-align: left; padding: 2.5rem;">
+                    <h3 style="color: #ff6b00; margin-bottom: 1rem;">3. Advanced Branding</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Free Tools:</strong> Limited colors, watermarks on free
+                        tiers.</p>
+                    <p><strong>Our Solution:</strong> Full customization. Upload logos, change patterns/shapes, and
+                        export in SVG/PDF for professional print use.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="card glass-effect" style="text-align: left; padding: 2.5rem;">
+                    <h3 style="color: #ff6b00; margin-bottom: 1rem;">4. Bulk & Agency-Ready</h3>
+                    <p style="margin-bottom: 1rem;"><strong>Free Tools:</strong> Make one at a time. No organization.
+                    </p>
+                    <p><strong>Our Solution:</strong> Bulk generation for campaigns. Folders for clients. Unlimited
+                        codes without monthly caps.</p>
                 </div>
             </div>
         </div>
 
         <section class="services">
-
-
-
             <div class="section-header">
                 <h2 class="fade-in-up">Interested in QR Codes?</h2>
                 <p>Bridge the physical and digital. Create your custom QR solution.</p>
                 <div style="margin-top: 2rem;">
-                    <button onclick="showServicesPopup('QR Codes')" class="btn-primary"
-                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
-                        Interested</button>
+                    <button
+                        onclick="document.getElementById('services-needed-popup').classList.remove('hidden'); document.getElementById('services-needed-popup').style.display='block';"
+                        class="btn-primary"
+                        style="border:none; cursor:pointer; font-family: inherit; display: inline-flex; flex-direction: column; align-items: center; padding: 0.8rem 2rem;">
+                        <span style="font-size: 1.1rem; line-height: 1.2;">Create Smart QRs</span>
+                        <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Get My Free QR Trial</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Services Needed Form (Pop-up/Inline) -->
-            <div id="services-needed-popup" class="conditional-content hidden">
-                <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
-                    title="Close Form">&times;</button>
-                <iframe
-                    src="https://link.essenceautomations.com/widget/form/g9F8xoEZgZjMUDIIP6hN?services_needed=QR%20Codes"
-                    style="width:100%;height:100%;border:none;border-radius:4px" id="popup-g9F8xoEZgZjMUDIIP6hN"
-                    data-layout='{ "id":"INLINE" }' data-trigger-type="alwaysShow" data-trigger-value=""
-                    data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="Services Needed Form" data-height="849"
-                    data-layout-iframe-id="popup-g9F8xoEZgZjMUDIIP6hN" data-form-id="g9F8xoEZgZjMUDIIP6hN"
-                    title="Services Needed Form">
-                </iframe>
+            <!-- Full-Screen Fixed Popup -->
+            <div id="services-needed-popup" class="conditional-content hidden zoom-in"
+                style="position: fixed !important; inset: 0 !important; width: 100vw !important; height: 100vh !important; background: rgba(0, 0, 0, 0.95) !important; z-index: 2147483647 !important; margin: 0 !important; padding: 0 !important; max-width: none !important; max-height: none !important; overflow: hidden !important; display: none;">
+
+                <!-- Flex Container for Centering -->
+                <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+
+                    <!-- Form Container (Full Screen with Scroll) -->
+                    <div
+                        style="position: relative; width: 100%; height: 100%; background: transparent; overflow-y: auto !important; -webkit-overflow-scrolling: touch;">
+
+                        <!-- Close Button (Fixed relative to viewport) -->
+                        <button class="close-form-btn"
+                            onclick="this.closest('#services-needed-popup').classList.add('hidden'); this.closest('#services-needed-popup').style.display='none';"
+                            title="Close Form"
+                            style="background: #ff6b00 !important; color: white; position: fixed; top: 20px; right: 20px; border-radius: 50%; width: 50px; height: 50px; font-size: 30px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.5); border: none; cursor: pointer; z-index: 2147483647;">&times;</button>
+
+
+                        <!-- Iframe (Corrected Style - Forced Visible & INLINE layout) -->
+                        <iframe src="https://link.essenceautomations.com/widget/form/noxMzUEZhHokpuveEv3O"
+                            style="width: 100%; height: 100%; min-height: 100vh; border: none; display: block !important;"
+                            id="popup-noxMzUEZhHokpuveEv3O" data-layout="{'id':'INLINE'}" data-trigger-type="alwaysShow"
+                            data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
+                            data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                            data-form-name="QR Codes" data-height="504"
+                            data-layout-iframe-id="popup-noxMzUEZhHokpuveEv3O" data-form-id="noxMzUEZhHokpuveEv3O"
+                            title="QR Codes" scrolling="no">
+                        </iframe>
+                    </div>
+                </div>
+
                 <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
             </div>
         </section>
@@ -182,12 +369,17 @@
         </section>
 
 
-                        <section id="feedback-cta" class="glass-effect" style="text-align: center; padding: 4rem 2rem; margin: 4rem 0;">
-            <h2 class="gradient-text fade-in-up" style="font-size: 2.5rem; margin-bottom: 1rem;">How Was Your Experience?</h2>
-            <p class="fade-in-up delay-1" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8);">
-                Whether you've partnered with us or are just exploring our site, your feedback helps us grow. Please take a moment to rate your visit.
+        <section id="feedback-cta" class="glass-effect" style="text-align: center; padding: 4rem 2rem; margin: 4rem 0;">
+            <h2 class="gradient-text fade-in-up" style="font-size: 2.5rem; margin-bottom: 1rem;">How Was Your
+                Experience?</h2>
+            <p class="fade-in-up delay-1"
+                style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem; color: rgba(255,255,255,0.8);">
+                Whether you've partnered with us or are just exploring our site, your feedback helps us grow. Please
+                take a moment to rate your visit.
             </p>
-            <a href="rate-us.html" class="btn-primary fade-in-up delay-2" style="padding: 1rem 3rem; font-weight: 600; letter-spacing: 1px; text-decoration: none; display: inline-block;">RATE YOUR EXPERIENCE</a>
+            <a href="rate-us.html" class="btn-primary fade-in-up delay-2"
+                style="padding: 1rem 3rem; font-weight: 600; letter-spacing: 1px; text-decoration: none; display: inline-block;">RATE
+                YOUR EXPERIENCE</a>
         </section>
 
         <section class="trusted-by">
@@ -287,6 +479,3 @@
 </body>
 
 </html>
-
-
-
