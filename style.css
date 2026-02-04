@@ -1491,9 +1491,11 @@ footer {
     /* Simplified mobile nav for now */
     .hero {
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start !important;
         text-align: center;
-        padding-top: 150px !important;
+        padding-top: 200px !important;
+        height: auto !important;
+        min-height: 100vh;
     }
 
     .hero-content {
