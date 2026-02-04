@@ -1690,6 +1690,24 @@ footer {
     margin-right: auto;
 }
 
+@media (max-width: 768px) {
+    .stats-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* Center the last item if it's the 3rd, 5th, etc. (odd number) */
+    .stats-grid>.stat-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: calc(50% - 0.5rem) !important;
+        max-width: 300px;
+    }
+}
+
 .stat-card {
     text-align: center;
     padding: 2rem;
@@ -2122,6 +2140,8 @@ footer {
     .stats-section .grid-container>.stat-card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
         justify-self: center;
+        margin-left: auto !important;
+        margin-right: auto !important;
         width: calc(50% - 0.5rem) !important;
         /* Match width of other single cards (50% - half gap) */
         max-width: 300px;
