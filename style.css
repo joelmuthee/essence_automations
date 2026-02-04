@@ -1526,6 +1526,12 @@ footer {
         min-height: 85vh;
     }
 
+    /* Specific override for Websites page */
+    .hero.website-hero-override {
+        padding-top: 180px !important;
+        min-height: 60vh !important;
+    }
+
     .hero-content {
         margin-bottom: 0.5rem;
     }
