@@ -214,7 +214,8 @@ window.showServicesPopup = function (serviceName) {
     } else {
         // First Open
         // CRITICAL FIX: Do NOT overwrite src if it is a manual custom form (checked by ID)
-        iframe.id.includes('1fDfreN5oMYY5wp3VN8j') || // Websites
+        const isCustomForm = iframe && (
+            iframe.id.includes('1fDfreN5oMYY5wp3VN8j') || // Websites
             iframe.id.includes('ntPz2EvEej9hA4iFW83Q') || // Ads
             iframe.id.includes('z4nalKLbhSGK9yUOnMoh') || // GBP
             iframe.id.includes('05EkqHahM76Tfa4ttGZc') || // Chat
