@@ -2208,6 +2208,7 @@ footer {
         font-size: 0.85rem !important;
         line-height: 1.3;
         margin-top: 0;
+        padding-bottom: 0 !important;
     }
 }
 
@@ -2299,7 +2300,7 @@ footer {
 
     /* Ensure case-study section padding is also manageable if inline styles persist */
     .case-study {
-        padding: 3rem 5% !important;
+        padding: 1.5rem 5% !important;
     }
 
     /* Mobile Visibility Utilities */
