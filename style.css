@@ -1541,8 +1541,9 @@ footer {
     #home.hero {
         padding-top: 140px !important;
         margin-top: 0 !important;
-        padding-bottom: 2rem !important;
-        /* Reduce bottom space */
+        padding-bottom: 0 !important;
+        /* Killed bottom space */
+        margin-bottom: 0 !important;
         min-height: auto !important;
         /* Let content dictate height */
     }
