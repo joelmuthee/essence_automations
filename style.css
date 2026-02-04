@@ -1471,8 +1471,8 @@ footer {
 }
 
 .trust-strip {
-    margin-top: 3rem;
-    /* Default desktop spacing */
+    margin-top: 1.5rem;
+    /* Reduced desktop spacing */
 }
 
 /* Reduce spacing in Trust Strip on mobile */
