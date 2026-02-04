@@ -196,7 +196,7 @@ window.showServicesPopup = function (serviceName) {
 
     if (container.dataset.opened === 'true') {
         // Subsequent Opens
-        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8') && !iframe.id.includes('popup-qE7JEAuhYOJqcmXTTvhv') && !iframe.id.includes('popup-gQP0iBekFMuwQCi7M2sI') && !iframe.id.includes('popup-zqMk0zUNQWj0Wc8Ym4K5') && !iframe.id.includes('popup-VZ4i0TQJhdoSpTITJMDu')) {
+        if (!isServiceMatch && !iframe.id.includes('popup-1fDfreN5oMYY5wp3VN8j') && !iframe.id.includes('popup-ntPz2EvEej9hA4iFW83Q') && !iframe.id.includes('popup-z4nalKLbhSGK9yUOnMoh') && !iframe.id.includes('popup-05EkqHahM76Tfa4ttGZc') && !iframe.id.includes('popup-AP1GiOfA6x5vbBsgrFF9') && !iframe.id.includes('popup-EOcnKMN2iPUJX53QjWf8') && !iframe.id.includes('popup-qE7JEAuhYOJqcmXTTvhv') && !iframe.id.includes('popup-gQP0iBekFMuwQCi7M2sI') && !iframe.id.includes('popup-zqMk0zUNQWj0Wc8Ym4K5') && !iframe.id.includes('popup-VZ4i0TQJhdoSpTITJMDu') && !iframe.id.includes('popup-wAspvN3os8khzmZ25TpH')) {
             // Only overwrite if it's NOT one of our customized manual forms
             console.log('Switching service, reloading...');
             container.innerHTML = getServicesPopupHTML(targetService);
@@ -214,8 +214,7 @@ window.showServicesPopup = function (serviceName) {
     } else {
         // First Open
         // CRITICAL FIX: Do NOT overwrite src if it is a manual custom form (checked by ID)
-        const isCustomForm = iframe && (
-            iframe.id.includes('1fDfreN5oMYY5wp3VN8j') || // Websites
+        iframe.id.includes('1fDfreN5oMYY5wp3VN8j') || // Websites
             iframe.id.includes('ntPz2EvEej9hA4iFW83Q') || // Ads
             iframe.id.includes('z4nalKLbhSGK9yUOnMoh') || // GBP
             iframe.id.includes('05EkqHahM76Tfa4ttGZc') || // Chat
@@ -224,7 +223,8 @@ window.showServicesPopup = function (serviceName) {
             iframe.id.includes('qE7JEAuhYOJqcmXTTvhv') || // WhatsApp
             iframe.id.includes('gQP0iBekFMuwQCi7M2sI') || // Email Marketing
             iframe.id.includes('zqMk0zUNQWj0Wc8Ym4K5') || // Online Calendar
-            iframe.id.includes('VZ4i0TQJhdoSpTITJMDu')    // Social Planner
+            iframe.id.includes('VZ4i0TQJhdoSpTITJMDu') || // Social Planner
+            iframe.id.includes('wAspvN3os8khzmZ25TpH')    // Document Management
         );
 
         if (!isCustomForm && !isServiceMatch && iframe) {
