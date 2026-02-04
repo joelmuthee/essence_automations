@@ -1467,9 +1467,21 @@ footer {
     padding: 0.5rem;
     border-radius: 8px;
     text-align: center;
+    text-align: center;
+}
+
+.trust-strip {
+    margin-top: 3rem;
+    /* Default desktop spacing */
 }
 
 /* Reduce spacing in Trust Strip on mobile */
+@media (max-width: 768px) {
+    .trust-strip {
+        margin-top: 0.5rem !important;
+    }
+}
+
 .trust-strip p {
     margin-bottom: 0.5rem !important;
 }
