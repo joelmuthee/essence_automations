@@ -1467,6 +1467,15 @@ footer {
 @media (max-width: 768px) {
     .hero h1 {
         font-size: 3rem;
+        /* Force visibility specifically for mobile */
+        color: #ffffff !important;
+        -webkit-text-fill-color: #ffffff !important;
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+
+    .hero h1 .gradient-text {
+        -webkit-text-fill-color: transparent !important;
     }
 
     .nav-links {
