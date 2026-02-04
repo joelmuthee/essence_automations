@@ -1537,6 +1537,11 @@ footer {
         min-height: 85vh !important;
     }
 
+    /* Specific override for Home page */
+    #home.hero {
+        padding-top: 140px !important;
+    }
+
     .hero-content {
         margin-bottom: 0.5rem;
     }
