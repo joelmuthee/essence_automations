@@ -2118,6 +2118,15 @@ footer {
         margin: 0 !important;
     }
 
+    /* Center the last item if it's the 3rd, 5th, etc. (odd number) */
+    .stats-section .grid-container>.stat-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 0.5rem) !important;
+        /* Match width of other single cards (50% - half gap) */
+        max-width: 300px;
+    }
+
     .stat-card h3 {
         font-size: 1.8rem !important;
         /* Slightly smaller to fit 2 cols */
@@ -2324,6 +2333,14 @@ footer {
         /* Ensure full width in grid cell */
         min-width: 0;
         /* reset min-width */
+    }
+
+    /* Center the last item if it's the 3rd, 5th, etc. (odd number) */
+    .case-study-stats-grid>.cs-stat-item:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc(50% - 0.4rem) !important;
+        /* Match width of other single cards (50% - half gap) */
     }
 
     .cs-stat-number {
