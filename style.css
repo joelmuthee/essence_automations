@@ -1539,7 +1539,8 @@ footer {
 
     /* Specific override for Home page */
     #home.hero {
-        padding-top: 140px !important;
+        padding-top: 120px !important;
+        margin-top: 0 !important;
     }
 
     .hero-content {
