@@ -76,8 +76,11 @@
                 </p>
                 <div class="hero-buttons fade-in-up delay-2">
                     <button onclick="showServicesPopup('Document Management')" class="btn-primary"
-                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
-                        Interested</button>
+                        style="border:none; cursor:pointer; font-family: inherit; display: inline-flex; flex-direction: column; align-items: center; padding: 0.8rem 2rem;">
+                        <span style="font-size: 1.1rem; line-height: 1.2;">Close Deals Faster</span>
+                        <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Create, Send & Sign in
+                            Minutes</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -146,26 +149,15 @@
                 <p>Go paperless, stay organized. Streamline your document workflow.</p>
                 <div style="margin-top: 2rem;">
                     <button onclick="showServicesPopup('Document Management')" class="btn-primary"
-                        style="border:none; cursor:pointer; font-family: inherit; font-size: 1rem;">I'm
-                        Interested</button>
+                        style="border:none; cursor:pointer; font-family: inherit; display: inline-flex; flex-direction: column; align-items: center; padding: 0.8rem 2rem;">
+                        <span style="font-size: 1.1rem; line-height: 1.2;">Close Deals Faster</span>
+                        <span style="font-size: 0.8rem; font-weight: 400; opacity: 0.9;">Create, Send & Sign in
+                            Minutes</span>
+                    </button>
                 </div>
             </div>
 
-            <!-- Services Needed Form (Pop-up/Inline) -->
-            <div id="services-needed-popup" class="conditional-content hidden">
-                <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');"
-                    title="Close Form">&times;</button>
-                <iframe src="https://link.essenceautomations.com/widget/form/wAspvN3os8khzmZ25TpH"
-                    style="display:none;width:100%;height:100%;border:none;border-radius:4px"
-                    id="popup-wAspvN3os8khzmZ25TpH" data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow"
-                    data-trigger-value="" data-activation-type="alwaysActivated" data-activation-value=""
-                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
-                    data-form-name="Document Management" data-height="755"
-                    data-layout-iframe-id="popup-wAspvN3os8khzmZ25TpH" data-form-id="wAspvN3os8khzmZ25TpH"
-                    title="Document Management">
-                </iframe>
-                <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
-            </div>
+
         </section>
 
         <section id="reviews" class="reviews">
@@ -289,6 +281,20 @@
     <script src="https://link.essenceautomations.com/js/external-tracking.js"
         data-tracking-id="tk_ed2385e52c284be3a90945e733a4e35f" data-debug="true">
         </script>
+    <!-- Services Needed Form (Pop-up/Inline) - MOVED TO BODY ROOT -->
+    <div id="services-needed-popup" class="conditional-content hidden zoom-in">
+        <button class="close-form-btn" onclick="this.parentElement.classList.add('hidden');" title="Close Form"
+            style="background: #ff6b00 !important; color: white; z-index: 2147483647 !important; position: fixed; top: 20px; right: 20px; opacity: 1; border-radius: 50%; width: 40px; height: 40px; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">&times;</button>
+        <iframe src="https://link.essenceautomations.com/widget/form/wAspvN3os8khzmZ25TpH"
+            style="display:none;width:100%;height:100%;border:none;border-radius:4px" id="popup-wAspvN3os8khzmZ25TpH"
+            data-layout="{'id':'POPUP'}" data-trigger-type="alwaysShow" data-trigger-value=""
+            data-activation-type="alwaysActivated" data-activation-value="" data-deactivation-type="neverDeactivate"
+            data-deactivation-value="" data-form-name="Document Management" data-height="755"
+            data-layout-iframe-id="popup-wAspvN3os8khzmZ25TpH" data-form-id="wAspvN3os8khzmZ25TpH"
+            title="Document Management">
+        </iframe>
+        <script src="https://link.essenceautomations.com/js/form_embed.js"></script>
+    </div>
 </body>
 
 </html>
