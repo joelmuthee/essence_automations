@@ -1546,6 +1546,12 @@ footer {
         margin-bottom: 0 !important;
         min-height: auto !important;
         /* Let content dictate height */
+        height: auto !important;
+    }
+
+    html,
+    body {
+        height: auto !important;
     }
 
     .hero-content {
