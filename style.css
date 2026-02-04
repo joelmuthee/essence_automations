@@ -1478,8 +1478,10 @@ footer {
 /* Reduce spacing in Trust Strip on mobile */
 @media (max-width: 768px) {
     .trust-strip {
-        margin-top: 0 !important;
+        margin-top: -1rem !important;
         padding-top: 0 !important;
+        position: relative;
+        z-index: 10;
     }
 }
 
