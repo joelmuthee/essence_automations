@@ -1513,8 +1513,9 @@ footer {
     }
 
     .logo img {
-        height: auto !important;
-        max-width: 100% !important;
+        height: 50px !important;
+        width: auto !important;
+        max-width: 180px !important;
         object-fit: contain;
     }
 }
