@@ -1469,6 +1469,13 @@ footer {
     text-align: center;
 }
 
+/* Reduce spacing in Trust Strip on mobile */
+.trust-strip p {
+    margin-bottom: 0.5rem !important;
+}
+
+
+
 /* Responsive */
 @media (max-width: 768px) {
 
@@ -1503,7 +1510,7 @@ footer {
     }
 
     .hero-content {
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
     }
 
     .navbar {
