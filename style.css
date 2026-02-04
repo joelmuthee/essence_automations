@@ -1521,9 +1521,9 @@ footer {
         flex-direction: column;
         justify-content: flex-start !important;
         text-align: center;
-        padding-top: 140px !important;
+        padding-top: 25vh !important;
         height: auto !important;
-        min-height: 40vh;
+        min-height: 80vh;
     }
 
     .hero-content {
