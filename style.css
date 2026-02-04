@@ -1502,6 +1502,12 @@ footer {
     .logo .highlight {
         display: inline-block;
     }
+
+    .logo img {
+        height: auto !important;
+        max-width: 100% !important;
+        object-fit: contain;
+    }
 }
 
 /* Global Glow Effect - Rajshyn Style */
