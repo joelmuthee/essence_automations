@@ -2313,15 +2313,16 @@ footer {
 
 @media (max-width: 768px) {
     .case-study-stats-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
 
     .cs-stat-item {
-        flex: 0 1 calc(50% - 0.6rem);
-        min-width: 130px;
+        width: 100%;
+        /* Ensure full width in grid cell */
+        min-width: 0;
+        /* reset min-width */
     }
 
     .cs-stat-number {
