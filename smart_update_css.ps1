@@ -1,5 +1,5 @@
 $directory = "c:\Users\Joel\OneDrive\Documents\Anti Gravity\Essence Automations"
-$target_version = 110
+$target_version = 111
 $replacement = "style.css?v=$target_version"
 $regex = "style\.css\?v=\d+"
 $count = 0

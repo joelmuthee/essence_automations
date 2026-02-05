@@ -2087,6 +2087,8 @@ footer {
     }
 }
 
+/* ... existing code ... */
+
 /* Mobile Footer Logo Resize & Center */
 @media (max-width: 768px) {
     .footer-brand {
@@ -2112,6 +2114,26 @@ footer {
 
     .contact-info a {
         justify-content: center;
+    }
+}
+
+/* DESKTOP HERO FIX - Enforce consistency across all pages */
+@media (min-width: 769px) {
+
+    .hero,
+    .hero.website-hero-override,
+    #home.hero {
+        padding-top: 220px !important;
+        /* Ensure it clears the header */
+        justify-content: flex-start !important;
+        /* Align to top (plus padding) to avoid vertical centering issues */
+        min-height: 60vh;
+        /* Maintain minimum height */
+    }
+
+    /* Optional: If we want slightly more space below content on desktop */
+    .hero {
+        padding-bottom: 6rem;
     }
 }
 
