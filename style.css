@@ -245,8 +245,8 @@ a.logo {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 5% 3rem;
-    /* Added bottom padding, adjusted top */
+    padding: 220px 5% 5rem;
+    /* Added bottom padding, adjusted top to 220px to account for large fixed header */
     position: relative;
     overflow: hidden;
 }
