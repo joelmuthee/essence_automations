@@ -115,3 +115,41 @@ Key Rules:
 2. **Scroll Strategy**: The *Container* (`overflow-y: auto`) scrolls, NOT the iframe.
 3. **Iframe**: `min-height: 100vh`, `border: none`. Do NOT use `scrolling="no"`.
 4. **Close Button**: `position: fixed` (relative to screen, not content) so it's always accessible.
+
+---
+
+6. Layout & Spacing Protocol (Header Clearance)
+**Problem:** The Hero section content is hidden behind the fixed navigation bar on Desktop, or has inconsistent spacing on Mobile.
+**Cause:** The fixed navbar (approx 170px tall) overlays the content flow. Standard padding is insufficient.
+
+**The Protocol:**
+- **Desktop (min-width: 769px):**
+  You MUST enforce a `padding-top` of at least **220px** for any hero section to ensure visual clearance.
+  You MUST enforce `justify-content: flex-start` to prevent vertical centering (which pushes content up behind the header).
+  
+  ```css
+  @media (min-width: 769px) {
+      .hero, .hero.website-hero-override, #home.hero {
+          padding-top: 220px !important; /* Critical Layout Fix */
+          justify-content: flex-start !important; /* Prevent centering overlap */
+          min-height: 60vh;
+      }
+  }
+  ```
+
+- **Mobile (max-width: 768px):**
+  Use `padding-top: 140px` (or adjusted based on specific design) but ensure it is handled separately from desktop rules.
+
+---
+
+7. Deployment & Cache Busting Protocol
+**Problem:** Users (and you) do not see changes immediately after deploying because browsers cache `style.css` aggressively.
+**Cause:** The filename `style.css` hasn't changed, so the browser uses the local copy.
+
+**The Protocol:**
+- **NEVER** deploy a CSS change without updating the version query parameter in ALL HTML files.
+- **The Tool:** Use `smart_update_css.ps1` (or `.py`) in the root directory.
+  - Command: `powershell -ExecutionPolicy Bypass -File smart_update_css.ps1`
+  - Logic: It finds `style.css?v=XXX` and increments/updates it to the target version in ALL 18+ HTML files instantly.
+- **Action:** run this script BEFORE `git push`.
+
